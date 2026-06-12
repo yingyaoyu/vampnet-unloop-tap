@@ -1,0 +1,18 @@
+$include:
+  - conf/vampnet.yml
+
+# Experimental motion-conditioning config.
+# The controller reads either batch["motion"] shaped (batch, 3, frames)
+# or batch["motion_path"] pointing at .npz/.jsonl sidecars.
+motion.enabled: true
+motion.feature_dim: 3
+motion.key: motion
+motion.path_key: motion_path
+motion.missing_policy: zeros
+# Set this once you have sidecars, for example:
+# motion.sidecar_dir: /path/to/motion-sidecars
+motion.sidecar_suffix: .motion.npz
+
+VampNet.ctrl_dims:
+  motion: 3
+VampNet.cfg_dropout_prob: 0.2

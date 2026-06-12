@@ -1,0 +1,24 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Local Python environments
+.venv/
+venv/
+env/
+
+# Downloaded model weights and caches
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+**/.cache/
+vampnet-main/models/vampnet/
+
+# generated or local audio files
+unloop-main/audio/
+
+# Generated local render output
+unloop_doc_render/
+

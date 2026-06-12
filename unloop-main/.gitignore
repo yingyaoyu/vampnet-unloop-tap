@@ -1,0 +1,12 @@
+*.mov
+*.mp4
+!audio/.gitkeep
+audio/*.wav
+py-js/
+build/
+
+# python package files
+__pycache__/
+*.egg-info/
+
+.DS_Store

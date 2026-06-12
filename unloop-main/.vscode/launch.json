@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug motion_to_unloop",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python",
+      "program": "/Users/yingyao/Downloads/VampNet/unloop-main/motion_to_unloop.py",
+      "console": "integratedTerminal",
+      "cwd": "/Users/yingyao/Downloads/VampNet/unloop-main",
+      "args": [
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9100",
+        "--listen-port",
+        "9101",
+        "--send-rate",
+        "2"
+      ],
+      "justMyCode": true
+    }
+  ]
+}
