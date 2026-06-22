@@ -31,6 +31,12 @@ from pythonosc.udp_client import SimpleUDPClient
 POSE_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/latest/pose_landmarker_lite.task"
 POSE_MODEL_PATH = Path(__file__).with_name("models") / "pose_landmarker_lite.task"
 
+# Loudness is intentionally a discrete gesture: normal below the threshold,
+# then an obvious boost once the wrists are clearly raised above the shoulders.
+LOUDNESS_TRIGGER_ARM_HEIGHT = 0.78
+LOUDNESS_NORMAL_GAIN_DB = 0.0
+LOUDNESS_BOOST_GAIN_DB = 10.0
+
 POSE_INDEX = {
     "NOSE": 0,
     "LEFT_EYE_INNER": 1,
@@ -111,6 +117,12 @@ class UnloopControls:
     dropout: float
     onset_mask: int
     periodic: int
+    input_gain: float
+    input_gain_db: float
+    filter_cutoff: float
+    filter_q: float
+    drive: float
+    fx_wet: float
 
 
 @dataclass
@@ -120,11 +132,26 @@ class MotionSample:
 
 
 def clamp(value: float, low: float = 0.0, high: float = 1.0) -> float:
-    return max(low, min(high, value))
+    return max(low, min(high, value)) #keeps values between 0 and 1
 
 
 def smooth(previous: float, current: float, alpha: float) -> float:
     return alpha * current + (1.0 - alpha) * previous
+
+
+def exp_map(value: float, low: float, high: float) -> float:
+    value = clamp(value)
+    return float(low * ((high / low) ** value))
+
+
+def arm_height_to_loudness_gain(arm_height: float) -> tuple[float, float]:
+    gain_db = (
+        LOUDNESS_BOOST_GAIN_DB
+        if arm_height >= LOUDNESS_TRIGGER_ARM_HEIGHT
+        else LOUDNESS_NORMAL_GAIN_DB
+    )
+    gain_linear = 10.0 ** (gain_db / 20.0)
+    return gain_linear, gain_db
 
 
 def ensure_pose_model(path: Path) -> Path:
@@ -201,8 +228,19 @@ def map_to_unloop(features: MotionFeatures) -> UnloopControls:
     # Arms higher = more expressive/wilder sampling. range: 0.75..1.3 cuz arm_height 0..1
     temperature = 0.75 + 0.55 * features.arm_height 
 
+    # Loudness stays unchanged until the arms cross the high-arm threshold,
+    # then jumps to an obvious boost. Max can still display this on its dial.
+    input_gain, input_gain_db = arm_height_to_loudness_gain(features.arm_height)
+
     # More movement = more regeneration pressure. dropout: randomly remove some of the prompt anchors 
     dropout = 0.25 * features.motion_energy #range 0..0.25 because motion_energy is clamped to 0..1
+
+    # More movement = brighter/more affected sound. These are meant for Max or
+    # Python DSP either before VampNet encoding or after generation.
+    filter_cutoff = exp_map(features.motion_energy, 350.0, 9000.0)
+    filter_q = 0.7 + 2.8 * features.motion_energy
+    drive = 1.0 + 5.0 * features.motion_energy
+    fx_wet = 0.08 + 0.72 * features.motion_energy
 
     # More movement also asks VampNet to preserve tap attacks/onsets.
     onset_mask = int(round(3 + 22 * features.motion_energy)) #range 3..25 because motion_energy is clamped to 0..1. 
@@ -222,6 +260,12 @@ def map_to_unloop(features: MotionFeatures) -> UnloopControls:
         dropout=round(dropout, 3),
         onset_mask=onset_mask,
         periodic=periodic,
+        input_gain=round(input_gain, 3),
+        input_gain_db=round(input_gain_db, 2),
+        filter_cutoff=round(filter_cutoff, 1),
+        filter_q=round(filter_q, 3),
+        drive=round(drive, 3),
+        fx_wet=round(fx_wet, 3),
     )
 
 #sends to Max using User Datagram Protocol, takes a UDP/PSC client from python-osc package, Max receives in vamper.maxpat udpreceive 9100
@@ -232,6 +276,17 @@ def send_controls(client: SimpleUDPClient, features: MotionFeatures, controls: U
     client.send_message("/motion/dropout", controls.dropout)
     client.send_message("/motion/onsetmask", controls.onset_mask)
     client.send_message("/motion/periodic", controls.periodic)
+    client.send_message("/motion/inputgain", controls.input_gain)
+    client.send_message("/motion/inputgain_db", controls.input_gain_db)
+    client.send_message("/motion/filtercutoff", controls.filter_cutoff)
+    client.send_message("/motion/filterq", controls.filter_q)
+    client.send_message("/motion/drive", controls.drive)
+    client.send_message("/motion/fxwet", controls.fx_wet)
+    client.send_message("/motion/gain", [controls.input_gain, controls.input_gain_db])
+    client.send_message(
+        "/motion/effects",
+        [controls.filter_cutoff, controls.filter_q, controls.drive, controls.fx_wet],
+    )
 
 
 def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionSample | None:
@@ -241,9 +296,22 @@ def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionS
     feature_values = np.array(
         [[sample.features.arm_height, sample.features.motion_energy, sample.features.arm_spread] for sample in samples],
         dtype=np.float32,
-    )
+    ) #convert list of MotionSample objects into a NumPy array of shape (num_samples, 3) 
     control_values = np.array(
-        [[sample.controls.temperature, sample.controls.dropout, sample.controls.onset_mask] for sample in samples],
+        [
+            [
+                sample.controls.temperature,
+                sample.controls.dropout,
+                sample.controls.onset_mask,
+                sample.controls.input_gain,
+                sample.controls.input_gain_db,
+                sample.controls.filter_cutoff,
+                sample.controls.filter_q,
+                sample.controls.drive,
+                sample.controls.fx_wet,
+            ]
+            for sample in samples
+        ],
         dtype=np.float32,
     )
 
@@ -255,6 +323,7 @@ def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionS
         control_summary = np.mean(control_values, axis=0)
 
     periodic = Counter(sample.controls.periodic for sample in samples).most_common(1)[0][0]
+    input_gain, input_gain_db = arm_height_to_loudness_gain(float(feature_summary[0]))
     return MotionSample(
         features=MotionFeatures(
             arm_height=float(feature_summary[0]),
@@ -266,6 +335,12 @@ def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionS
             dropout=round(float(control_summary[1]), 3),
             onset_mask=int(round(float(control_summary[2]))),
             periodic=int(periodic),
+            input_gain=round(input_gain, 3),
+            input_gain_db=round(input_gain_db, 2),
+            filter_cutoff=round(float(control_summary[5]), 1),
+            filter_q=round(float(control_summary[6]), 3),
+            drive=round(float(control_summary[7]), 3),
+            fx_wet=round(float(control_summary[8]), 3),
         ),
     )
 
@@ -324,7 +399,10 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
             f"temp={summary.controls.temperature:.2f} "
             f"dropout={summary.controls.dropout:.2f} "
             f"onset={summary.controls.onset_mask} "
-            f"periodic={summary.controls.periodic}"
+            f"periodic={summary.controls.periodic} "
+            f"gain={summary.controls.input_gain:.2f} "
+            f"cutoff={summary.controls.filter_cutoff:.0f}Hz "
+            f"wet={summary.controls.fx_wet:.2f}"
         )
 
     def apply_summary_if_available(self) -> bool:
@@ -343,7 +421,8 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
                 return (
                     "SUMMARY "
                     f"temp {controls.temperature:.2f} | dropout {controls.dropout:.2f} | "
-                    f"onset {controls.onset_mask} | periodic {controls.periodic}"
+                    f"onset {controls.onset_mask} | periodic {controls.periodic} | "
+                    f"gain {controls.input_gain:.2f} | wet {controls.fx_wet:.2f}"
                 )
             return "LIVE"
 
@@ -365,7 +444,7 @@ def parse_max_event(data: bytes) -> tuple[str, int] | None:
     return None
 
 
-class MaxEventListener:
+class MaxEventListener: #opens UDP port 9101 to receive max events
     def __init__(self, port: int, accumulator: RecordingAccumulator):
         self.port = port
         self.accumulator = accumulator
@@ -373,7 +452,7 @@ class MaxEventListener:
         self.thread = threading.Thread(target=self._serve, daemon=True)
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.settimeout(0.25)
-        self.sock.bind(("127.0.0.1", port))
+        self.sock.bind(("127.0.0.1", port)) 
 
     def start(self) -> None:
         self.thread.start()
@@ -404,7 +483,7 @@ class MaxEventListener:
                 self.accumulator.apply_summary_if_available()
 
 
-def draw_pose(frame, landmarks) -> None:
+def draw_pose(frame, landmarks) -> None: #draw skeleton lines
     if not landmarks:
         return
 
@@ -429,7 +508,7 @@ class PoseTracker:
         pass
 
 
-class SolutionsPoseTracker(PoseTracker):
+class SolutionsPoseTracker(PoseTracker): #old, included for compatibility
     def __init__(self):
         self.pose = mp.solutions.pose.Pose(
             model_complexity=1,
@@ -448,7 +527,7 @@ class SolutionsPoseTracker(PoseTracker):
         self.pose.close()
 
 
-class TasksPoseTracker(PoseTracker):
+class TasksPoseTracker(PoseTracker): #new, new mediapipe tasks api
     def __init__(self, model_path: Path):
         from mediapipe.tasks.python import BaseOptions, vision
 
@@ -549,7 +628,9 @@ def main() -> None:
 
             frame = cv2.flip(frame, 1)
             rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            landmarks = pose_tracker.process(rgb)
+            landmarks = pose_tracker.process(rgb) 
+            # landmarks[12]: NormalizedLandmark(x=0.27521955966949463, y=1.1038858890533447, z=-0.5271918177604675, visibility=0.9503990411758423, presence=0.7850533723831177, name=None)
+            # visibility:confidence that this landmark is visible. prsence: confidence that this landmark exists in the detected pose.
             features, previous_points = compute_features(landmarks, previous_points)
 
             if features is not None:
@@ -568,7 +649,9 @@ def main() -> None:
                             f"features arm_height={smoothed.arm_height:.2f} "
                             f"energy={smoothed.motion_energy:.2f} spread={smoothed.arm_spread:.2f} | "
                             f"temp={controls.temperature:.2f} dropout={controls.dropout:.2f} "
-                            f"onset={controls.onset_mask} periodic={controls.periodic}"
+                            f"onset={controls.onset_mask} periodic={controls.periodic} "
+                            f"gain={controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB "
+                            f"cutoff={controls.filter_cutoff:.0f}Hz drive={controls.drive:.2f} wet={controls.fx_wet:.2f}"
                         )
                     else:
                         send_controls(client, smoothed, controls)
@@ -584,17 +667,23 @@ def main() -> None:
                     f"temp {controls.temperature:.2f} | dropout {controls.dropout:.2f} | "
                     f"onset {controls.onset_mask} | periodic {controls.periodic}"
                 )
+                effects = (
+                    f"gain {controls.input_gain:.2f} ({controls.input_gain_db:.1f}dB) | "
+                    f"cutoff {controls.filter_cutoff:.0f}Hz | drive {controls.drive:.2f} | wet {controls.fx_wet:.2f}"
+                )
                 accumulator_status = accumulator.status_text()
             else:
                 overlay = "No pose detected"
                 mapped = ""
+                effects = ""
                 accumulator_status = accumulator.status_text()
 
             if not args.hide:
                 cv2.putText(frame, overlay, (18, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 255, 0), 2)
                 cv2.putText(frame, mapped, (18, 56), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 255, 255), 2)
-                cv2.putText(frame, accumulator_status, (18, 84), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 180, 0), 2)
-                cv2.putText(frame, "r: avg on/off | u: avg+unloop | q: quit", (18, 112), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2)
+                cv2.putText(frame, effects, (18, 84), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (120, 220, 255), 2)
+                cv2.putText(frame, accumulator_status, (18, 112), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 180, 0), 2)
+                cv2.putText(frame, "r: avg on/off | u: avg+unloop | q: quit", (18, 140), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2)
                 cv2.imshow("Motion to Unloop", frame)
                 key = cv2.waitKey(1) & 0xFF
                 if key == ord("q"):

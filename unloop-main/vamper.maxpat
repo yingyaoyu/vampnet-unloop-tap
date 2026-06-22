@@ -630,7 +630,7 @@
         "obj-8",
         "umenu",
         "int",
-        1,
+        11,
         5,
         "obj-70",
         "live.dial",
@@ -670,7 +670,7 @@
         "obj-8",
         "umenu",
         "int",
-        1,
+        11,
         5,
         "obj-70",
         "live.dial",
@@ -710,7 +710,7 @@
         "obj-8",
         "umenu",
         "int",
-        1,
+        11,
         5,
         "obj-70",
         "live.dial",
@@ -762,7 +762,7 @@
        0
       ],
       "ckpt-name": [
-       "percussion"
+       "n64"
       ],
       "dropout": [
        0.0
@@ -5182,8 +5182,37 @@
       100.0,
       22.0
      ],
+     "presentation": 1,
+     "presentation_rect": [
+      373.3665141701189,
+      424.0,
+      161.0,
+      22.0
+     ],
      "pattrmode": 1,
      "varname": "ckpt-name"
+    }
+   },
+   {
+    "box": {
+     "id": "model-select-label",
+     "maxclass": "comment",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      3375.0,
+      852.5619840679856,
+      48.0,
+      20.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      317.0665159463373,
+      425.0,
+      48.0,
+      20.0
+     ],
+     "text": "model"
     }
    },
    {
@@ -5939,7 +5968,7 @@
       2523.0,
       22.0
      ],
-     "text": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py \"--audio_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-input-1058.wav\" \"--output_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-output-1058.wav\" \"--servername http://127.0.0.1:7860/\" \"--temp 1.0000\" \"--periodic_hint_freq 0\" \"--onset_mask_width 0\" beatmask downbeats \"--typical_filter 0\" \"--num_steps 36\" \"--checkpoint_name percussion\" \"--dropout 0.0000\" \"--seed 0\""
+     "text": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py \"--audio_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-input-1058.wav\" \"--output_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-output-1058.wav\" \"--servername http://127.0.0.1:7860/\" \"--temp 1.0000\" \"--periodic_hint_freq 0\" \"--onset_mask_width 0\" beatmask downbeats \"--typical_filter 0\" \"--num_steps 36\" \"--checkpoint_name n64\" \"--dropout 0.0000\" \"--seed 0\""
     }
    },
    {
@@ -9552,12 +9581,12 @@
       45.0
      ],
      "presentation": 1,
-	     "presentation_rect": [
-	      501.0,
-	      120.88736510375952,
-	      55.0,
-	      45.0
-	     ],
+     "presentation_rect": [
+      501.0,
+      120.88736510375952,
+      55.0,
+      45.0
+     ],
      "saved_attribute_attributes": {
       "activedialcolor": {
        "expression": ""
@@ -9874,67 +9903,67 @@
       }
      },
      "varname": "onsetmask"
-	    }
-	   },
-	   {
-	    "box": {
-	     "activedialcolor": [
-	      0.0,
-	      0.854901960784314,
-	      0.282352941176471,
-	      1.0
-	     ],
-	     "fontname": "Helvetica",
-	     "id": "obj-69",
-	     "maxclass": "live.dial",
-	     "numinlets": 1,
-	     "numoutlets": 2,
-	     "outlettype": [
-	      "",
-	      "float"
-	     ],
-	     "parameter_enable": 1,
-	     "patching_rect": [
-	      2653.5871167579667,
-	      808.5619840679856,
-	      50.0,
-	      45.0
-	     ],
-	     "presentation": 1,
-	     "presentation_rect": [
-	      454.0,
-	      120.88736510375952,
-	      45.0,
-	      45.0
-	     ],
-	     "saved_attribute_attributes": {
-	      "activedialcolor": {
-	       "expression": "themecolor.live_macro_assignment"
-	      },
-	      "valueof": {
-	       "parameter_initial": [
-	        0
-	       ],
-	       "parameter_initial_enable": 1,
-	       "parameter_linknames": 1,
-	       "parameter_longname": "beatwidth[1]",
-	       "parameter_mmax": 200.0,
-	       "parameter_modmode": 0,
-	       "parameter_osc_name": "<default>",
-	       "parameter_shortname": "beat (ms)",
-	       "parameter_steps": 200,
-	       "parameter_type": 1,
-	       "parameter_unitstyle": 0
-	      }
-	     },
-	     "varname": "beatwidth"
-	    }
-	   },
-	   {
-	    "box": {
-	     "id": "obj-47",
-	     "maxclass": "comment",
-	     "numinlets": 1,
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "obj-69",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      2653.5871167579667,
+      808.5619840679856,
+      50.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      454.0,
+      120.88736510375952,
+      45.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "beatwidth[1]",
+       "parameter_mmax": 200.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "beat (ms)",
+       "parameter_steps": 200,
+       "parameter_type": 1,
+       "parameter_unitstyle": 0
+      }
+     },
+     "varname": "beatwidth"
+    }
+   },
+   {
+    "box": {
+     "id": "obj-47",
+     "maxclass": "comment",
+     "numinlets": 1,
      "numoutlets": 0,
      "patching_rect": [
       1410.6355885671628,
@@ -10193,7 +10222,7 @@
       298.7202114466387,
       283.1506427240429,
       258.0126248927919,
-      145.71649186934656
+      169.71649186934656
      ],
      "proportion": 0.5,
      "rounded": 0
@@ -10364,15 +10393,23 @@
      "id": "motion-osc-route-controls",
      "maxclass": "newobj",
      "numinlets": 2,
-     "numoutlets": 8,
+     "numoutlets": 16,
      "patching_rect": [
       4210.0,
       225.0,
-      420.0,
+      880.0,
       22.0
      ],
-     "text": "route temperature dropout onsetmask periodic unloop feedback steps",
+     "text": "route temperature dropout onsetmask periodic unloop feedback steps inputgain inputgain_db filtercutoff filterq drive fxwet gain effects",
      "outlettype": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       "",
       "",
       "",
@@ -10411,7 +10448,7 @@
      "numoutlets": 1,
      "patching_rect": [
       4210.0,
-      265.0,
+      305.0,
       105.0,
       22.0
      ],
@@ -10426,15 +10463,23 @@
      "id": "motion-osc-route-direct",
      "maxclass": "newobj",
      "numinlets": 2,
-     "numoutlets": 8,
+     "numoutlets": 16,
      "patching_rect": [
       4210.0,
       155.0,
-      620.0,
+      1160.0,
       22.0
      ],
-     "text": "route /motion/temperature /motion/dropout /motion/onsetmask /motion/periodic /motion/unloop /motion/feedback /motion/steps",
+     "text": "route /motion/temperature /motion/dropout /motion/onsetmask /motion/periodic /motion/unloop /motion/feedback /motion/steps /motion/inputgain /motion/inputgain_db /motion/filtercutoff /motion/filterq /motion/drive /motion/fxwet /motion/gain /motion/effects",
      "outlettype": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       "",
       "",
       "",
@@ -10568,6 +10613,418 @@
      "outlettype": [
       ""
      ]
+    }
+   },
+   {
+    "box": {
+     "id": "motion-dsp-comment",
+     "maxclass": "comment",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      4210.0,
+      560.0,
+      220.0,
+      20.0
+     ],
+     "text": "motion DSP controls",
+     "presentation": 1,
+     "presentation_rect": [
+      310.0,
+      292.0,
+      170.0,
+      20.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.686274509803922,
+      0.427450980392157,
+      0.588235294117647,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "motion-inputgain-db-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      4210.0,
+      590.0,
+      47.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      310.0,
+      316.0,
+      47.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_initial": [
+        0.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "motion input gain dB",
+       "parameter_mmax": 12.0,
+       "parameter_mmin": -24.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "in gain",
+       "parameter_type": 0,
+       "parameter_unitstyle": 4
+      }
+     },
+     "varname": "inputgain-db-dial"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-inputgain-db-send",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "outlettype": [],
+     "patching_rect": [
+      4210.0,
+      652.0,
+      155.0,
+      22.0
+     ],
+     "text": "s motion-inputgain-db"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.23921568627451,
+      0.592156862745098,
+      0.925490196078431,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "motion-filtercutoff-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      4270.0,
+      590.0,
+      47.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      360.0,
+      316.0,
+      47.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_initial": [
+        12000.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "motion filter cutoff",
+       "parameter_mmax": 12000.0,
+       "parameter_mmin": 100.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "cutoff",
+       "parameter_type": 0,
+       "parameter_unitstyle": 3
+      }
+     },
+     "varname": "filtercutoff-dial"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-filtercutoff-send",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "outlettype": [],
+     "patching_rect": [
+      4270.0,
+      652.0,
+      155.0,
+      22.0
+     ],
+     "text": "s motion-filtercutoff"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.23921568627451,
+      0.592156862745098,
+      0.925490196078431,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "motion-filterq-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      4330.0,
+      590.0,
+      47.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      410.0,
+      316.0,
+      47.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_initial": [
+        0.7
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "motion filter Q",
+       "parameter_mmax": 5.0,
+       "parameter_mmin": 0.1,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "filt Q",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "filterq-dial"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-filterq-send",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "outlettype": [],
+     "patching_rect": [
+      4330.0,
+      652.0,
+      155.0,
+      22.0
+     ],
+     "text": "s motion-filterq"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.945098039215686,
+      0.533333333333333,
+      0.243137254901961,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "motion-drive-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      4390.0,
+      590.0,
+      47.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      460.0,
+      316.0,
+      47.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_initial": [
+        1.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "motion drive",
+       "parameter_mmax": 8.0,
+       "parameter_mmin": 1.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "drive",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "drive-dial"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-drive-send",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "outlettype": [],
+     "patching_rect": [
+      4390.0,
+      652.0,
+      155.0,
+      22.0
+     ],
+     "text": "s motion-drive"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.945098039215686,
+      0.533333333333333,
+      0.243137254901961,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "motion-fxwet-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      4450.0,
+      590.0,
+      47.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      510.0,
+      316.0,
+      47.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": ""
+      },
+      "valueof": {
+       "parameter_initial": [
+        0.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "motion fx wet",
+       "parameter_mmax": 1.0,
+       "parameter_mmin": 0.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "fx wet",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "fxwet-dial"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-fxwet-send",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "outlettype": [],
+     "patching_rect": [
+      4450.0,
+      652.0,
+      155.0,
+      22.0
+     ],
+     "text": "s motion-fxwet"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-osc-unpack-gain",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "float",
+      "float"
+     ],
+     "patching_rect": [
+      4970.0,
+      265.0,
+      75.0,
+      22.0
+     ],
+     "text": "unpack f f"
+    }
+   },
+   {
+    "box": {
+     "id": "motion-osc-unpack-effects",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 4,
+     "outlettype": [
+      "float",
+      "float",
+      "float",
+      "float"
+     ],
+     "patching_rect": [
+      4970.0,
+      305.0,
+      105.0,
+      22.0
+     ],
+     "text": "unpack f f f f"
     }
    }
   ],
@@ -10758,67 +11215,67 @@
      ]
     }
    },
-	   {
-	    "patchline": {
-	     "destination": [
-	      "obj-69",
-	      0
-	     ],
-	     "midpoints": [
-	      2663.0871167579667,
-	      795.0,
-	      2663.0871167579667,
-	      795.0
-	     ],
-	     "source": [
-	      "obj-172",
-	      0
-	     ]
-	    }
-	   },
-	   {
-	    "patchline": {
-	     "destination": [
-	      "obj-107",
-	      0
-	     ],
-	     "midpoints": [
-	      2663.0871167579667,
-	      879.0,
-	      2663.0871167579667,
-	      879.0
-	     ],
-	     "source": [
-	      "obj-69",
-	      0
-	     ]
-	    }
-	   },
-	   {
-	    "patchline": {
-	     "destination": [
-	      "obj-69",
-	      0
-	     ],
-	     "midpoints": [
-	      2733.5,
-	      795.0,
-	      2663.0871167579667,
-	      795.0
-	     ],
-	     "order": 4,
-	     "source": [
-	      "obj-227",
-	      0
-	     ]
-	    }
-	   },
-	   {
-	    "patchline": {
-	     "destination": [
-	      "obj-22",
-	      0
-	     ],
+   {
+    "patchline": {
+     "destination": [
+      "obj-69",
+      0
+     ],
+     "midpoints": [
+      2663.0871167579667,
+      795.0,
+      2663.0871167579667,
+      795.0
+     ],
+     "source": [
+      "obj-172",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-107",
+      0
+     ],
+     "midpoints": [
+      2663.0871167579667,
+      879.0,
+      2663.0871167579667,
+      879.0
+     ],
+     "source": [
+      "obj-69",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-69",
+      0
+     ],
+     "midpoints": [
+      2733.5,
+      795.0,
+      2663.0871167579667,
+      795.0
+     ],
+     "order": 4,
+     "source": [
+      "obj-227",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-22",
+      0
+     ],
      "midpoints": [
       2663.0871167579667,
       921.0,
@@ -16154,18 +16611,6 @@
    {
     "patchline": {
      "source": [
-      "motion-osc-route-controls",
-      7
-     ],
-     "destination": [
-      "motion-osc-print",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
       "motion-osc-recv",
       0
      ],
@@ -16255,18 +16700,6 @@
      ],
      "destination": [
       "obj-70",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
-      7
-     ],
-     "destination": [
-      "motion-osc-print",
       0
      ]
     }
@@ -16411,6 +16844,318 @@
      ],
      "destination": [
       "motion-max-event-send",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-inputgain-db-dial",
+      0
+     ],
+     "destination": [
+      "motion-inputgain-db-send",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-filtercutoff-dial",
+      0
+     ],
+     "destination": [
+      "motion-filtercutoff-send",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-filterq-dial",
+      0
+     ],
+     "destination": [
+      "motion-filterq-send",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-drive-dial",
+      0
+     ],
+     "destination": [
+      "motion-drive-send",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-fxwet-dial",
+      0
+     ],
+     "destination": [
+      "motion-fxwet-send",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      8
+     ],
+     "destination": [
+      "motion-inputgain-db-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      9
+     ],
+     "destination": [
+      "motion-filtercutoff-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      10
+     ],
+     "destination": [
+      "motion-filterq-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      11
+     ],
+     "destination": [
+      "motion-drive-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      12
+     ],
+     "destination": [
+      "motion-fxwet-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      13
+     ],
+     "destination": [
+      "motion-osc-unpack-gain",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      14
+     ],
+     "destination": [
+      "motion-osc-unpack-effects",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-controls",
+      15
+     ],
+     "destination": [
+      "motion-osc-print",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      8
+     ],
+     "destination": [
+      "motion-inputgain-db-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      9
+     ],
+     "destination": [
+      "motion-filtercutoff-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      10
+     ],
+     "destination": [
+      "motion-filterq-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      11
+     ],
+     "destination": [
+      "motion-drive-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      12
+     ],
+     "destination": [
+      "motion-fxwet-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      13
+     ],
+     "destination": [
+      "motion-osc-unpack-gain",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      14
+     ],
+     "destination": [
+      "motion-osc-unpack-effects",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-route-direct",
+      15
+     ],
+     "destination": [
+      "motion-osc-print",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-unpack-gain",
+      1
+     ],
+     "destination": [
+      "motion-inputgain-db-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-unpack-effects",
+      0
+     ],
+     "destination": [
+      "motion-filtercutoff-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-unpack-effects",
+      1
+     ],
+     "destination": [
+      "motion-filterq-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-unpack-effects",
+      2
+     ],
+     "destination": [
+      "motion-drive-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-unpack-effects",
+      3
+     ],
+     "destination": [
+      "motion-fxwet-dial",
       0
      ]
     }
