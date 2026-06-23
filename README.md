@@ -45,13 +45,27 @@ The Max patch also requires these third-party externals:
 - [`karma~`](https://github.com/rconstanzo/karma)
 - [`shell`](https://github.com/jeremybernstein/shell)
 
-Install them from inside Max when they are available:
+### Install `karma~`
 
 1. Open Max.
 2. Select **File → Show Package Manager**.
 3. Search for `karma` and click **Install**.
-4. Search for `shell` and click **Install** if it is listed.
-5. Restart Max after installation.
+4. Restart Max after installation.
+
+### Install `shell`
+
+`shell` is not currently listed in Max's Package Manager.
+
+1. Download
+   [`shell.zip` from the shell 1.0b3 release](https://github.com/jeremybernstein/shell/releases/download/1.0b3/shell.zip).
+2. Unzip the download. It contains a folder named `shell`.
+3. Move the entire `shell` folder into:
+
+   ```text
+   ~/Documents/Max 9/Packages/
+   ```
+
+4. Quit and reopen Max.
 
 When the patch opens, the `karma~` and `shell` objects should not appear orange
 or report that they are missing.
