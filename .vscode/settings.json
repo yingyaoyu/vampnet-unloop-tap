@@ -1,0 +1,8 @@
+{
+  "python.defaultInterpreterPath": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/unloop-main",
+    "${workspaceFolder}/vampnet-main",
+    "${workspaceFolder}/wavebeat-main"
+  ]
+}

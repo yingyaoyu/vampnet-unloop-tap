@@ -17,8 +17,12 @@ env/
 vampnet-main/models/vampnet/
 
 # generated or local audio files
-unloop-main/audio/
+unloop-main/audio/*
+!unloop-main/audio/.gitkeep
 
 # Generated local render output
 unloop_doc_render/
 
+# Local setup notes
+using csail cluster.md
+MOTION_PROTOTYPE_README.md

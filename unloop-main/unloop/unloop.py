@@ -21,7 +21,19 @@ def vamp(
     seed: int = 0,
 ):
     # print(dir(Client))
-    Path(audio_path).parent.mkdir(exist_ok=True, parents=True)
+    audio_file = Path(audio_path).expanduser()
+    output_file = Path(output_path).expanduser()
+    audio_file.parent.mkdir(exist_ok=True, parents=True)
+    output_file.parent.mkdir(exist_ok=True, parents=True)
+    if not audio_file.exists():
+        raise FileNotFoundError(
+            f"Input audio file was not created: {audio_file}. "
+            "In Max, record/stop first, then click Unloop, and check the Max console "
+            "for writewave or audio-device errors."
+        )
+    if audio_file.stat().st_size == 0:
+        raise ValueError(f"Input audio file is empty: {audio_file}")
+
     client = Client(
         servername,
         verbose=False,
@@ -30,11 +42,11 @@ def vamp(
 
 
     def save_output(output_audio):
-        shutil.copy(output_audio, output_path)
-        print(f"{output_path}")
+        shutil.copy(output_audio, output_file)
+        print(f"{output_file}")
 
     job = client.submit(
-        input_audio=handle_file(audio_path),
+        input_audio=handle_file(str(audio_file)),
         sampletemp=temp,
         top_p=0.0,
         periodic_p=periodic_hint_freq,

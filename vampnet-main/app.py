@@ -789,9 +789,11 @@ with gr.Blocks() as demo:
 
 try:
     demo.queue()
-    #demo.launch(share=True)
-    #demo.launch(server_name="0.0.0.0", server_port=7860)
-    demo.launch(server_name="127.0.0.1", server_port=7860)
+    launch_mode = input("Run VampNet locally or publicly? [local/public]: ").strip().lower()
+    if launch_mode == "public":
+        demo.launch(share=True)
+    else:
+        demo.launch(server_name="127.0.0.1", server_port=7860)
 except KeyboardInterrupt:
     shutil.rmtree("gradio-outputs", ignore_errors=True)
     raise

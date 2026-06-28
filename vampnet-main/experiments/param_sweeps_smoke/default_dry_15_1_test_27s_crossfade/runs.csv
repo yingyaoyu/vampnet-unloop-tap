@@ -1,0 +1,2 @@
+batch_size,beat_mask_ms,chunk_count,chunk_seconds,crossfade_seconds,dropout,join_method,model_choice,n_mask_codebooks,num_feedback_steps,num_outputs,onset_mask_width,periodic_p,pitch_shift_amt,run_id,run_number,sample_cutoff,sampletemp,sampling_steps,status,stretch_factor,sweep_label,sweep_param,sweep_value,top_p,typical_filtering,typical_mass,typical_min_tokens
+1,0,4,8.0,1.0,0.0,equal_power,default,3,1,1,0,7,0,001_baseline_default_default_351c95a867ab,1,1.0,1.0,4,ok,1,default,baseline,default,0.0,True,0.15,64

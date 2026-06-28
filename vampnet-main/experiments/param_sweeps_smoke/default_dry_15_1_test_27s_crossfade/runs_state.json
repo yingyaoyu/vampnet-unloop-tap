@@ -1,0 +1,43 @@
+[
+  {
+    "batch_size": 1,
+    "beat_mask_ms": 0,
+    "chunk_count": 4,
+    "chunk_seconds": 8.0,
+    "copied_input_path": "experiments/param_sweeps_smoke/default_dry_15_1_test_27s_crossfade/input/Dry#15_1_test_27s.wav",
+    "crossfade_seconds": 1.0,
+    "dropout": 0.0,
+    "elapsed_s": 55.276,
+    "input_path": "/Users/yingyao/Downloads/Dry#15_1_test_27s.wav",
+    "join_method": "equal_power",
+    "mask_path": "experiments/param_sweeps_smoke/default_dry_15_1_test_27s_crossfade/runs/baseline/001_baseline_default_default_351c95a867ab/mask.png",
+    "model_choice": "default",
+    "n_mask_codebooks": 3,
+    "num_feedback_steps": 1,
+    "num_outputs": 1,
+    "onset_mask_width": 0,
+    "output_1_path": "experiments/param_sweeps_smoke/default_dry_15_1_test_27s_crossfade/runs/baseline/001_baseline_default_default_351c95a867ab/output_1.wav",
+    "output_paths": [
+      "experiments/param_sweeps_smoke/default_dry_15_1_test_27s_crossfade/runs/baseline/001_baseline_default_default_351c95a867ab/output_1.wav"
+    ],
+    "params_hash": "351c95a867ab",
+    "periodic_p": 7,
+    "pitch_shift_amt": 0,
+    "run_dir": "experiments/param_sweeps_smoke/default_dry_15_1_test_27s_crossfade/runs/baseline/001_baseline_default_default_351c95a867ab",
+    "run_id": "001_baseline_default_default_351c95a867ab",
+    "run_number": 1,
+    "sample_cutoff": 1.0,
+    "sampletemp": 1.0,
+    "sampling_steps": 4,
+    "seed": 20260617,
+    "status": "ok",
+    "stretch_factor": 1,
+    "sweep_label": "default",
+    "sweep_param": "baseline",
+    "sweep_value": "default",
+    "top_p": 0.0,
+    "typical_filtering": true,
+    "typical_mass": 0.15,
+    "typical_min_tokens": 64
+  }
+]

@@ -1,0 +1,1733 @@
+{
+  "027240e4ee4c": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 26,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/046_sampling_steps_low20_26_027240e4ee4c/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/046_sampling_steps_low20_26_027240e4ee4c/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/046_sampling_steps_low20_26_027240e4ee4c/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/046_sampling_steps_low20_26_027240e4ee4c",
+        "run_id": "046_sampling_steps_low20_26_027240e4ee4c",
+        "run_number": 46,
+        "sweep_label": "low20",
+        "sweep_param": "sampling_steps",
+        "sweep_value": "26"
+      }
+    ]
+  },
+  "06368bef2d6c": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": false,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/035_typical_filtering_false_false_06368bef2d6c/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/035_typical_filtering_false_false_06368bef2d6c/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/035_typical_filtering_false_false_06368bef2d6c/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/035_typical_filtering_false_false_06368bef2d6c",
+        "run_id": "035_typical_filtering_false_false_06368bef2d6c",
+        "run_number": 35,
+        "sweep_label": "false",
+        "sweep_param": "typical_filtering",
+        "sweep_value": "False"
+      }
+    ]
+  },
+  "0e4dc3134c68": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 0.18,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/043_sample_cutoff_low20_0p18_0e4dc3134c68/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/043_sample_cutoff_low20_0p18_0e4dc3134c68/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/043_sample_cutoff_low20_0p18_0e4dc3134c68/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/043_sample_cutoff_low20_0p18_0e4dc3134c68",
+        "run_id": "043_sample_cutoff_low20_0p18_0e4dc3134c68",
+        "run_number": 43,
+        "sweep_label": "low20",
+        "sweep_param": "sample_cutoff",
+        "sweep_value": "0.18"
+      }
+    ]
+  },
+  "16c170f79df9": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 205
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/042_typical_min_tokens_high80_205_16c170f79df9/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/042_typical_min_tokens_high80_205_16c170f79df9/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/042_typical_min_tokens_high80_205_16c170f79df9/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/042_typical_min_tokens_high80_205_16c170f79df9",
+        "run_id": "042_typical_min_tokens_high80_205_16c170f79df9",
+        "run_number": 42,
+        "sweep_label": "high80",
+        "sweep_param": "typical_min_tokens",
+        "sweep_value": "205"
+      }
+    ]
+  },
+  "17967e6bdab0": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 6,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/003_periodic_prompt_mid50_6_17967e6bdab0/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/003_periodic_prompt_mid50_6_17967e6bdab0/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/003_periodic_prompt_mid50_6_17967e6bdab0/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/003_periodic_prompt_mid50_6_17967e6bdab0",
+        "run_id": "003_periodic_prompt_mid50_6_17967e6bdab0",
+        "run_number": 3,
+        "sweep_label": "mid50",
+        "sweep_param": "periodic_prompt",
+        "sweep_value": "6"
+      }
+    ]
+  },
+  "19148174cca6": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": -7,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/023_pitch_shift_amount_low20_neg7_19148174cca6/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/023_pitch_shift_amount_low20_neg7_19148174cca6/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/023_pitch_shift_amount_low20_neg7_19148174cca6/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/023_pitch_shift_amount_low20_neg7_19148174cca6",
+        "run_id": "023_pitch_shift_amount_low20_neg7_19148174cca6",
+        "run_number": 23,
+        "sweep_label": "low20",
+        "sweep_param": "pitch_shift_amount",
+        "sweep_value": "-7"
+      }
+    ]
+  },
+  "2a897003edd3": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 41,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/008_beat_mask_width_low20_41_2a897003edd3/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/008_beat_mask_width_low20_41_2a897003edd3/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/008_beat_mask_width_low20_41_2a897003edd3/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/008_beat_mask_width_low20_41_2a897003edd3",
+        "run_id": "008_beat_mask_width_low20_41_2a897003edd3",
+        "run_number": 8,
+        "sweep_label": "low20",
+        "sweep_param": "beat_mask_width",
+        "sweep_value": "41"
+      }
+    ]
+  },
+  "2f53c276a1fe": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 20,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/005_onset_mask_width_low20_20_2f53c276a1fe/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/005_onset_mask_width_low20_20_2f53c276a1fe/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/005_onset_mask_width_low20_20_2f53c276a1fe/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/005_onset_mask_width_low20_20_2f53c276a1fe",
+        "run_id": "005_onset_mask_width_low20_20_2f53c276a1fe",
+        "run_number": 5,
+        "sweep_label": "low20",
+        "sweep_param": "onset_mask_width",
+        "sweep_value": "20"
+      }
+    ]
+  },
+  "2fa8200d6747": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 8.02,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/031_sampling_temperature_high80_8p02_2fa8200d6747/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/031_sampling_temperature_high80_8p02_2fa8200d6747/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/031_sampling_temperature_high80_8p02_2fa8200d6747/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/031_sampling_temperature_high80_8p02_2fa8200d6747",
+        "run_id": "031_sampling_temperature_high80_8p02_2fa8200d6747",
+        "run_number": 31,
+        "sweep_label": "high80",
+        "sweep_param": "sampling_temperature",
+        "sweep_value": "8.02"
+      }
+    ]
+  },
+  "410cd6823d83": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 6,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/028_time_stretch_factor_high80_6_410cd6823d83/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/028_time_stretch_factor_high80_6_410cd6823d83/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/028_time_stretch_factor_high80_6_410cd6823d83/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/028_time_stretch_factor_high80_6_410cd6823d83",
+        "run_id": "028_time_stretch_factor_high80_6_410cd6823d83",
+        "run_number": 28,
+        "sweep_label": "high80",
+        "sweep_param": "time_stretch_factor",
+        "sweep_value": "6"
+      }
+    ]
+  },
+  "51d4eb669d82": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 7,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/025_pitch_shift_amount_high80_7_51d4eb669d82/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/025_pitch_shift_amount_high80_7_51d4eb669d82/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/025_pitch_shift_amount_high80_7_51d4eb669d82/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/025_pitch_shift_amount_high80_7_51d4eb669d82",
+        "run_id": "025_pitch_shift_amount_high80_7_51d4eb669d82",
+        "run_number": 25,
+        "sweep_label": "high80",
+        "sweep_param": "pitch_shift_amount",
+        "sweep_value": "7"
+      }
+    ]
+  },
+  "51fb197a2f56": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.5,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/015_mask_dropout_mid50_0p5_51fb197a2f56/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/015_mask_dropout_mid50_0p5_51fb197a2f56/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/015_mask_dropout_mid50_0p5_51fb197a2f56/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/015_mask_dropout_mid50_0p5_51fb197a2f56",
+        "run_id": "015_mask_dropout_mid50_0p5_51fb197a2f56",
+        "run_number": 15,
+        "sweep_label": "mid50",
+        "sweep_param": "mask_dropout",
+        "sweep_value": "0.5"
+      }
+    ]
+  },
+  "590f9470a158": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 4,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/011_compression_prompt_low20_4_590f9470a158/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/011_compression_prompt_low20_4_590f9470a158/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/011_compression_prompt_low20_4_590f9470a158/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/011_compression_prompt_low20_4_590f9470a158",
+        "run_id": "011_compression_prompt_low20_4_590f9470a158",
+        "run_number": 11,
+        "sweep_label": "low20",
+        "sweep_param": "compression_prompt",
+        "sweep_value": "4"
+      }
+    ]
+  },
+  "5aa5f0f15292": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 3,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/002_periodic_prompt_low20_3_5aa5f0f15292/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/002_periodic_prompt_low20_3_5aa5f0f15292/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/002_periodic_prompt_low20_3_5aa5f0f15292/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/002_periodic_prompt_low20_3_5aa5f0f15292",
+        "run_id": "002_periodic_prompt_low20_3_5aa5f0f15292",
+        "run_number": 2,
+        "sweep_label": "low20",
+        "sweep_param": "periodic_prompt",
+        "sweep_value": "3"
+      }
+    ]
+  },
+  "61bf2a5bff9a": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 10,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/004_periodic_prompt_high80_10_61bf2a5bff9a/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/004_periodic_prompt_high80_10_61bf2a5bff9a/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/004_periodic_prompt_high80_10_61bf2a5bff9a/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/periodic_prompt/004_periodic_prompt_high80_10_61bf2a5bff9a",
+        "run_id": "004_periodic_prompt_high80_10_61bf2a5bff9a",
+        "run_number": 4,
+        "sweep_label": "high80",
+        "sweep_param": "periodic_prompt",
+        "sweep_value": "10"
+      }
+    ]
+  },
+  "61c8a4f73c9d": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 4,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "preset": "medium_variation",
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/021_preset_medium_variation_medium_variation_61c8a4f73c9d/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/021_preset_medium_variation_medium_variation_61c8a4f73c9d/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/021_preset_medium_variation_medium_variation_61c8a4f73c9d/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/021_preset_medium_variation_medium_variation_61c8a4f73c9d",
+        "run_id": "021_preset_medium_variation_medium_variation_61c8a4f73c9d",
+        "run_number": 21,
+        "sweep_label": "medium_variation",
+        "sweep_param": "preset",
+        "sweep_value": "medium_variation"
+      }
+    ]
+  },
+  "64f6c906c008": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 4,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 5,
+      "pitch_shift_amt": 0,
+      "preset": "small_variation",
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/020_preset_small_variation_small_variation_64f6c906c008/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/020_preset_small_variation_small_variation_64f6c906c008/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/020_preset_small_variation_small_variation_64f6c906c008/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/020_preset_small_variation_small_variation_64f6c906c008",
+        "run_id": "020_preset_small_variation_small_variation_64f6c906c008",
+        "run_number": 20,
+        "sweep_label": "small_variation",
+        "sweep_param": "preset",
+        "sweep_value": "small_variation"
+      }
+    ]
+  },
+  "66cf49e2fd12": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 80,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/007_onset_mask_width_high80_80_66cf49e2fd12/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/007_onset_mask_width_high80_80_66cf49e2fd12/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/007_onset_mask_width_high80_80_66cf49e2fd12/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/007_onset_mask_width_high80_80_66cf49e2fd12",
+        "run_id": "007_onset_mask_width_high80_80_66cf49e2fd12",
+        "run_number": 7,
+        "sweep_label": "high80",
+        "sweep_param": "onset_mask_width",
+        "sweep_value": "80"
+      }
+    ]
+  },
+  "676a054109b2": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.5,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/033_top_p_mid50_0p5_676a054109b2/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/033_top_p_mid50_0p5_676a054109b2/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/033_top_p_mid50_0p5_676a054109b2/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/033_top_p_mid50_0p5_676a054109b2",
+        "run_id": "033_top_p_mid50_0p5_676a054109b2",
+        "run_number": 33,
+        "sweep_label": "mid50",
+        "sweep_param": "top_p",
+        "sweep_value": "0.5"
+      }
+    ]
+  },
+  "756066bdd5dd": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 11,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/013_compression_prompt_high80_11_756066bdd5dd/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/013_compression_prompt_high80_11_756066bdd5dd/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/013_compression_prompt_high80_11_756066bdd5dd/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/013_compression_prompt_high80_11_756066bdd5dd",
+        "run_id": "013_compression_prompt_high80_11_756066bdd5dd",
+        "run_number": 13,
+        "sweep_label": "high80",
+        "sweep_param": "compression_prompt",
+        "sweep_value": "11"
+      }
+    ]
+  },
+  "7977936e995f": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 5,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/018_feedback_steps_mid50_5_7977936e995f/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/018_feedback_steps_mid50_5_7977936e995f/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/018_feedback_steps_mid50_5_7977936e995f/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/018_feedback_steps_mid50_5_7977936e995f",
+        "run_id": "018_feedback_steps_mid50_5_7977936e995f",
+        "run_number": 18,
+        "sweep_label": "mid50",
+        "sweep_param": "feedback_steps",
+        "sweep_value": "5"
+      }
+    ]
+  },
+  "7fa8bf7826fc": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 7,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/012_compression_prompt_mid50_7_7fa8bf7826fc/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/012_compression_prompt_mid50_7_7fa8bf7826fc/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/012_compression_prompt_mid50_7_7fa8bf7826fc/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/compression_prompt/012_compression_prompt_mid50_7_7fa8bf7826fc",
+        "run_id": "012_compression_prompt_mid50_7_7fa8bf7826fc",
+        "run_number": 12,
+        "sweep_label": "mid50",
+        "sweep_param": "compression_prompt",
+        "sweep_value": "7"
+      }
+    ]
+  },
+  "879ce4ebeaa2": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.21,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/037_typical_mass_low20_0p21_879ce4ebeaa2/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/037_typical_mass_low20_0p21_879ce4ebeaa2/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/037_typical_mass_low20_0p21_879ce4ebeaa2/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/037_typical_mass_low20_0p21_879ce4ebeaa2",
+        "run_id": "037_typical_mass_low20_0p21_879ce4ebeaa2",
+        "run_number": 37,
+        "sweep_label": "low20",
+        "sweep_param": "typical_mass",
+        "sweep_value": "0.21"
+      }
+    ]
+  },
+  "87cd9d70abf1": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 50,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/006_onset_mask_width_mid50_50_87cd9d70abf1/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/006_onset_mask_width_mid50_50_87cd9d70abf1/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/006_onset_mask_width_mid50_50_87cd9d70abf1/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/onset_mask_width/006_onset_mask_width_mid50_50_87cd9d70abf1",
+        "run_id": "006_onset_mask_width_mid50_50_87cd9d70abf1",
+        "run_number": 6,
+        "sweep_label": "mid50",
+        "sweep_param": "onset_mask_width",
+        "sweep_value": "50"
+      }
+    ]
+  },
+  "91829efb467b": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 0.45,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/044_sample_cutoff_mid50_0p45_91829efb467b/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/044_sample_cutoff_mid50_0p45_91829efb467b/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/044_sample_cutoff_mid50_0p45_91829efb467b/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/044_sample_cutoff_mid50_0p45_91829efb467b",
+        "run_id": "044_sample_cutoff_mid50_0p45_91829efb467b",
+        "run_number": 44,
+        "sweep_label": "mid50",
+        "sweep_param": "sample_cutoff",
+        "sweep_value": "0.45"
+      }
+    ]
+  },
+  "9b58f4da8b9b": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 103,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/048_sampling_steps_high80_103_9b58f4da8b9b/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/048_sampling_steps_high80_103_9b58f4da8b9b/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/048_sampling_steps_high80_103_9b58f4da8b9b/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/048_sampling_steps_high80_103_9b58f4da8b9b",
+        "run_id": "048_sampling_steps_high80_103_9b58f4da8b9b",
+        "run_number": 48,
+        "sweep_label": "high80",
+        "sweep_param": "sampling_steps",
+        "sweep_value": "103"
+      }
+    ]
+  },
+  "9debdcbec76a": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 65,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/047_sampling_steps_mid50_65_9debdcbec76a/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/047_sampling_steps_mid50_65_9debdcbec76a/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/047_sampling_steps_mid50_65_9debdcbec76a/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_steps/047_sampling_steps_mid50_65_9debdcbec76a",
+        "run_id": "047_sampling_steps_mid50_65_9debdcbec76a",
+        "run_number": 47,
+        "sweep_label": "mid50",
+        "sweep_param": "sampling_steps",
+        "sweep_value": "65"
+      }
+    ]
+  },
+  "9e236651f4ec": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 4,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/027_time_stretch_factor_mid50_4_9e236651f4ec/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/027_time_stretch_factor_mid50_4_9e236651f4ec/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/027_time_stretch_factor_mid50_4_9e236651f4ec/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/027_time_stretch_factor_mid50_4_9e236651f4ec",
+        "run_id": "027_time_stretch_factor_mid50_4_9e236651f4ec",
+        "run_number": 27,
+        "sweep_label": "mid50",
+        "sweep_param": "time_stretch_factor",
+        "sweep_value": "4"
+      }
+    ]
+  },
+  "b4d870d9550d": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.2,
+      "model_choice": "opera",
+      "n_mask_codebooks": 4,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 13,
+      "pitch_shift_amt": 0,
+      "preset": "large_variation",
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/022_preset_large_variation_large_variation_b4d870d9550d/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/022_preset_large_variation_large_variation_b4d870d9550d/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/022_preset_large_variation_large_variation_b4d870d9550d/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/preset/022_preset_large_variation_large_variation_b4d870d9550d",
+        "run_id": "022_preset_large_variation_large_variation_b4d870d9550d",
+        "run_number": 22,
+        "sweep_label": "large_variation",
+        "sweep_param": "preset",
+        "sweep_value": "large_variation"
+      }
+    ]
+  },
+  "beaac9b6dbf6": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/baseline/001_baseline_default_default_beaac9b6dbf6/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/baseline/001_baseline_default_default_beaac9b6dbf6/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/baseline/001_baseline_default_default_beaac9b6dbf6/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/baseline/001_baseline_default_default_beaac9b6dbf6",
+        "run_id": "001_baseline_default_default_beaac9b6dbf6",
+        "run_number": 1,
+        "sweep_label": "default",
+        "sweep_param": "baseline",
+        "sweep_value": "default"
+      },
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/024_pitch_shift_amount_mid50_0_beaac9b6dbf6/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/024_pitch_shift_amount_mid50_0_beaac9b6dbf6/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/024_pitch_shift_amount_mid50_0_beaac9b6dbf6/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/pitch_shift_amount/024_pitch_shift_amount_mid50_0_beaac9b6dbf6",
+        "run_id": "024_pitch_shift_amount_mid50_0_beaac9b6dbf6",
+        "run_number": 24,
+        "sweep_label": "mid50",
+        "sweep_param": "pitch_shift_amount",
+        "sweep_value": "0"
+      },
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/036_typical_filtering_true_true_beaac9b6dbf6/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/036_typical_filtering_true_true_beaac9b6dbf6/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/036_typical_filtering_true_true_beaac9b6dbf6/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_filtering/036_typical_filtering_true_true_beaac9b6dbf6",
+        "run_id": "036_typical_filtering_true_true_beaac9b6dbf6",
+        "run_number": 36,
+        "sweep_label": "true",
+        "sweep_param": "typical_filtering",
+        "sweep_value": "True"
+      }
+    ]
+  },
+  "c30c8754e701": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 0.72,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/045_sample_cutoff_high80_0p72_c30c8754e701/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/045_sample_cutoff_high80_0p72_c30c8754e701/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/045_sample_cutoff_high80_0p72_c30c8754e701/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sample_cutoff/045_sample_cutoff_high80_0p72_c30c8754e701",
+        "run_id": "045_sample_cutoff_high80_0p72_c30c8754e701",
+        "run_number": 45,
+        "sweep_label": "high80",
+        "sweep_param": "sample_cutoff",
+        "sweep_value": "0.72"
+      }
+    ]
+  },
+  "c3e15ec0e635": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 52
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/040_typical_min_tokens_low20_52_c3e15ec0e635/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/040_typical_min_tokens_low20_52_c3e15ec0e635/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/040_typical_min_tokens_low20_52_c3e15ec0e635/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/040_typical_min_tokens_low20_52_c3e15ec0e635",
+        "run_id": "040_typical_min_tokens_low20_52_c3e15ec0e635",
+        "run_number": 40,
+        "sweep_label": "low20",
+        "sweep_param": "typical_min_tokens",
+        "sweep_value": "52"
+      }
+    ]
+  },
+  "c93afac0b2fc": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.2,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/032_top_p_low20_0p2_c93afac0b2fc/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/032_top_p_low20_0p2_c93afac0b2fc/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/032_top_p_low20_0p2_c93afac0b2fc/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/032_top_p_low20_0p2_c93afac0b2fc",
+        "run_id": "032_top_p_low20_0p2_c93afac0b2fc",
+        "run_number": 32,
+        "sweep_label": "low20",
+        "sweep_param": "top_p",
+        "sweep_value": "0.2"
+      }
+    ]
+  },
+  "cb1e6ebfbfae": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 101,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/009_beat_mask_width_mid50_101_cb1e6ebfbfae/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/009_beat_mask_width_mid50_101_cb1e6ebfbfae/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/009_beat_mask_width_mid50_101_cb1e6ebfbfae/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/009_beat_mask_width_mid50_101_cb1e6ebfbfae",
+        "run_id": "009_beat_mask_width_mid50_101_cb1e6ebfbfae",
+        "run_number": 9,
+        "sweep_label": "mid50",
+        "sweep_param": "beat_mask_width",
+        "sweep_value": "101"
+      }
+    ]
+  },
+  "cc2ebb91195c": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.2,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/014_mask_dropout_low20_0p2_cc2ebb91195c/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/014_mask_dropout_low20_0p2_cc2ebb91195c/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/014_mask_dropout_low20_0p2_cc2ebb91195c/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/014_mask_dropout_low20_0p2_cc2ebb91195c",
+        "run_id": "014_mask_dropout_low20_0p2_cc2ebb91195c",
+        "run_number": 14,
+        "sweep_label": "low20",
+        "sweep_param": "mask_dropout",
+        "sweep_value": "0.2"
+      }
+    ]
+  },
+  "d2b53b2a40dd": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 160,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/010_beat_mask_width_high80_160_d2b53b2a40dd/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/010_beat_mask_width_high80_160_d2b53b2a40dd/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/010_beat_mask_width_high80_160_d2b53b2a40dd/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/beat_mask_width/010_beat_mask_width_high80_160_d2b53b2a40dd",
+        "run_id": "010_beat_mask_width_high80_160_d2b53b2a40dd",
+        "run_number": 10,
+        "sweep_label": "high80",
+        "sweep_param": "beat_mask_width",
+        "sweep_value": "160"
+      }
+    ]
+  },
+  "d4bbe61edee1": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.79,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/039_typical_mass_high80_0p79_d4bbe61edee1/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/039_typical_mass_high80_0p79_d4bbe61edee1/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/039_typical_mass_high80_0p79_d4bbe61edee1/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/039_typical_mass_high80_0p79_d4bbe61edee1",
+        "run_id": "039_typical_mass_high80_0p79_d4bbe61edee1",
+        "run_number": 39,
+        "sweep_label": "high80",
+        "sweep_param": "typical_mass",
+        "sweep_value": "0.79"
+      }
+    ]
+  },
+  "d4f72f36418a": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 129
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/041_typical_min_tokens_mid50_129_d4f72f36418a/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/041_typical_min_tokens_mid50_129_d4f72f36418a/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/041_typical_min_tokens_mid50_129_d4f72f36418a/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_min_tokens/041_typical_min_tokens_mid50_129_d4f72f36418a",
+        "run_id": "041_typical_min_tokens_mid50_129_d4f72f36418a",
+        "run_number": 41,
+        "sweep_label": "mid50",
+        "sweep_param": "typical_min_tokens",
+        "sweep_value": "129"
+      }
+    ]
+  },
+  "dec11a297815": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 2.08,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/029_sampling_temperature_low20_2p08_dec11a297815/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/029_sampling_temperature_low20_2p08_dec11a297815/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/029_sampling_temperature_low20_2p08_dec11a297815/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/029_sampling_temperature_low20_2p08_dec11a297815",
+        "run_id": "029_sampling_temperature_low20_2p08_dec11a297815",
+        "run_number": 29,
+        "sweep_label": "low20",
+        "sweep_param": "sampling_temperature",
+        "sweep_value": "2.08"
+      }
+    ]
+  },
+  "e633176fa0af": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 2,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/026_time_stretch_factor_low20_2_e633176fa0af/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/026_time_stretch_factor_low20_2_e633176fa0af/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/026_time_stretch_factor_low20_2_e633176fa0af/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/time_stretch_factor/026_time_stretch_factor_low20_2_e633176fa0af",
+        "run_id": "026_time_stretch_factor_low20_2_e633176fa0af",
+        "run_number": 26,
+        "sweep_label": "low20",
+        "sweep_param": "time_stretch_factor",
+        "sweep_value": "2"
+      }
+    ]
+  },
+  "ead66803af11": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.5,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/038_typical_mass_mid50_0p5_ead66803af11/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/038_typical_mass_mid50_0p5_ead66803af11/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/038_typical_mass_mid50_0p5_ead66803af11/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/typical_mass/038_typical_mass_mid50_0p5_ead66803af11",
+        "run_id": "038_typical_mass_mid50_0p5_ead66803af11",
+        "run_number": 38,
+        "sweep_label": "mid50",
+        "sweep_param": "typical_mass",
+        "sweep_value": "0.5"
+      }
+    ]
+  },
+  "ec2bfa61f836": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 2,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/017_feedback_steps_low20_2_ec2bfa61f836/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/017_feedback_steps_low20_2_ec2bfa61f836/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/017_feedback_steps_low20_2_ec2bfa61f836/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/017_feedback_steps_low20_2_ec2bfa61f836",
+        "run_id": "017_feedback_steps_low20_2_ec2bfa61f836",
+        "run_number": 17,
+        "sweep_label": "low20",
+        "sweep_param": "feedback_steps",
+        "sweep_value": "2"
+      }
+    ]
+  },
+  "ed9fe2fa2edb": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.8,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/034_top_p_high80_0p8_ed9fe2fa2edb/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/034_top_p_high80_0p8_ed9fe2fa2edb/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/034_top_p_high80_0p8_ed9fe2fa2edb/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/top_p/034_top_p_high80_0p8_ed9fe2fa2edb",
+        "run_id": "034_top_p_high80_0p8_ed9fe2fa2edb",
+        "run_number": 34,
+        "sweep_label": "high80",
+        "sweep_param": "top_p",
+        "sweep_value": "0.8"
+      }
+    ]
+  },
+  "ef89d4d326ef": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.8,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/016_mask_dropout_high80_0p8_ef89d4d326ef/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/016_mask_dropout_high80_0p8_ef89d4d326ef/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/016_mask_dropout_high80_0p8_ef89d4d326ef/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/mask_dropout/016_mask_dropout_high80_0p8_ef89d4d326ef",
+        "run_id": "016_mask_dropout_high80_0p8_ef89d4d326ef",
+        "run_number": 16,
+        "sweep_label": "high80",
+        "sweep_param": "mask_dropout",
+        "sweep_value": "0.8"
+      }
+    ]
+  },
+  "f664a911b53c": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 5.05,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/030_sampling_temperature_mid50_5p05_f664a911b53c/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/030_sampling_temperature_mid50_5p05_f664a911b53c/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/030_sampling_temperature_mid50_5p05_f664a911b53c/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/sampling_temperature/030_sampling_temperature_mid50_5p05_f664a911b53c",
+        "run_id": "030_sampling_temperature_mid50_5p05_f664a911b53c",
+        "run_number": 30,
+        "sweep_label": "mid50",
+        "sweep_param": "sampling_temperature",
+        "sweep_value": "5.05"
+      }
+    ]
+  },
+  "fd02ddf6d63a": {
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "opera",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 7,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 36,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "runs": [
+      {
+        "mask_path": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/019_feedback_steps_high80_7_fd02ddf6d63a/mask.png",
+        "output_paths": [
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/019_feedback_steps_high80_7_fd02ddf6d63a/output_1.wav",
+          "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/019_feedback_steps_high80_7_fd02ddf6d63a/output_2.wav"
+        ],
+        "run_dir": "experiments/param_sweeps/opera_dry_15_1_test_12s/runs/feedback_steps/019_feedback_steps_high80_7_fd02ddf6d63a",
+        "run_id": "019_feedback_steps_high80_7_fd02ddf6d63a",
+        "run_number": 19,
+        "sweep_label": "high80",
+        "sweep_param": "feedback_steps",
+        "sweep_value": "7"
+      }
+    ]
+  }
+}

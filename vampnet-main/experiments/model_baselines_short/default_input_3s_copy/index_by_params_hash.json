@@ -1,0 +1,32 @@
+{
+  "6881727ba682": {
+    "output_1_path": "experiments/model_baselines_short/20260617_232900_default_input_3s_copy/runs/baseline/001_baseline_default_default_6881727ba682/output_1.wav",
+    "output_2_path": null,
+    "output_paths": [
+      "experiments/model_baselines_short/20260617_232900_default_input_3s_copy/runs/baseline/001_baseline_default_default_6881727ba682/output_1.wav"
+    ],
+    "params": {
+      "batch_size": 1,
+      "beat_mask_ms": 0,
+      "dropout": 0.0,
+      "model_choice": "default",
+      "n_mask_codebooks": 3,
+      "num_feedback_steps": 1,
+      "onset_mask_width": 0,
+      "periodic_p": 7,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 1.0,
+      "sampletemp": 1.0,
+      "sampling_steps": 4,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.15,
+      "typical_min_tokens": 64
+    },
+    "run_dir": "experiments/model_baselines_short/20260617_232900_default_input_3s_copy/runs/baseline/001_baseline_default_default_6881727ba682",
+    "run_id": "001_baseline_default_default_6881727ba682",
+    "status": "ok"
+  }
+}

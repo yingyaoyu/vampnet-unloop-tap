@@ -3,15 +3,6 @@
 This branch adds an opt-in path for conditioning VampNet on synchronized motion
 features. It does not change the default config.
 
-## Branch
-
-```bash
-git switch codex/motion-conditioning-experiment
-```
-
-The repository currently has no first commit, so this is an unborn branch with
-the workspace files still untracked.
-
 ## Motion Format
 
 The experimental controller accepts either direct batch tensors:
@@ -47,6 +38,43 @@ The three default features match the webcam prototype:
 - `arm_height`
 - `motion_energy`
 - `arm_spread`
+
+## AIST++ / SMPL Mapping
+
+AIST++ can be used as a first paired-motion sandbox even though it is dance
+rather than tap. The motion stream should be converted into sidecars before
+training:
+
+```bash
+python scripts/utils/aist_motion_to_sidecars.py \
+  --input /path/to/aist/keypoints3d-or-motions \
+  --audio-dir /path/to/aist/audio \
+  --output-dir data/aist_motion_sidecars \
+  --fps 60
+```
+
+The converter writes one `.motion.npz` per sequence plus
+`motion_sidecars_summary.csv`. For keypoint files it derives the current
+3-channel control stream from COCO-style 3D joints:
+
+- `arm_height`: average wrist height relative to the shoulders
+- `motion_energy`: root and joint velocity magnitude
+- `arm_spread`: distance between wrists relative to shoulder width
+
+For SMPL motion files that only expose root translation, it can still write
+`motion_energy`, but `arm_height` and `arm_spread` are zero placeholders unless
+you first run SMPL forward kinematics to joints. Prefer `keypoints3d_optim` or
+`keypoints3d` sidecars when they are available.
+
+The summary CSV also includes heuristic knob hints. Those hints are useful for
+app-level experiments, but they are not a replacement for the learned control
+stream:
+
+- high `motion_energy` -> larger variation hints (`periodic_p: 13`, more
+  dropout, more sampling steps)
+- low `motion_energy` -> smaller variation hints (`periodic_p: 5`, fewer
+  sampling steps)
+- high `arm_spread` -> mask one more codebook in the app-level sweep hint
 
 ## Training Config
 

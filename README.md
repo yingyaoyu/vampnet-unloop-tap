@@ -221,6 +221,15 @@ Running on local URL: http://127.0.0.1:7860
 Open [http://127.0.0.1:7860](http://127.0.0.1:7860) in a browser to confirm
 that the server is running.
 
+To run the VampNet server on a GPU machine and control it from another
+computer, start the app and choose `public` when prompted:
+
+```bash
+python app.py
+```
+
+Copy the printed `https://...gradio.live/` URL into the Max server URL field.
+
 ### Max: Unloop
 
 Open:
