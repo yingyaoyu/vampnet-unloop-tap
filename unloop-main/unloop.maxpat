@@ -501,7 +501,7 @@
       "valueof": {
        "parameter_linknames": 1,
        "parameter_longname": "input-gain",
-       "parameter_mmax": 12.0,
+       "parameter_mmax": 18.0,
        "parameter_mmin": -70.0,
        "parameter_shortname": "input gain",
        "parameter_type": 0,
@@ -863,24 +863,6 @@
    },
    {
     "box": {
-     "id": "motion-r-fxwet",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      560.0,
-      235.0,
-      90.0,
-      22.0
-     ],
-     "text": "r motion-fxwet"
-    }
-   },
-   {
-    "box": {
      "id": "motion-load-cutoff",
      "maxclass": "newobj",
      "numinlets": 1,
@@ -931,24 +913,6 @@
       22.0
      ],
      "text": "loadmess 1."
-    }
-   },
-   {
-    "box": {
-     "id": "motion-load-fxwet",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      560.0,
-      265.0,
-      85.0,
-      22.0
-     ],
-     "text": "loadmess 0."
     }
    },
    {
@@ -1020,7 +984,7 @@
       45.0,
       22.0
      ],
-     "text": "*~ 0."
+     "text": "*~ 1."
     }
    },
    {
@@ -1038,25 +1002,7 @@
       45.0,
       22.0
      ],
-     "text": "*~ 1."
-    }
-   },
-   {
-    "box": {
-     "id": "motion-dry-expr",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      560.0,
-      305.0,
-      95.0,
-      22.0
-     ],
-     "text": "expr 1. - $f1"
+     "text": "*~ 0."
     }
    },
    {
@@ -1089,7 +1035,7 @@
       360.0,
       20.0
      ],
-     "text": "motion input FX: gain -> filter/drive/wet -> VampNet"
+     "text": "motion input FX: gain -> filter/drive -> VampNet"
     }
    },
    {
@@ -1157,7 +1103,7 @@
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
        "parameter_longname": "motion top input gain dB",
-       "parameter_mmax": 12.0,
+       "parameter_mmax": 18.0,
        "parameter_mmin": -24.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
@@ -1393,76 +1339,6 @@
       22.0
      ],
      "text": "s motion-drive"
-    }
-   },
-   {
-    "box": {
-     "activedialcolor": [
-      0.945098039215686,
-      0.533333333333333,
-      0.243137254901961,
-      1.0
-     ],
-     "fontname": "Helvetica",
-     "id": "motion-top-fxwet-dial",
-     "maxclass": "live.dial",
-     "numinlets": 1,
-     "numoutlets": 2,
-     "outlettype": [
-      "",
-      "float"
-     ],
-     "parameter_enable": 1,
-     "patching_rect": [
-      470.0,
-      180.0,
-      45.0,
-      45.0
-     ],
-     "presentation": 1,
-     "presentation_rect": [
-      438.0,
-      88.0,
-      45.0,
-      45.0
-     ],
-     "saved_attribute_attributes": {
-      "activedialcolor": {
-       "expression": ""
-      },
-      "valueof": {
-       "parameter_initial": [
-        0.0
-       ],
-       "parameter_initial_enable": 1,
-       "parameter_linknames": 1,
-       "parameter_longname": "motion top fx wet",
-       "parameter_mmax": 1.0,
-       "parameter_mmin": 0.0,
-       "parameter_modmode": 0,
-       "parameter_osc_name": "<default>",
-       "parameter_shortname": "fx wet",
-       "parameter_type": 0,
-       "parameter_unitstyle": 1
-      }
-     },
-     "varname": "motion-top-fxwet-dial"
-    }
-   },
-   {
-    "box": {
-     "id": "motion-top-fxwet-send",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 0,
-     "outlettype": [],
-     "patching_rect": [
-      470.0,
-      238.0,
-      145.0,
-      22.0
-     ],
-     "text": "s motion-fxwet"
     }
    }
   ],
@@ -1806,66 +1682,6 @@
    {
     "patchline": {
      "source": [
-      "motion-r-fxwet",
-      0
-     ],
-     "destination": [
-      "motion-wet-mul",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-load-fxwet",
-      0
-     ],
-     "destination": [
-      "motion-wet-mul",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-fxwet",
-      0
-     ],
-     "destination": [
-      "motion-dry-expr",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-load-fxwet",
-      0
-     ],
-     "destination": [
-      "motion-dry-expr",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-dry-expr",
-      0
-     ],
-     "destination": [
-      "motion-dry-mul",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
       "motion-dry-mul",
       0
      ],
@@ -1950,18 +1766,6 @@
    {
     "patchline": {
      "source": [
-      "motion-top-fxwet-dial",
-      0
-     ],
-     "destination": [
-      "motion-top-fxwet-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
       "motion-r-inputgain-db",
       0
      ],
@@ -2003,18 +1807,6 @@
      ],
      "destination": [
       "motion-top-drive-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-fxwet",
-      0
-     ],
-     "destination": [
-      "motion-top-fxwet-dial",
       0
      ]
     }
@@ -2194,11 +1986,6 @@
      "parameter_longname": "motion top drive",
      "parameter_shortname": "drive",
      "parameter_invisible": 0
-    },
-    "motion-top-fxwet-dial": {
-     "parameter_longname": "motion top fx wet",
-     "parameter_shortname": "fx wet",
-     "parameter_invisible": 0
     }
    },
    "inherited_shortname": 1,
@@ -2220,11 +2007,6 @@
    "motion-top-drive-dial": [
     "motion top drive",
     "drive",
-    0
-   ],
-   "motion-top-fxwet-dial": [
-    "motion top fx wet",
-    "fx wet",
     0
    ]
   },

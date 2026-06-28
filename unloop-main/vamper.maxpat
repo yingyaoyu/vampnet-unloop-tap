@@ -10393,17 +10393,15 @@
      "id": "motion-osc-route-controls",
      "maxclass": "newobj",
      "numinlets": 2,
-     "numoutlets": 16,
+     "numoutlets": 14,
      "patching_rect": [
       4210.0,
       225.0,
       880.0,
       22.0
      ],
-     "text": "route temperature dropout onsetmask periodic unloop feedback steps inputgain inputgain_db filtercutoff filterq drive fxwet gain effects",
+     "text": "route temperature dropout onsetmask periodic unloop feedback steps inputgain inputgain_db filtercutoff filterq drive gain",
      "outlettype": [
-      "",
-      "",
       "",
       "",
       "",
@@ -10463,17 +10461,15 @@
      "id": "motion-osc-route-direct",
      "maxclass": "newobj",
      "numinlets": 2,
-     "numoutlets": 16,
+     "numoutlets": 14,
      "patching_rect": [
       4210.0,
       155.0,
       1160.0,
       22.0
      ],
-     "text": "route /motion/temperature /motion/dropout /motion/onsetmask /motion/periodic /motion/unloop /motion/feedback /motion/steps /motion/inputgain /motion/inputgain_db /motion/filtercutoff /motion/filterq /motion/drive /motion/fxwet /motion/gain /motion/effects",
+     "text": "route /motion/temperature /motion/dropout /motion/onsetmask /motion/periodic /motion/unloop /motion/feedback /motion/steps /motion/inputgain /motion/inputgain_db /motion/filtercutoff /motion/filterq /motion/drive /motion/gain",
      "outlettype": [
-      "",
-      "",
       "",
       "",
       "",
@@ -10679,7 +10675,7 @@
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
        "parameter_longname": "motion input gain dB",
-       "parameter_mmax": 12.0,
+       "parameter_mmax": 18.0,
        "parameter_mmin": -24.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
@@ -10919,76 +10915,6 @@
    },
    {
     "box": {
-     "activedialcolor": [
-      0.945098039215686,
-      0.533333333333333,
-      0.243137254901961,
-      1.0
-     ],
-     "fontname": "Helvetica",
-     "id": "motion-fxwet-dial",
-     "maxclass": "live.dial",
-     "numinlets": 1,
-     "numoutlets": 2,
-     "outlettype": [
-      "",
-      "float"
-     ],
-     "parameter_enable": 1,
-     "patching_rect": [
-      4450.0,
-      590.0,
-      47.0,
-      45.0
-     ],
-     "presentation": 1,
-     "presentation_rect": [
-      510.0,
-      316.0,
-      47.0,
-      45.0
-     ],
-     "saved_attribute_attributes": {
-      "activedialcolor": {
-       "expression": ""
-      },
-      "valueof": {
-       "parameter_initial": [
-        0.0
-       ],
-       "parameter_initial_enable": 1,
-       "parameter_linknames": 1,
-       "parameter_longname": "motion fx wet",
-       "parameter_mmax": 1.0,
-       "parameter_mmin": 0.0,
-       "parameter_modmode": 0,
-       "parameter_osc_name": "<default>",
-       "parameter_shortname": "fx wet",
-       "parameter_type": 0,
-       "parameter_unitstyle": 1
-      }
-     },
-     "varname": "fxwet-dial"
-    }
-   },
-   {
-    "box": {
-     "id": "motion-fxwet-send",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 0,
-     "outlettype": [],
-     "patching_rect": [
-      4450.0,
-      652.0,
-      155.0,
-      22.0
-     ],
-     "text": "s motion-fxwet"
-    }
-   },
-   {
-    "box": {
      "id": "motion-osc-unpack-gain",
      "maxclass": "newobj",
      "numinlets": 1,
@@ -11004,27 +10930,6 @@
       22.0
      ],
      "text": "unpack f f"
-    }
-   },
-   {
-    "box": {
-     "id": "motion-osc-unpack-effects",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 4,
-     "outlettype": [
-      "float",
-      "float",
-      "float",
-      "float"
-     ],
-     "patching_rect": [
-      4970.0,
-      305.0,
-      105.0,
-      22.0
-     ],
-     "text": "unpack f f f f"
     }
    }
   ],
@@ -13645,13 +13550,13 @@
    {
     "patchline": {
      "destination": [
-      "obj-366",
+      "obj-365",
       0
      ],
      "midpoints": [
       788.6187416527816,
       -144.0,
-      928.4125670000001,
+      601.3301262349535,
       -144.0
      ],
      "source": [
@@ -13880,6 +13785,26 @@
      "source": [
       "obj-244",
       0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-163",
+      0
+     ],
+     "midpoints": [
+      768.6187416527816,
+      -181.0,
+      298.4965905849533,
+      -181.0,
+      298.4965905849533,
+      116.0
+     ],
+     "source": [
+      "obj-244",
+      1
      ]
     }
    },
@@ -16899,18 +16824,6 @@
    {
     "patchline": {
      "source": [
-      "motion-fxwet-dial",
-      0
-     ],
-     "destination": [
-      "motion-fxwet-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
       "motion-osc-route-controls",
       8
      ],
@@ -16963,18 +16876,6 @@
       12
      ],
      "destination": [
-      "motion-fxwet-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
-      13
-     ],
-     "destination": [
       "motion-osc-unpack-gain",
       0
      ]
@@ -16984,19 +16885,7 @@
     "patchline": {
      "source": [
       "motion-osc-route-controls",
-      14
-     ],
-     "destination": [
-      "motion-osc-unpack-effects",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
-      15
+      13
      ],
      "destination": [
       "motion-osc-print",
@@ -17059,18 +16948,6 @@
       12
      ],
      "destination": [
-      "motion-fxwet-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
-      13
-     ],
-     "destination": [
       "motion-osc-unpack-gain",
       0
      ]
@@ -17080,19 +16957,7 @@
     "patchline": {
      "source": [
       "motion-osc-route-direct",
-      14
-     ],
-     "destination": [
-      "motion-osc-unpack-effects",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
-      15
+      13
      ],
      "destination": [
       "motion-osc-print",
@@ -17108,54 +16973,6 @@
      ],
      "destination": [
       "motion-inputgain-db-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-unpack-effects",
-      0
-     ],
-     "destination": [
-      "motion-filtercutoff-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-unpack-effects",
-      1
-     ],
-     "destination": [
-      "motion-filterq-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-unpack-effects",
-      2
-     ],
-     "destination": [
-      "motion-drive-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-unpack-effects",
-      3
-     ],
-     "destination": [
-      "motion-fxwet-dial",
       0
      ]
     }

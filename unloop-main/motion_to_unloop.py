@@ -7,8 +7,25 @@ extracts three simple MediaPipe pose features:
   3. arm_spread: how open/wide the arms are
 
 It sends those features and mapped Unloop control values over OSC.
-"""
+
+arm_height: wrists high vs torso, 0..1.
+temperature = 0.75..1.30: higher arms = wilder VampNet sampling.
+input_gain_db: binary loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +16 dB (a bit above shoulder)
+
+motion_energy: frame-to-frame body movement, 0..1.
+dropout = 0..0.25: more movement = less prompt anchoring / more variation.
+onset_mask = 3..25: more movement preserves wider onset/attack regions.
+filter_cutoff = 350..9000 Hz: more movement = brighter processed input.
+filter_q = 0.7..3.5: more movement = more resonant filter.
+drive = 1..6: more movement = more saturation/distortion.
  
+arm_spread: wrist distance vs shoulder width, 0..1.
+< 0.33 -> periodic = 3
+< 0.66 -> periodic = 7
+otherwise -> periodic = 13
+Smaller p means denser periodic prompt anchors; larger p means looser rhythmic constraint.
+"""
+
 from __future__ import annotations
 
 import argparse
@@ -35,7 +52,7 @@ POSE_MODEL_PATH = Path(__file__).with_name("models") / "pose_landmarker_lite.tas
 # then an obvious boost once the wrists are clearly raised above the shoulders.
 LOUDNESS_TRIGGER_ARM_HEIGHT = 0.78
 LOUDNESS_NORMAL_GAIN_DB = 0.0
-LOUDNESS_BOOST_GAIN_DB = 10.0
+LOUDNESS_BOOST_GAIN_DB = 16.0
 
 POSE_INDEX = {
     "NOSE": 0,
@@ -122,7 +139,6 @@ class UnloopControls:
     filter_cutoff: float
     filter_q: float
     drive: float
-    fx_wet: float
 
 
 @dataclass
@@ -235,12 +251,10 @@ def map_to_unloop(features: MotionFeatures) -> UnloopControls:
     # More movement = more regeneration pressure. dropout: randomly remove some of the prompt anchors 
     dropout = 0.25 * features.motion_energy #range 0..0.25 because motion_energy is clamped to 0..1
 
-    # More movement = brighter/more affected sound. These are meant for Max or
-    # Python DSP either before VampNet encoding or after generation.
+    # More movement = brighter/more affected sound before VampNet encoding.
     filter_cutoff = exp_map(features.motion_energy, 350.0, 9000.0)
     filter_q = 0.7 + 2.8 * features.motion_energy
     drive = 1.0 + 5.0 * features.motion_energy
-    fx_wet = 0.08 + 0.72 * features.motion_energy
 
     # More movement also asks VampNet to preserve tap attacks/onsets.
     onset_mask = int(round(3 + 22 * features.motion_energy)) #range 3..25 because motion_energy is clamped to 0..1. 
@@ -265,7 +279,6 @@ def map_to_unloop(features: MotionFeatures) -> UnloopControls:
         filter_cutoff=round(filter_cutoff, 1),
         filter_q=round(filter_q, 3),
         drive=round(drive, 3),
-        fx_wet=round(fx_wet, 3),
     )
 
 #sends to Max using User Datagram Protocol, takes a UDP/PSC client from python-osc package, Max receives in vamper.maxpat udpreceive 9100
@@ -281,12 +294,7 @@ def send_controls(client: SimpleUDPClient, features: MotionFeatures, controls: U
     client.send_message("/motion/filtercutoff", controls.filter_cutoff)
     client.send_message("/motion/filterq", controls.filter_q)
     client.send_message("/motion/drive", controls.drive)
-    client.send_message("/motion/fxwet", controls.fx_wet)
     client.send_message("/motion/gain", [controls.input_gain, controls.input_gain_db])
-    client.send_message(
-        "/motion/effects",
-        [controls.filter_cutoff, controls.filter_q, controls.drive, controls.fx_wet],
-    )
 
 
 def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionSample | None:
@@ -308,7 +316,6 @@ def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionS
                 sample.controls.filter_cutoff,
                 sample.controls.filter_q,
                 sample.controls.drive,
-                sample.controls.fx_wet,
             ]
             for sample in samples
         ],
@@ -340,7 +347,6 @@ def summarize_samples(samples: list[MotionSample], summary_mode: str) -> MotionS
             filter_cutoff=round(float(control_summary[5]), 1),
             filter_q=round(float(control_summary[6]), 3),
             drive=round(float(control_summary[7]), 3),
-            fx_wet=round(float(control_summary[8]), 3),
         ),
     )
 
@@ -402,7 +408,7 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
             f"periodic={summary.controls.periodic} "
             f"gain={summary.controls.input_gain:.2f} "
             f"cutoff={summary.controls.filter_cutoff:.0f}Hz "
-            f"wet={summary.controls.fx_wet:.2f}"
+            f"drive={summary.controls.drive:.2f}"
         )
 
     def apply_summary_if_available(self) -> bool:
@@ -422,7 +428,7 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
                     "SUMMARY "
                     f"temp {controls.temperature:.2f} | dropout {controls.dropout:.2f} | "
                     f"onset {controls.onset_mask} | periodic {controls.periodic} | "
-                    f"gain {controls.input_gain:.2f} | wet {controls.fx_wet:.2f}"
+                    f"gain {controls.input_gain:.2f} | drive {controls.drive:.2f}"
                 )
             return "LIVE"
 
@@ -651,7 +657,7 @@ def main() -> None:
                             f"temp={controls.temperature:.2f} dropout={controls.dropout:.2f} "
                             f"onset={controls.onset_mask} periodic={controls.periodic} "
                             f"gain={controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB "
-                            f"cutoff={controls.filter_cutoff:.0f}Hz drive={controls.drive:.2f} wet={controls.fx_wet:.2f}"
+                            f"cutoff={controls.filter_cutoff:.0f}Hz drive={controls.drive:.2f}"
                         )
                     else:
                         send_controls(client, smoothed, controls)
@@ -669,7 +675,7 @@ def main() -> None:
                 )
                 effects = (
                     f"gain {controls.input_gain:.2f} ({controls.input_gain_db:.1f}dB) | "
-                    f"cutoff {controls.filter_cutoff:.0f}Hz | drive {controls.drive:.2f} | wet {controls.fx_wet:.2f}"
+                    f"cutoff {controls.filter_cutoff:.0f}Hz | drive {controls.drive:.2f}"
                 )
                 accumulator_status = accumulator.status_text()
             else:
