@@ -3556,6 +3556,24 @@
    },
    {
     "box": {
+     "id": "status-unloop-starting",
+     "maxclass": "message",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1934.0,
+      1564.0,
+      121.0,
+      22.0
+     ],
+     "text": "STATUS.STARTING"
+    }
+   },
+   {
+    "box": {
      "id": "obj-232",
      "maxclass": "newobj",
      "numinlets": 2,
@@ -3570,42 +3588,6 @@
       22.0
      ],
      "text": "delay 300"
-    }
-   },
-   {
-    "box": {
-     "id": "obj-231",
-     "maxclass": "message",
-     "numinlets": 2,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      999.4024361371994,
-      1651.0,
-      111.0,
-      22.0
-     ],
-     "text": "set STATUS.DONE"
-    }
-   },
-   {
-    "box": {
-     "id": "obj-229",
-     "maxclass": "newobj",
-     "numinlets": 0,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-     "patching_rect": [
-      1008.0,
-      1619.0,
-      104.0,
-      22.0
-     ],
-     "text": "r #0-shell-done"
     }
    },
    {
@@ -9741,7 +9723,7 @@
       122.0,
       18.0
      ],
-     "text": "STATUS.DONE"
+     "text": "STATUS.READY"
     }
    },
    {
@@ -10730,7 +10712,7 @@
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
        "parameter_longname": "motion input gain dB",
-       "parameter_mmax": 18.0,
+       "parameter_mmax": 80.0,
        "parameter_mmin": -24.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
@@ -13479,24 +13461,6 @@
    {
     "patchline": {
      "destination": [
-      "obj-231",
-      0
-     ],
-     "midpoints": [
-      1017.5,
-      1647.0,
-      1008.9024361371994,
-      1647.0
-     ],
-     "source": [
-      "obj-229",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "destination": [
       "obj-24",
       9
      ],
@@ -13530,24 +13494,6 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "destination": [
-      "obj-140",
-      0
-     ],
-     "midpoints": [
-      1008.9024361371994,
-      1692.0,
-      1159.5,
-      1692.0
-     ],
-     "source": [
-      "obj-231",
-      0
-     ]
-   }
-  },
   {
    "patchline": {
     "destination": [
@@ -13755,6 +13701,42 @@
      "source": [
       "obj-239",
       1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "status-unloop-starting",
+      0
+     ],
+     "midpoints": [
+      1906.7442058324814,
+      1566.0,
+      1943.5,
+      1566.0
+     ],
+     "source": [
+      "obj-239",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-140",
+      1
+     ],
+     "midpoints": [
+      1943.5,
+      1605.0,
+      1246.5,
+      1605.0
+     ],
+     "source": [
+      "status-unloop-starting",
+      0
      ]
     }
    },

@@ -10,7 +10,8 @@ It sends those features and mapped Unloop control values over OSC.
 
 arm_height: wrists high vs torso, 0..1.
 temperature = 0.75..1.30: higher arms = wilder VampNet sampling.
-input_gain_db: binary loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +16 dB (a bit above shoulder)
+input_gain_db: binary loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +16 dB by default (a bit above shoulder).
+Change the boost per run with --loudness-boost-db.
 
 motion_energy: frame-to-frame body movement, 0..1.
 dropout = 0..0.25: more movement = less prompt anchoring / more variation.
@@ -587,6 +588,8 @@ def open_camera(index: int):
 
 
 def main() -> None:
+    global LOUDNESS_BOOST_GAIN_DB, LOUDNESS_TRIGGER_ARM_HEIGHT
+
     parser = argparse.ArgumentParser(description="Send webcam motion controls to Unloop over OSC.")
     parser.add_argument("--host", default="127.0.0.1", help="OSC host running Max.")
     parser.add_argument("--port", type=int, default=9100, help="OSC port for Max to receive motion controls.")
@@ -599,7 +602,22 @@ def main() -> None:
     parser.add_argument("--listen-port", type=int, default=9101, help="UDP port for Max record/unloop events; use 0 to disable.")
     parser.add_argument("--summary-mode", choices=("mean", "median"), default="mean", help="How to summarize continuous controls.")
     parser.add_argument("--pretrigger-delay", type=float, default=0.15, help="Seconds to wait after applying a summary before triggering Unloop.")
+    parser.add_argument(
+        "--loudness-boost-db",
+        type=float,
+        default=LOUDNESS_BOOST_GAIN_DB,
+        help="Input-gain boost in dB when arm_height crosses the high-arm threshold.",
+    )
+    parser.add_argument(
+        "--loudness-trigger-arm-height",
+        type=float,
+        default=LOUDNESS_TRIGGER_ARM_HEIGHT,
+        help="Arm-height threshold for switching from normal gain to boosted gain.",
+    )
     args = parser.parse_args()
+
+    LOUDNESS_BOOST_GAIN_DB = args.loudness_boost_db
+    LOUDNESS_TRIGGER_ARM_HEIGHT = args.loudness_trigger_arm_height
 
     client = SimpleUDPClient(args.host, args.port)
     accumulator = RecordingAccumulator(client, args.summary_mode, print_only=args.print_only)

@@ -1,5 +1,40 @@
 import os
 import re
+from pathlib import Path
+
+
+def _configure_gradio_temp_dir() -> None:
+    configured = os.environ.get("VAMPNET_GRADIO_TEMP_DIR") or os.environ.get("GRADIO_TEMP_DIR")
+    candidates = []
+    if configured:
+        candidates.append(Path(configured).expanduser())
+
+    scratch_root = os.environ.get("SCRATCH")
+    if scratch_root:
+        candidates.append(Path(scratch_root).expanduser() / "gradio")
+
+    user = os.environ.get("USER")
+    if user:
+        candidates.append(Path("/scratch") / user / "gradio")
+
+    candidates.append(Path.cwd() / ".gradio-tmp")
+
+    for candidate in candidates:
+        try:
+            candidate.mkdir(exist_ok=True, parents=True)
+        except OSError:
+            continue
+        os.environ["GRADIO_TEMP_DIR"] = str(candidate)
+        os.environ.setdefault("TMPDIR", str(candidate))
+        print(f"using Gradio temp dir: {candidate}")
+        return
+
+    raise PermissionError("Could not create a writable Gradio temp directory.")
+
+
+_configure_gradio_temp_dir()
+SCRATCH_DIR = Path(os.environ["GRADIO_TEMP_DIR"]) / "scratch"
+SCRATCH_DIR.mkdir(exist_ok=True, parents=True)
 
 # Localhost must bypass proxy (Gradio startup-events self-check).
 os.environ["NO_PROXY"] = "localhost,127.0.0.1,::1," + os.environ.get("NO_PROXY", "")
@@ -37,7 +72,6 @@ if _vampnet_proxy:
     os.environ["HTTPS_PROXY"] = _vampnet_proxy
 
 import spaces
-from pathlib import Path
 import yaml
 import time
 import uuid
@@ -145,7 +179,7 @@ def new_vampnet_mask(self,
 
     
     # save mask as txt (ints)
-    np.savetxt("scratch/rms_mask.txt", mask[0].cpu().numpy(), fmt='%d')
+    np.savetxt(SCRATCH_DIR / "rms_mask.txt", mask[0].cpu().numpy(), fmt='%d')
     mask = mask.to(self.device)
     return mask[:, :, :]
 
@@ -164,8 +198,9 @@ def mask_preview(periodic_p, n_mask_codebooks, onset_mask_width, dropout):
     plt.clf()
     interface.visualize_codes(mask)
     plt.title("mask preview")
-    plt.savefig("scratch/mask-prev.png")
-    return "scratch/mask-prev.png"
+    mask_preview_path = SCRATCH_DIR / "mask-prev.png"
+    plt.savefig(mask_preview_path)
+    return str(mask_preview_path)
 
 
 @spaces.GPU
@@ -258,7 +293,7 @@ def _vamp_internal(
             )
         )
         mask = pmask.codebook_mask(mask, n_mask_codebooks)
-    np.savetxt("scratch/rms_mask.txt", mask[0].cpu().numpy(), fmt='%d')
+    np.savetxt(SCRATCH_DIR / "rms_mask.txt", mask[0].cpu().numpy(), fmt='%d')
 
     interface.set_chunk_size(10.0)
 
@@ -294,14 +329,15 @@ def _vamp_internal(
     # plt.imshow(mask_z[0].cpu().numpy(), aspect='auto
     interface.visualize_codes(mask)
     plt.title("actual mask")
-    plt.savefig("scratch/mask.png")
+    mask_path = SCRATCH_DIR / "mask.png"
+    plt.savefig(mask_path)
     plt.clf()
 
     if harp: 
         return sig
 
     if not api:
-        return to_output(sig[0]), to_output(sig[1]), "scratch/mask.png"
+        return to_output(sig[0]), to_output(sig[1]), str(mask_path)
     else:
         return to_output(sig[0]), to_output(sig[1])
 

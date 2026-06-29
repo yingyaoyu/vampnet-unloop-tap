@@ -501,7 +501,7 @@
       "valueof": {
        "parameter_linknames": 1,
        "parameter_longname": "input-gain",
-       "parameter_mmax": 18.0,
+       "parameter_mmax": 80.0,
        "parameter_mmin": -70.0,
        "parameter_shortname": "input gain",
        "parameter_type": 0,
@@ -1103,7 +1103,7 @@
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
        "parameter_longname": "motion top input gain dB",
-       "parameter_mmax": 18.0,
+       "parameter_mmax": 80.0,
        "parameter_mmin": -24.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
