@@ -55,7 +55,7 @@ def vamp(
 
         def save_output(output_audio):
             shutil.copy(output_audio, output_file)
-            print(f"{output_file}", flush=True)
+            return output_file
 
         _emit_status("SUBMITTING")
         job = client.submit(
@@ -89,8 +89,9 @@ def vamp(
             time.sleep(0.1)
 
         result = job.result()
-        save_output(result[0])
+        saved_output = save_output(result[0])
         _emit_status("DONE")
+        print(f"{saved_output}", flush=True)
     except Exception as exc:
         _emit_status("ERROR")
         print(f"ERROR {type(exc).__name__}: {exc}", flush=True)
