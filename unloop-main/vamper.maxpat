@@ -10261,7 +10261,43 @@
       74.0,
       22.0
      ],
-     "text": "r 1102-clear"
+     "text": "r #0-clear"
+    }
+   },
+   {
+    "box": {
+     "id": "reset-auto-go-clear-r",
+     "maxclass": "newobj",
+     "numinlets": 0,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2038.0,
+      1805.0,
+      74.0,
+      22.0
+     ],
+     "text": "r #0-clear"
+    }
+   },
+   {
+    "box": {
+     "id": "reset-auto-go-stop-msg",
+     "maxclass": "message",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2038.0,
+      1840.0,
+      35.0,
+      22.0
+     ],
+     "text": "stop"
     }
    },
    {
@@ -10543,15 +10579,16 @@
      "id": "motion-unloop-trigger",
      "maxclass": "newobj",
      "numinlets": 1,
-     "numoutlets": 2,
+     "numoutlets": 3,
      "patching_rect": [
       1816.7809259643934,
       -16.0,
-      45.0,
+      55.0,
       22.0
      ],
-     "text": "t b b",
+     "text": "t b b b",
      "outlettype": [
+      "bang",
       "bang",
       "bang"
      ]
@@ -10606,6 +10643,24 @@
       22.0
      ],
      "text": "/max/record 0",
+     "outlettype": [
+      ""
+     ]
+    }
+   },
+   {
+    "box": {
+     "id": "motion-osc-unloop-speedlim",
+     "maxclass": "newobj",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "patching_rect": [
+      4320.0,
+      255.0,
+      85.0,
+      22.0
+     ],
+     "text": "speedlim 500",
      "outlettype": [
       ""
      ]
@@ -13491,13 +13546,37 @@
       "obj-231",
       0
      ]
-    }
-   },
-   {
-    "patchline": {
-     "destination": [
-      "obj-181",
-      0
+   }
+  },
+  {
+   "patchline": {
+    "destination": [
+     "reset-auto-go-stop-msg",
+     0
+    ],
+    "source": [
+     "reset-auto-go-clear-r",
+     0
+    ]
+   }
+  },
+  {
+   "patchline": {
+    "destination": [
+     "obj-232",
+     0
+    ],
+    "source": [
+     "reset-auto-go-stop-msg",
+     0
+    ]
+   }
+  },
+  {
+   "patchline": {
+    "destination": [
+     "obj-181",
+     0
      ],
      "midpoints": [
       1965.5,
@@ -16504,6 +16583,18 @@
       0
      ],
      "destination": [
+      "motion-osc-unloop-speedlim",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-osc-unloop-speedlim",
+      0
+     ],
+     "destination": [
       "obj-14",
       0
      ]
@@ -16661,6 +16752,18 @@
      ],
      "destination": [
       "motion-unloop-trigger",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-unloop-trigger",
+      2
+     ],
+     "destination": [
+      "obj-365",
       0
      ]
     }
