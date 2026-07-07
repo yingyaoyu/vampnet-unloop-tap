@@ -28,6 +28,7 @@ def vamp(
     num_steps: int = 32,
     checkpoint_name: str = "default", 
     dropout: float = 0.0,
+    n_mask_codebooks: int = 3,
     seed: int = 0,
 ):
     _emit_status("STARTING")
@@ -71,7 +72,7 @@ def vamp(
             typical_min_tokens=64,
             seed=seed,
             model_choice=checkpoint_name,
-            n_mask_codebooks=3,
+            n_mask_codebooks=n_mask_codebooks,
             pitch_shift_amt=0,
             sample_cutoff=1.0,
             sampling_steps=num_steps,

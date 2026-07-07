@@ -717,6 +717,46 @@
    },
    {
     "box": {
+     "bgmode": 0,
+     "border": 0,
+     "clickthrough": 0,
+     "enablehscroll": 0,
+     "enablevscroll": 0,
+     "id": "vamper-client-2",
+     "lockeddragscroll": 0,
+     "lockedsize": 0,
+     "maxclass": "bpatcher",
+     "name": "vamper.maxpat",
+     "numinlets": 2,
+     "numoutlets": 3,
+     "offset": [
+      0.0,
+      0.0
+     ],
+     "outlettype": [
+      "signal",
+      "signal",
+      ""
+     ],
+     "patching_rect": [
+      608.6666921377182,
+      302.5,
+      558.4367037406773,
+      461.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      568.1767640709877,
+      309.95860119394877,
+      558.0,
+      457.0
+     ],
+     "varname": "vamper[2]",
+     "viewvisibility": 1
+    }
+   },
+   {
+    "box": {
      "bgcolor": [
       0.427450980392157,
       0.447058823529412,
@@ -1810,6 +1850,42 @@
       0
      ]
     }
+   },
+   {
+    "patchline": {
+     "source": [
+      "motion-sum",
+      0
+     ],
+     "destination": [
+      "vamper-client-2",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "vamper-client-2",
+      0
+     ],
+     "destination": [
+      "obj-25",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "vamper-client-2",
+      1
+     ],
+     "destination": [
+      "obj-8",
+      0
+     ]
+    }
    }
   ],
   "parameters": {
@@ -1986,6 +2062,91 @@
      "parameter_longname": "motion top drive",
      "parameter_shortname": "drive",
      "parameter_invisible": 0
+    },
+    "vamper-client-2::obj-101": {
+     "parameter_initial": 5,
+     "parameter_longname": "client 2 onsetmask[1]",
+     "parameter_range": [
+      0,
+      100
+     ]
+    },
+    "vamper-client-2::obj-121": {
+     "parameter_initial": 0.0,
+     "parameter_invisible": 0,
+     "parameter_longname": "client 2 dropout",
+     "parameter_modmode": 0,
+     "parameter_range": [
+      0.0,
+      1.0
+     ],
+     "parameter_shortname": "dropout",
+     "parameter_type": 0,
+     "parameter_unitstyle": 1
+    },
+    "vamper-client-2::obj-133": {
+     "parameter_longname": "client 2 live.gain~[7]"
+    },
+    "vamper-client-2::obj-225": {
+     "parameter_initial": 0.85,
+     "parameter_initial_enable": 1,
+     "parameter_linknames": 1,
+     "parameter_longname": "client 2 overdub",
+     "parameter_range": [
+      0.0,
+      1.0
+     ],
+     "parameter_shortname": "overdub",
+     "parameter_unitstyle": 1
+    },
+    "vamper-client-2::obj-269": {
+     "parameter_initial": 5,
+     "parameter_longname": "client 2 periodic prompt[3]",
+     "parameter_shortname": "periodic"
+    },
+    "vamper-client-2::obj-323": {
+     "parameter_longname": "client 2 number[3]",
+     "parameter_shortname": "number"
+    },
+    "vamper-client-2::obj-363": {
+     "parameter_linknames": 1,
+     "parameter_longname": "client 2 drygain",
+     "parameter_shortname": "live.gain~"
+    },
+    "vamper-client-2::obj-62": {
+     "parameter_initial": 1.0,
+     "parameter_longname": "client 2 temperature[1]",
+     "parameter_range": [
+      0.0,
+      3.0
+     ]
+    },
+    "vamper-client-2::obj-69": {
+     "parameter_initial": 0,
+     "parameter_longname": "client 2 beatwidth[1]",
+     "parameter_shortname": "beat (ms)"
+    },
+    "vamper-client-2::obj-70": {
+     "parameter_initial": 24,
+     "parameter_longname": "client 2 numsteps[1]"
+    },
+    "obj-1::comp-dial": {
+     "parameter_initial": 3,
+     "parameter_longname": "compression prompt",
+     "parameter_range": [
+      1,
+      14
+     ],
+     "parameter_shortname": "comp"
+    },
+    "vamper-client-2::comp-dial": {
+     "parameter_initial": 3,
+     "parameter_longname": "client 2 compression prompt",
+     "parameter_range": [
+      1,
+      14
+     ],
+     "parameter_shortname": "comp"
     }
    },
    "inherited_shortname": 1,
@@ -2007,6 +2168,71 @@
    "motion-top-drive-dial": [
     "motion top drive",
     "drive",
+    0
+   ],
+   "vamper-client-2::obj-101": [
+    "client 2 onsetmask[1]",
+    "onset mask",
+    0
+   ],
+   "vamper-client-2::obj-121": [
+    "client 2 dropout",
+    "dropout",
+    0
+   ],
+   "vamper-client-2::obj-133": [
+    "client 2 live.gain~[7]",
+    "live.gain~",
+    0
+   ],
+   "vamper-client-2::obj-211": [
+    "client 2 number[1]",
+    "number",
+    0
+   ],
+   "vamper-client-2::obj-225": [
+    "client 2 overdub",
+    "overdub",
+    0
+   ],
+   "vamper-client-2::obj-269": [
+    "client 2 periodic prompt[3]",
+    "periodic",
+    0
+   ],
+   "vamper-client-2::obj-323": [
+    "client 2 number[3]",
+    "number",
+    0
+   ],
+   "vamper-client-2::obj-363": [
+    "client 2 drygain",
+    "live.gain~",
+    0
+   ],
+   "vamper-client-2::obj-62": [
+    "client 2 temperature[1]",
+    "temperature",
+    0
+   ],
+   "vamper-client-2::obj-69": [
+    "client 2 beatwidth[1]",
+    "beat (ms)",
+    0
+   ],
+   "vamper-client-2::obj-70": [
+    "client 2 numsteps[1]",
+    "steps",
+    0
+   ],
+   "obj-1::comp-dial": [
+    "compression prompt",
+    "comp",
+    0
+   ],
+   "vamper-client-2::comp-dial": [
+    "client 2 compression prompt",
+    "comp",
     0
    ]
   },

@@ -1,6 +1,25 @@
 import os
 import re
+import sys
 from pathlib import Path
+
+
+def _pop_int_arg(names: tuple[str, ...], default: int, minimum: int, maximum: int) -> int:
+    for name in names:
+        if name not in sys.argv:
+            continue
+        index = sys.argv.index(name)
+        if index + 1 >= len(sys.argv):
+            raise ValueError(f"{name} requires an integer value.")
+        value = int(sys.argv[index + 1])
+        if not minimum <= value <= maximum:
+            raise ValueError(f"{name} must be between {minimum} and {maximum}.")
+        del sys.argv[index:index + 2]
+        return value
+    return default
+
+
+DEFAULT_COMPRESSION = _pop_int_arg(("--compression", "--n-mask-codebooks"), 3, 1, 14)
 
 
 def _configure_gradio_temp_dir() -> None:
@@ -523,7 +542,7 @@ with gr.Blocks() as demo:
 
                 n_mask_codebooks = gr.Slider(
                     label="compression prompt ",
-                    value=3,
+                    value=DEFAULT_COMPRESSION,
                     minimum=1, 
                     maximum=14,
                     step=1,

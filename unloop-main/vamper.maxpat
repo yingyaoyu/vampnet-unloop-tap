@@ -814,6 +814,9 @@
       ],
       "wetgain": [
        -7.712952671227633
+      ],
+      "compression": [
+       3.0
       ]
      },
      "text": "autopattr",
@@ -5799,7 +5802,7 @@
     "box": {
      "id": "obj-24",
      "maxclass": "newobj",
-     "numinlets": 15,
+     "numinlets": 16,
      "numoutlets": 1,
      "outlettype": [
       ""
@@ -5807,10 +5810,10 @@
      "patching_rect": [
       1005.0457851837236,
       1207.2077932357788,
-      2901.0413315742426,
+      3100.0,
       22.0
      ],
-     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed"
+     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression"
     }
    },
    {
@@ -5947,10 +5950,10 @@
      "patching_rect": [
       999.4024361371994,
       1315.5276569223633,
-      2523.0,
+      2700.0,
       22.0
      ],
-     "text": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py \"--audio_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-input-1058.wav\" \"--output_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-output-1058.wav\" \"--servername http://127.0.0.1:7860/\" \"--temp 1.0000\" \"--periodic_hint_freq 0\" \"--onset_mask_width 0\" beatmask downbeats \"--typical_filter 0\" \"--num_steps 36\" \"--checkpoint_name n64\" \"--dropout 0.0000\" \"--seed 0\""
+     "text": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py \"--audio_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-input-1058.wav\" \"--output_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-output-1058.wav\" \"--servername http://127.0.0.1:7860/\" \"--temp 1.0000\" \"--periodic_hint_freq 0\" \"--onset_mask_width 0\" beatmask downbeats \"--typical_filter 0\" \"--num_steps 36\" \"--checkpoint_name n64\" \"--dropout 0.0000\" \"--seed 0\" \"--n_mask_codebooks 3\""
     }
    },
    {
@@ -9619,7 +9622,7 @@
      "presentation_rect": [
       310.56651445622117,
       120.88736510375952,
-      67.0,
+      45.0,
       45.0
      ],
      "saved_attribute_attributes": {
@@ -9860,9 +9863,9 @@
      ],
      "presentation": 1,
      "presentation_rect": [
-      379.8524445463778,
+      406.0,
       120.88736510375952,
-      73.0,
+      45.0,
       45.0
      ],
      "saved_attribute_attributes": {
@@ -10967,6 +10970,140 @@
       22.0
      ],
      "text": "unpack f f"
+    }
+   },
+   {
+    "box": {
+     "id": "comp-loadbang",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      "bang"
+     ],
+     "patching_rect": [
+      2380.0,
+      754.5619840679856,
+      58.0,
+      22.0
+     ],
+     "text": "loadbang"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "comp-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      2380.0,
+      808.5619840679856,
+      50.0,
+      45.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      358.0,
+      120.88736510375952,
+      45.0,
+      45.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        3
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "compression prompt",
+       "parameter_mmax": 14.0,
+       "parameter_mmin": 1.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "comp",
+       "parameter_steps": 13,
+       "parameter_type": 1,
+       "parameter_unitstyle": 0
+      }
+     },
+     "varname": "compression"
+    }
+   },
+   {
+    "box": {
+     "id": "comp-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2380.0,
+      894.0,
+      176.0,
+      22.0
+     ],
+     "text": "prepend --n_mask_codebooks"
+    }
+   },
+   {
+    "box": {
+     "id": "comp-symbol",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2380.0,
+      944.0,
+      57.0,
+      22.0
+     ],
+     "text": "tosymbol"
+    }
+   },
+   {
+    "box": {
+     "fontname": "Helvetica",
+     "fontsize": 10.0,
+     "id": "comp-label",
+     "maxclass": "comment",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      2380.0,
+      790.0,
+      45.0,
+      16.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      358.0,
+      108.0,
+      45.0,
+      16.0
+     ],
+     "text": "comp",
+     "textjustification": 1
     }
    }
   ],
@@ -13476,35 +13613,35 @@
      ]
     }
    },
-  {
-   "patchline": {
-    "destination": [
-     "reset-auto-go-stop-msg",
-     0
-    ],
-    "source": [
-     "reset-auto-go-clear-r",
-     0
-    ]
-   }
-  },
-  {
-   "patchline": {
-    "destination": [
-     "obj-232",
-     0
-    ],
-    "source": [
-     "reset-auto-go-stop-msg",
-     0
-    ]
-   }
-  },
-  {
-   "patchline": {
-    "destination": [
-     "obj-181",
-     0
+   {
+    "patchline": {
+     "destination": [
+      "reset-auto-go-stop-msg",
+      0
+     ],
+     "source": [
+      "reset-auto-go-clear-r",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-232",
+      0
+     ],
+     "source": [
+      "reset-auto-go-stop-msg",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "destination": [
+      "obj-181",
+      0
      ],
      "midpoints": [
       1965.5,
@@ -17041,6 +17178,54 @@
      "destination": [
       "motion-inputgain-db-dial",
       0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "comp-loadbang",
+      0
+     ],
+     "destination": [
+      "comp-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "comp-dial",
+      0
+     ],
+     "destination": [
+      "comp-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "comp-prepend",
+      0
+     ],
+     "destination": [
+      "comp-symbol",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "comp-symbol",
+      0
+     ],
+     "destination": [
+      "obj-24",
+      15
      ]
     }
    }
