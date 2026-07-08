@@ -29,6 +29,9 @@ def vamp(
     checkpoint_name: str = "default", 
     dropout: float = 0.0,
     n_mask_codebooks: int = 3,
+    top_p: float = 0.0,
+    pitch_shift_amt: int = 0,
+    sample_cutoff: float = 1.0,
     seed: int = 0,
 ):
     _emit_status("STARTING")
@@ -62,7 +65,7 @@ def vamp(
         job = client.submit(
             input_audio=handle_file(str(audio_file)),
             sampletemp=temp,
-            top_p=0.0,
+            top_p=top_p,
             periodic_p=periodic_hint_freq,
             dropout=dropout,
             stretch_factor=1.0,
@@ -73,8 +76,8 @@ def vamp(
             seed=seed,
             model_choice=checkpoint_name,
             n_mask_codebooks=n_mask_codebooks,
-            pitch_shift_amt=0,
-            sample_cutoff=1.0,
+            pitch_shift_amt=pitch_shift_amt,
+            sample_cutoff=sample_cutoff,
             sampling_steps=num_steps,
             beat_mask_ms=beat_mask_ms,
             num_feedback_steps=1,

@@ -717,46 +717,6 @@
    },
    {
     "box": {
-     "bgmode": 0,
-     "border": 0,
-     "clickthrough": 0,
-     "enablehscroll": 0,
-     "enablevscroll": 0,
-     "id": "vamper-client-2",
-     "lockeddragscroll": 0,
-     "lockedsize": 0,
-     "maxclass": "bpatcher",
-     "name": "vamper.maxpat",
-     "numinlets": 2,
-     "numoutlets": 3,
-     "offset": [
-      0.0,
-      0.0
-     ],
-     "outlettype": [
-      "signal",
-      "signal",
-      ""
-     ],
-     "patching_rect": [
-      608.6666921377182,
-      302.5,
-      558.4367037406773,
-      461.0
-     ],
-     "presentation": 1,
-     "presentation_rect": [
-      568.1767640709877,
-      309.95860119394877,
-      558.0,
-      457.0
-     ],
-     "varname": "vamper[2]",
-     "viewvisibility": 1
-    }
-   },
-   {
-    "box": {
      "bgcolor": [
       0.427450980392157,
       0.447058823529412,
@@ -790,43 +750,6 @@
       44.0,
       44.0
      ]
-    }
-   },
-   {
-    "box": {
-     "angle": 270.0,
-     "bgcolor": [
-      0.945098039215686,
-      0.780392156862745,
-      0.533333333333333,
-      1.0
-     ],
-     "border": 5,
-     "bordercolor": [
-      0.945098039215686,
-      0.533333333333333,
-      0.533333333333333,
-      1.0
-     ],
-     "id": "obj-5",
-     "maxclass": "panel",
-     "mode": 0,
-     "numinlets": 1,
-     "numoutlets": 0,
-     "patching_rect": [
-      785.0,
-      223.0,
-      128.0,
-      128.0
-     ],
-     "presentation": 1,
-     "presentation_rect": [
-      5.088382035493851,
-      7.0,
-      554.1767640709877,
-      300.95860119394877
-     ],
-     "proportion": 0.5
     }
    },
    {
@@ -1096,7 +1019,7 @@
      "presentation_rect": [
       226.0,
       66.0,
-      130.0,
+      150.0,
       18.0
      ]
     }
@@ -1129,8 +1052,8 @@
      "presentation_rect": [
       226.0,
       88.0,
-      45.0,
-      45.0
+      48.0,
+      48.0
      ],
      "saved_attribute_attributes": {
       "activedialcolor": {
@@ -1197,10 +1120,10 @@
      ],
      "presentation": 1,
      "presentation_rect": [
-      279.0,
+      286.0,
       88.0,
-      45.0,
-      45.0
+      48.0,
+      48.0
      ],
      "saved_attribute_attributes": {
       "activedialcolor": {
@@ -1267,10 +1190,10 @@
      ],
      "presentation": 1,
      "presentation_rect": [
-      332.0,
+      346.0,
       88.0,
-      45.0,
-      45.0
+      48.0,
+      48.0
      ],
      "saved_attribute_attributes": {
       "activedialcolor": {
@@ -1337,10 +1260,10 @@
      ],
      "presentation": 1,
      "presentation_rect": [
-      385.0,
+      406.0,
       88.0,
-      45.0,
-      45.0
+      48.0,
+      48.0
      ],
      "saved_attribute_attributes": {
       "activedialcolor": {
@@ -1379,6 +1302,465 @@
       22.0
      ],
      "text": "s motion-drive"
+    }
+   },
+   {
+    "box": {
+     "id": "top-gen-controls-label",
+     "maxclass": "comment",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      760.0,
+      115.0,
+      160.0,
+      20.0
+     ],
+     "text": "generation",
+     "presentation": 1,
+     "presentation_rect": [
+      226.0,
+      142.0,
+      150.0,
+      18.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "top-compression-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      760.0,
+      190.0,
+      55.0,
+      55.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      226.0,
+      164.0,
+      50.0,
+      50.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        3
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "top compression prompt",
+       "parameter_mmax": 14.0,
+       "parameter_mmin": 0.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "comp",
+       "parameter_type": 1,
+       "parameter_unitstyle": 0,
+       "parameter_steps": 14
+      }
+     },
+     "varname": "top-compression"
+    }
+   },
+   {
+    "box": {
+     "id": "top-compression-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      760.0,
+      275.0,
+      170.0,
+      22.0
+     ],
+     "text": "prepend compression"
+    }
+   },
+   {
+    "box": {
+     "id": "top-compression-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      760.0,
+      145.0,
+      95.0,
+      22.0
+     ],
+     "text": "loadmess 3"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "top-pitch-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      960.0,
+      190.0,
+      55.0,
+      55.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      300.0,
+      164.0,
+      50.0,
+      50.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "top pitch shift",
+       "parameter_mmax": 12.0,
+       "parameter_mmin": -12.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "pitch",
+       "parameter_type": 1,
+       "parameter_unitstyle": 0,
+       "parameter_steps": 24
+      }
+     },
+     "varname": "top-pitch-shift"
+    }
+   },
+   {
+    "box": {
+     "id": "top-pitch-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      960.0,
+      275.0,
+      170.0,
+      22.0
+     ],
+     "text": "prepend pitch_shift"
+    }
+   },
+   {
+    "box": {
+     "id": "top-pitch-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      960.0,
+      145.0,
+      95.0,
+      22.0
+     ],
+     "text": "loadmess 0"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "top-top-p-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      1160.0,
+      190.0,
+      55.0,
+      55.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      374.0,
+      164.0,
+      50.0,
+      50.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        0.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "top p",
+       "parameter_mmax": 1.0,
+       "parameter_mmin": 0.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "top p",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "top-top-p"
+    }
+   },
+   {
+    "box": {
+     "id": "top-top-p-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1160.0,
+      275.0,
+      170.0,
+      22.0
+     ],
+     "text": "prepend top_p"
+    }
+   },
+   {
+    "box": {
+     "id": "top-top-p-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1160.0,
+      145.0,
+      95.0,
+      22.0
+     ],
+     "text": "loadmess 0."
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "top-sample-cutoff-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      1360.0,
+      190.0,
+      55.0,
+      55.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      448.0,
+      164.0,
+      50.0,
+      50.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        1.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "top sample cutoff",
+       "parameter_mmax": 1.0,
+       "parameter_mmin": 0.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "samp cut",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "top-sample-cutoff"
+    }
+   },
+   {
+    "box": {
+     "id": "top-sample-cutoff-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1360.0,
+      275.0,
+      170.0,
+      22.0
+     ],
+     "text": "prepend sample_cutoff"
+    }
+   },
+   {
+    "box": {
+     "id": "top-sample-cutoff-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1360.0,
+      145.0,
+      95.0,
+      22.0
+     ],
+     "text": "loadmess 1."
+    }
+   },
+   {
+    "box": {
+     "id": "top-preset-menu",
+     "items": [
+      "default",
+      ",",
+      "small_variation",
+      ",",
+      "medium_variation",
+      ",",
+      "large_variation"
+     ],
+     "maxclass": "umenu",
+     "numinlets": 1,
+     "numoutlets": 3,
+     "outlettype": [
+      "int",
+      "",
+      ""
+     ],
+     "parameter_enable": 0,
+     "parameter_mappable": 0,
+     "patching_rect": [
+      1560.0,
+      205.0,
+      170.0,
+      22.0
+     ],
+     "presentation": 1,
+     "presentation_rect": [
+      408.0,
+      228.0,
+      142.0,
+      22.0
+     ],
+     "pattrmode": 1,
+     "varname": "top-preset-menu"
+    }
+   },
+   {
+    "box": {
+     "id": "top-preset-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1560.0,
+      275.0,
+      130.0,
+      22.0
+     ],
+     "text": "prepend preset"
+    }
+   },
+   {
+    "box": {
+     "id": "top-preset-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1560.0,
+      145.0,
+      95.0,
+      22.0
+     ],
+     "text": "loadmess 0"
     }
    }
   ],
@@ -1854,11 +2236,11 @@
    {
     "patchline": {
      "source": [
-      "motion-sum",
+      "top-compression-load",
       0
      ],
      "destination": [
-      "vamper-client-2",
+      "top-compression-dial",
       0
      ]
     }
@@ -1866,11 +2248,11 @@
    {
     "patchline": {
      "source": [
-      "vamper-client-2",
+      "top-compression-dial",
       0
      ],
      "destination": [
-      "obj-25",
+      "top-compression-prepend",
       0
      ]
     }
@@ -1878,12 +2260,156 @@
    {
     "patchline": {
      "source": [
-      "vamper-client-2",
+      "top-compression-prepend",
+      0
+     ],
+     "destination": [
+      "obj-1",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-pitch-load",
+      0
+     ],
+     "destination": [
+      "top-pitch-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-pitch-dial",
+      0
+     ],
+     "destination": [
+      "top-pitch-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-pitch-prepend",
+      0
+     ],
+     "destination": [
+      "obj-1",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-top-p-load",
+      0
+     ],
+     "destination": [
+      "top-top-p-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-top-p-dial",
+      0
+     ],
+     "destination": [
+      "top-top-p-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-top-p-prepend",
+      0
+     ],
+     "destination": [
+      "obj-1",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-sample-cutoff-load",
+      0
+     ],
+     "destination": [
+      "top-sample-cutoff-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-sample-cutoff-dial",
+      0
+     ],
+     "destination": [
+      "top-sample-cutoff-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-sample-cutoff-prepend",
+      0
+     ],
+     "destination": [
+      "obj-1",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-preset-load",
+      0
+     ],
+     "destination": [
+      "top-preset-menu",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-preset-menu",
       1
      ],
      "destination": [
-      "obj-8",
+      "top-preset-prepend",
       0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-preset-prepend",
+      0
+     ],
+     "destination": [
+      "obj-1",
+      1
      ]
     }
    }
@@ -2063,73 +2589,6 @@
      "parameter_shortname": "drive",
      "parameter_invisible": 0
     },
-    "vamper-client-2::obj-101": {
-     "parameter_initial": 5,
-     "parameter_longname": "client 2 onsetmask[1]",
-     "parameter_range": [
-      0,
-      100
-     ]
-    },
-    "vamper-client-2::obj-121": {
-     "parameter_initial": 0.0,
-     "parameter_invisible": 0,
-     "parameter_longname": "client 2 dropout",
-     "parameter_modmode": 0,
-     "parameter_range": [
-      0.0,
-      1.0
-     ],
-     "parameter_shortname": "dropout",
-     "parameter_type": 0,
-     "parameter_unitstyle": 1
-    },
-    "vamper-client-2::obj-133": {
-     "parameter_longname": "client 2 live.gain~[7]"
-    },
-    "vamper-client-2::obj-225": {
-     "parameter_initial": 0.85,
-     "parameter_initial_enable": 1,
-     "parameter_linknames": 1,
-     "parameter_longname": "client 2 overdub",
-     "parameter_range": [
-      0.0,
-      1.0
-     ],
-     "parameter_shortname": "overdub",
-     "parameter_unitstyle": 1
-    },
-    "vamper-client-2::obj-269": {
-     "parameter_initial": 5,
-     "parameter_longname": "client 2 periodic prompt[3]",
-     "parameter_shortname": "periodic"
-    },
-    "vamper-client-2::obj-323": {
-     "parameter_longname": "client 2 number[3]",
-     "parameter_shortname": "number"
-    },
-    "vamper-client-2::obj-363": {
-     "parameter_linknames": 1,
-     "parameter_longname": "client 2 drygain",
-     "parameter_shortname": "live.gain~"
-    },
-    "vamper-client-2::obj-62": {
-     "parameter_initial": 1.0,
-     "parameter_longname": "client 2 temperature[1]",
-     "parameter_range": [
-      0.0,
-      3.0
-     ]
-    },
-    "vamper-client-2::obj-69": {
-     "parameter_initial": 0,
-     "parameter_longname": "client 2 beatwidth[1]",
-     "parameter_shortname": "beat (ms)"
-    },
-    "vamper-client-2::obj-70": {
-     "parameter_initial": 24,
-     "parameter_longname": "client 2 numsteps[1]"
-    },
     "obj-1::comp-dial": {
      "parameter_initial": 3,
      "parameter_longname": "compression prompt",
@@ -2139,14 +2598,25 @@
      ],
      "parameter_shortname": "comp"
     },
-    "vamper-client-2::comp-dial": {
-     "parameter_initial": 3,
-     "parameter_longname": "client 2 compression prompt",
-     "parameter_range": [
-      1,
-      14
-     ],
-     "parameter_shortname": "comp"
+    "top-compression-dial": {
+     "parameter_longname": "top compression prompt",
+     "parameter_shortname": "comp",
+     "parameter_invisible": 0
+    },
+    "top-pitch-dial": {
+     "parameter_longname": "top pitch shift",
+     "parameter_shortname": "pitch",
+     "parameter_invisible": 0
+    },
+    "top-top-p-dial": {
+     "parameter_longname": "top p",
+     "parameter_shortname": "top p",
+     "parameter_invisible": 0
+    },
+    "top-sample-cutoff-dial": {
+     "parameter_longname": "top sample cutoff",
+     "parameter_shortname": "samp cut",
+     "parameter_invisible": 0
     }
    },
    "inherited_shortname": 1,
@@ -2170,69 +2640,29 @@
     "drive",
     0
    ],
-   "vamper-client-2::obj-101": [
-    "client 2 onsetmask[1]",
-    "onset mask",
-    0
-   ],
-   "vamper-client-2::obj-121": [
-    "client 2 dropout",
-    "dropout",
-    0
-   ],
-   "vamper-client-2::obj-133": [
-    "client 2 live.gain~[7]",
-    "live.gain~",
-    0
-   ],
-   "vamper-client-2::obj-211": [
-    "client 2 number[1]",
-    "number",
-    0
-   ],
-   "vamper-client-2::obj-225": [
-    "client 2 overdub",
-    "overdub",
-    0
-   ],
-   "vamper-client-2::obj-269": [
-    "client 2 periodic prompt[3]",
-    "periodic",
-    0
-   ],
-   "vamper-client-2::obj-323": [
-    "client 2 number[3]",
-    "number",
-    0
-   ],
-   "vamper-client-2::obj-363": [
-    "client 2 drygain",
-    "live.gain~",
-    0
-   ],
-   "vamper-client-2::obj-62": [
-    "client 2 temperature[1]",
-    "temperature",
-    0
-   ],
-   "vamper-client-2::obj-69": [
-    "client 2 beatwidth[1]",
-    "beat (ms)",
-    0
-   ],
-   "vamper-client-2::obj-70": [
-    "client 2 numsteps[1]",
-    "steps",
-    0
-   ],
    "obj-1::comp-dial": [
     "compression prompt",
     "comp",
     0
    ],
-   "vamper-client-2::comp-dial": [
-    "client 2 compression prompt",
+   "top-compression-dial": [
+    "top compression prompt",
     "comp",
+    0
+   ],
+   "top-pitch-dial": [
+    "top pitch shift",
+    "pitch",
+    0
+   ],
+   "top-top-p-dial": [
+    "top p",
+    "top p",
+    0
+   ],
+   "top-sample-cutoff-dial": [
+    "top sample cutoff",
+    "samp cut",
     0
    ]
   },

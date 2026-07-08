@@ -3222,8 +3222,13 @@
      "id": "obj-15",
      "maxclass": "newobj",
      "numinlets": 11,
-     "numoutlets": 11,
+     "numoutlets": 16,
      "outlettype": [
+      "",
+      "",
+      "",
+      "",
+      "",
       "",
       "",
       "",
@@ -3237,12 +3242,12 @@
       ""
      ],
      "patching_rect": [
-      627.3661172740814,
-      -52.0,
-      420.0,
+      620.0,
+      -95.0,
+      900.0,
       22.0
      ],
-     "text": "route play stop rec reset url overdub unloop toggle-record toggle-mute unloop"
+     "text": "route play stop rec reset url overdub unloop toggle-record toggle-mute unloop compression pitch_shift top_p sample_cutoff preset"
     }
    },
    {
@@ -5802,18 +5807,18 @@
     "box": {
      "id": "obj-24",
      "maxclass": "newobj",
-     "numinlets": 16,
+     "numinlets": 19,
      "numoutlets": 1,
      "outlettype": [
       ""
      ],
      "patching_rect": [
-      1005.0457851837236,
-      1207.2077932357788,
-      3100.0,
+      1005.0,
+      1245.0,
+      3600.0,
       22.0
      ],
-     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression"
+     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression top_p pitchshift samplecutoff"
     }
    },
    {
@@ -10983,8 +10988,8 @@
      ],
      "patching_rect": [
       2380.0,
-      754.5619840679856,
-      58.0,
+      760.0,
+      90.0,
       22.0
      ],
      "text": "loadbang"
@@ -11010,9 +11015,9 @@
      "parameter_enable": 1,
      "patching_rect": [
       2380.0,
-      808.5619840679856,
-      50.0,
-      45.0
+      815.0,
+      60.0,
+      55.0
      ],
      "presentation": 1,
      "presentation_rect": [
@@ -11033,11 +11038,11 @@
        "parameter_linknames": 1,
        "parameter_longname": "compression prompt",
        "parameter_mmax": 14.0,
-       "parameter_mmin": 1.0,
+       "parameter_mmin": 0.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
        "parameter_shortname": "comp",
-       "parameter_steps": 13,
+       "parameter_steps": 14,
        "parameter_type": 1,
        "parameter_unitstyle": 0
       }
@@ -11056,8 +11061,8 @@
      ],
      "patching_rect": [
       2380.0,
-      894.0,
-      176.0,
+      910.0,
+      205.0,
       22.0
      ],
      "text": "prepend --n_mask_codebooks"
@@ -11074,8 +11079,8 @@
      ],
      "patching_rect": [
       2380.0,
-      944.0,
-      57.0,
+      965.0,
+      80.0,
       22.0
      ],
      "text": "tosymbol"
@@ -11104,6 +11109,426 @@
      ],
      "text": "comp",
      "textjustification": 1
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "top-p-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      2630.0,
+      815.0,
+      60.0,
+      55.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        0.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "top p",
+       "parameter_mmax": 1.0,
+       "parameter_mmin": 0.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "top p",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "top_p"
+    }
+   },
+   {
+    "box": {
+     "id": "top-p-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2630.0,
+      910.0,
+      205.0,
+      22.0
+     ],
+     "text": "prepend --top_p"
+    }
+   },
+   {
+    "box": {
+     "id": "top-p-symbol",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2630.0,
+      965.0,
+      80.0,
+      22.0
+     ],
+     "text": "tosymbol"
+    }
+   },
+   {
+    "box": {
+     "id": "top-p-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2630.0,
+      760.0,
+      90.0,
+      22.0
+     ],
+     "text": "loadmess 0."
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "pitch-shift-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      2880.0,
+      815.0,
+      60.0,
+      55.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "pitch shift",
+       "parameter_mmax": 12.0,
+       "parameter_mmin": -12.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "pitch",
+       "parameter_type": 1,
+       "parameter_unitstyle": 0,
+       "parameter_steps": 24
+      }
+     },
+     "varname": "pitch_shift"
+    }
+   },
+   {
+    "box": {
+     "id": "pitch-shift-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2880.0,
+      910.0,
+      205.0,
+      22.0
+     ],
+     "text": "prepend --pitch_shift_amt"
+    }
+   },
+   {
+    "box": {
+     "id": "pitch-shift-symbol",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2880.0,
+      965.0,
+      80.0,
+      22.0
+     ],
+     "text": "tosymbol"
+    }
+   },
+   {
+    "box": {
+     "id": "pitch-shift-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2880.0,
+      760.0,
+      90.0,
+      22.0
+     ],
+     "text": "loadmess 0"
+    }
+   },
+   {
+    "box": {
+     "activedialcolor": [
+      0.0,
+      0.854901960784314,
+      0.282352941176471,
+      1.0
+     ],
+     "fontname": "Helvetica",
+     "id": "sample-cutoff-dial",
+     "maxclass": "live.dial",
+     "numinlets": 1,
+     "numoutlets": 2,
+     "outlettype": [
+      "",
+      "float"
+     ],
+     "parameter_enable": 1,
+     "patching_rect": [
+      3130.0,
+      815.0,
+      60.0,
+      55.0
+     ],
+     "saved_attribute_attributes": {
+      "activedialcolor": {
+       "expression": "themecolor.live_macro_assignment"
+      },
+      "valueof": {
+       "parameter_initial": [
+        1.0
+       ],
+       "parameter_initial_enable": 1,
+       "parameter_linknames": 1,
+       "parameter_longname": "sample cutoff",
+       "parameter_mmax": 1.0,
+       "parameter_mmin": 0.0,
+       "parameter_modmode": 0,
+       "parameter_osc_name": "<default>",
+       "parameter_shortname": "samp cut",
+       "parameter_type": 0,
+       "parameter_unitstyle": 1
+      }
+     },
+     "varname": "sample_cutoff"
+    }
+   },
+   {
+    "box": {
+     "id": "sample-cutoff-prepend",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      3130.0,
+      910.0,
+      205.0,
+      22.0
+     ],
+     "text": "prepend --sample_cutoff"
+    }
+   },
+   {
+    "box": {
+     "id": "sample-cutoff-symbol",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      3130.0,
+      965.0,
+      80.0,
+      22.0
+     ],
+     "text": "tosymbol"
+    }
+   },
+   {
+    "box": {
+     "id": "sample-cutoff-load",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      3130.0,
+      760.0,
+      90.0,
+      22.0
+     ],
+     "text": "loadmess 1."
+    }
+   },
+   {
+    "box": {
+     "id": "gen-preset-route",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 5,
+     "outlettype": [
+      "bang",
+      "bang",
+      "bang",
+      "bang",
+      ""
+     ],
+     "patching_rect": [
+      1120.0,
+      -15.0,
+      420.0,
+      22.0
+     ],
+     "text": "sel default small_variation medium_variation large_variation"
+    }
+   },
+   {
+    "box": {
+     "id": "gen-preset-default-msg",
+     "maxclass": "message",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1120.0,
+      35.0,
+      100.0,
+      22.0
+     ],
+     "text": "7 3 0 0. 0"
+    }
+   },
+   {
+    "box": {
+     "id": "gen-preset-small-msg",
+     "maxclass": "message",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1260.0,
+      35.0,
+      100.0,
+      22.0
+     ],
+     "text": "5 4 0 0. 0"
+    }
+   },
+   {
+    "box": {
+     "id": "gen-preset-medium-msg",
+     "maxclass": "message",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1400.0,
+      35.0,
+      100.0,
+      22.0
+     ],
+     "text": "7 4 0 0. 0"
+    }
+   },
+   {
+    "box": {
+     "id": "gen-preset-large-msg",
+     "maxclass": "message",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      1540.0,
+      35.0,
+      120.0,
+      22.0
+     ],
+     "text": "13 4 0 0.2 0"
+    }
+   },
+   {
+    "box": {
+     "id": "gen-preset-unpack",
+     "maxclass": "newobj",
+     "numinlets": 1,
+     "numoutlets": 5,
+     "outlettype": [
+      "int",
+      "int",
+      "int",
+      "float",
+      "int"
+     ],
+     "patching_rect": [
+      1320.0,
+      95.0,
+      150.0,
+      22.0
+     ],
+     "text": "unpack i i i f i"
     }
    }
   ],
@@ -17228,6 +17653,366 @@
       15
      ]
     }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-p-load",
+      0
+     ],
+     "destination": [
+      "top-p-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-p-dial",
+      0
+     ],
+     "destination": [
+      "top-p-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-p-prepend",
+      0
+     ],
+     "destination": [
+      "top-p-symbol",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "top-p-symbol",
+      0
+     ],
+     "destination": [
+      "obj-24",
+      16
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "pitch-shift-load",
+      0
+     ],
+     "destination": [
+      "pitch-shift-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "pitch-shift-dial",
+      0
+     ],
+     "destination": [
+      "pitch-shift-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "pitch-shift-prepend",
+      0
+     ],
+     "destination": [
+      "pitch-shift-symbol",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "pitch-shift-symbol",
+      0
+     ],
+     "destination": [
+      "obj-24",
+      17
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "sample-cutoff-load",
+      0
+     ],
+     "destination": [
+      "sample-cutoff-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "sample-cutoff-dial",
+      0
+     ],
+     "destination": [
+      "sample-cutoff-prepend",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "sample-cutoff-prepend",
+      0
+     ],
+     "destination": [
+      "sample-cutoff-symbol",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "sample-cutoff-symbol",
+      0
+     ],
+     "destination": [
+      "obj-24",
+      18
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-15",
+      10
+     ],
+     "destination": [
+      "comp-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-15",
+      11
+     ],
+     "destination": [
+      "pitch-shift-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-15",
+      12
+     ],
+     "destination": [
+      "top-p-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-15",
+      13
+     ],
+     "destination": [
+      "sample-cutoff-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-15",
+      14
+     ],
+     "destination": [
+      "gen-preset-route",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-route",
+      0
+     ],
+     "destination": [
+      "gen-preset-default-msg",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-route",
+      1
+     ],
+     "destination": [
+      "gen-preset-small-msg",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-route",
+      2
+     ],
+     "destination": [
+      "gen-preset-medium-msg",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-route",
+      3
+     ],
+     "destination": [
+      "gen-preset-large-msg",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-default-msg",
+      0
+     ],
+     "destination": [
+      "gen-preset-unpack",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-small-msg",
+      0
+     ],
+     "destination": [
+      "gen-preset-unpack",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-medium-msg",
+      0
+     ],
+     "destination": [
+      "gen-preset-unpack",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-large-msg",
+      0
+     ],
+     "destination": [
+      "gen-preset-unpack",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-unpack",
+      0
+     ],
+     "destination": [
+      "obj-269",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-unpack",
+      1
+     ],
+     "destination": [
+      "comp-dial",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-unpack",
+      2
+     ],
+     "destination": [
+      "obj-101",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-unpack",
+      3
+     ],
+     "destination": [
+      "obj-121",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "gen-preset-unpack",
+      4
+     ],
+     "destination": [
+      "obj-69",
+      0
+     ]
+    }
    }
   ],
   "originid": "pat-237",
@@ -17333,6 +18118,52 @@
     "parentstyle": "",
     "multi": 0
    }
-  ]
+  ],
+  "parameters": {
+   "top-p-dial": [
+    "top p",
+    "top p",
+    0
+   ],
+   "parameter_overrides": {
+    "top-p-dial": {
+     "parameter_initial": 0.0,
+     "parameter_longname": "top p",
+     "parameter_range": [
+      0.0,
+      1.0
+     ],
+     "parameter_shortname": "top p"
+    },
+    "pitch-shift-dial": {
+     "parameter_initial": 0,
+     "parameter_longname": "pitch shift",
+     "parameter_range": [
+      -12,
+      12
+     ],
+     "parameter_shortname": "pitch"
+    },
+    "sample-cutoff-dial": {
+     "parameter_initial": 1.0,
+     "parameter_longname": "sample cutoff",
+     "parameter_range": [
+      0.0,
+      1.0
+     ],
+     "parameter_shortname": "samp cut"
+    }
+   },
+   "pitch-shift-dial": [
+    "pitch shift",
+    "pitch",
+    0
+   ],
+   "sample-cutoff-dial": [
+    "sample cutoff",
+    "samp cut",
+    0
+   ]
+  }
  }
 }
