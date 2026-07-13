@@ -5250,7 +5250,7 @@
 	      110.0,
 	      20.0
 	     ],
-	     "text": "choir preset"
+		     "text": "opera preset"
 	    }
 	   },
 	   {
@@ -5306,7 +5306,7 @@
 	      110.0,
 	      22.0
 	     ],
-	     "text": "choir_musical"
+		     "text": "opera_musical"
 	    }
 	   },
 	   {
@@ -5325,7 +5325,7 @@
 	      24.0,
 	      24.0
 	     ],
-	     "presentation": 1,
+		     "presentation": 1,
 	     "presentation_rect": [
 	      373.3665141701189,
 	      480.0,
@@ -5347,7 +5347,7 @@
 	      130.0,
 	      20.0
 	     ],
-	     "presentation": 1,
+		     "presentation": 1,
 	     "presentation_rect": [
 	      404.0,
 	      482.0,
@@ -5429,7 +5429,7 @@
 		      24.0,
 		      24.0
 		     ],
-		     "presentation": 1,
+			     "presentation": 0,
 		     "presentation_rect": [
 		      373.3665141701189,
 		      508.0,
@@ -5451,7 +5451,7 @@
 		      120.0,
 		      20.0
 		     ],
-		     "presentation": 1,
+			     "presentation": 0,
 		     "presentation_rect": [
 		      404.0,
 		      510.0,
@@ -12156,7 +12156,7 @@
 		      340.0,
 		      22.0
 		     ],
-		     "text": "13 2 4 0.2 0 0.88 24 12 0.3 0.68 1 0.28 48 1. 2 0"
+			     "text": "13 2 0 0.1 0 0.92 48 0 0. 0.9 1 0.12 64 1. 2 20260617"
 		    }
 		   },
 		   {
