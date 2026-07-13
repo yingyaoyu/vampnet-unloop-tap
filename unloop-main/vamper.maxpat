@@ -12030,26 +12030,27 @@
 	     "id": "gen-preset-route",
 	     "maxclass": "newobj",
 	     "numinlets": 1,
-		     "numoutlets": 8,
-			     "outlettype": [
-			      "bang",
-			      "bang",
-			      "bang",
-			      "bang",
-			      "bang",
-			      "bang",
-			      "bang",
-			      ""
-			     ],
-			     "patching_rect": [
-			      1120.0,
-			      -15.0,
-			      780.0,
-			      22.0
-			     ],
-			     "text": "sel default small_variation medium_variation large_variation choir_musical supermetroid opera_musical"
-			    }
-			   },
+		     "numoutlets": 9,
+				     "outlettype": [
+				      "bang",
+				      "bang",
+				      "bang",
+				      "bang",
+				      "bang",
+				      "bang",
+				      "bang",
+				      "bang",
+				      ""
+				     ],
+				     "patching_rect": [
+				      1120.0,
+				      -15.0,
+				      930.0,
+				      22.0
+				     ],
+				     "text": "sel default small_variation medium_variation large_variation choir_musical supermetroid opera_musical n64_cleaner"
+				    }
+				   },
    {
     "box": {
      "id": "gen-preset-default-msg",
@@ -12173,12 +12174,30 @@
 		      340.0,
 		      22.0
 		     ],
-		     "text": "10 2 0 0.38 0 0.92 30 0 0. 0.84 1 0.18 64 1. 2 20260617"
-		    }
-		   },
+			     "text": "10 2 0 0.38 0 0.92 30 0 0. 0.84 1 0.18 64 1. 2 20260617"
+			    }
+			   },
 			   {
-	    "box": {
-			     "id": "gen-preset-unpack",
+			    "box": {
+			     "id": "gen-preset-n64-cleaner-msg",
+			     "maxclass": "message",
+			     "numinlets": 2,
+			     "numoutlets": 1,
+			     "outlettype": [
+			      ""
+			     ],
+			     "patching_rect": [
+			      2720.0,
+			      35.0,
+			      360.0,
+			      22.0
+			     ],
+			     "text": "13 2 0 0.1 0 0.92 48 0 0. 0.9 1 0.12 64 1. 2 20260617"
+			    }
+			   },
+				   {
+		    "box": {
+				     "id": "gen-preset-unpack",
 		     "maxclass": "newobj",
 		     "numinlets": 1,
 		     "numoutlets": 16,
@@ -18882,25 +18901,49 @@
 			      "gen-preset-opera-musical-msg",
 			      0
 			     ]
-			    }
-			   },
-			   {
-			    "patchline": {
-			     "source": [
-			      "gen-preset-opera-musical-msg",
-			      0
-			     ],
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "gen-preset-route",
+				      7
+				     ],
+				     "destination": [
+				      "gen-preset-n64-cleaner-msg",
+				      0
+				     ]
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "gen-preset-opera-musical-msg",
+				      0
+				     ],
 			     "destination": [
 			      "gen-preset-unpack",
 			      0
 			     ]
-			    }
-			   },
-			   {
-			    "patchline": {
-			     "source": [
-			      "gen-preset-default-msg",
-      0
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "gen-preset-n64-cleaner-msg",
+				      0
+				     ],
+				     "destination": [
+				      "gen-preset-unpack",
+				      0
+				     ]
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "gen-preset-default-msg",
+	      0
      ],
      "destination": [
       "gen-preset-unpack",

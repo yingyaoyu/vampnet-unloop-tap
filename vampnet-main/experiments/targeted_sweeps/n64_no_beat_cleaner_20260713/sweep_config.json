@@ -1,0 +1,28 @@
+{
+  "device": "mps",
+  "input_path": "/Users/yingyao/Downloads/VampNet/vampnet-main/experiments/Dry #15_1 10s.wav",
+  "notes": "Beat tracker disabled: beat_mask_ms=0. Onset mask disabled: onset_mask_width=0. Cleaner pass uses lower dropout/temp and higher sample_cutoff/sampling_steps.",
+  "output_root": "experiments/targeted_sweeps/n64_no_beat_cleaner_20260713",
+  "params": {
+    "batch_size": 1,
+    "beat_mask_ms": 0,
+    "compression": 2,
+    "dropout": 0.1,
+    "model_choice": "n64",
+    "n_mask_codebooks": 2,
+    "num_feedback_steps": 2,
+    "onset_mask_width": 0,
+    "periodic_p": 13,
+    "pitch_shift_amt": 0,
+    "sample_cutoff": 0.9,
+    "sampletemp": 0.92,
+    "sampling_steps": 48,
+    "seed": 20260617,
+    "stretch_factor": 1,
+    "top_p": 0.0,
+    "typical_filtering": true,
+    "typical_mass": 0.12,
+    "typical_min_tokens": 64
+  },
+  "sweep_mode": "single_n64_no_beat_cleaner_recommendation"
+}

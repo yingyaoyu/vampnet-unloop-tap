@@ -1700,10 +1700,12 @@
 	      ",",
 	      "large_variation",
 	      ",",
-	      "choir_musical",
-	      ",",
-	      "opera_musical"
-	     ],
+		      "choir_musical",
+		      ",",
+		      "opera_musical",
+		      ",",
+		      "n64_cleaner"
+		     ],
      "maxclass": "umenu",
      "numinlets": 1,
      "numoutlets": 3,
