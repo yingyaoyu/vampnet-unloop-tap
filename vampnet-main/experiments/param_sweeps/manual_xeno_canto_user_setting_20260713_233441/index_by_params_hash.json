@@ -1,0 +1,33 @@
+{
+  "039614f501a2": {
+    "output_1_path": "experiments/param_sweeps/manual_xeno_canto_user_setting_20260713_233441/runs/manual/001_xeno_canto_user_setting_039614f501a2/output_1.wav",
+    "output_2_path": "experiments/param_sweeps/manual_xeno_canto_user_setting_20260713_233441/runs/manual/001_xeno_canto_user_setting_039614f501a2/output_2.wav",
+    "output_paths": [
+      "experiments/param_sweeps/manual_xeno_canto_user_setting_20260713_233441/runs/manual/001_xeno_canto_user_setting_039614f501a2/output_1.wav",
+      "experiments/param_sweeps/manual_xeno_canto_user_setting_20260713_233441/runs/manual/001_xeno_canto_user_setting_039614f501a2/output_2.wav"
+    ],
+    "params": {
+      "batch_size": 2,
+      "beat_mask_ms": 0,
+      "dropout": 0.1,
+      "model_choice": "xeno-canto",
+      "n_mask_codebooks": 2,
+      "num_feedback_steps": 2,
+      "onset_mask_width": 0,
+      "periodic_p": 13,
+      "pitch_shift_amt": 0,
+      "sample_cutoff": 0.9,
+      "sampletemp": 0.92,
+      "sampling_steps": 48,
+      "seed": 20260617,
+      "stretch_factor": 1,
+      "top_p": 0.0,
+      "typical_filtering": true,
+      "typical_mass": 0.12,
+      "typical_min_tokens": 64
+    },
+    "run_dir": "experiments/param_sweeps/manual_xeno_canto_user_setting_20260713_233441/runs/manual/001_xeno_canto_user_setting_039614f501a2",
+    "run_id": "001_xeno_canto_user_setting_039614f501a2",
+    "status": "ok"
+  }
+}

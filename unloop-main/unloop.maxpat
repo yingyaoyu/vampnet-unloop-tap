@@ -1704,8 +1704,10 @@
 		      ",",
 		      "opera_musical",
 		      ",",
-		      "n64_cleaner"
-		     ],
+			      "n64_cleaner",
+			      ",",
+			      "xeno_canto_musical"
+			     ],
      "maxclass": "umenu",
      "numinlets": 1,
      "numoutlets": 3,

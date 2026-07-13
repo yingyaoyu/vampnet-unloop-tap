@@ -5499,10 +5499,10 @@
 		     "text": "default"
 		    }
 		   },
-		   {
-		    "box": {
-		     "id": "opera-musical-preset-on-msg",
-		     "maxclass": "message",
+			   {
+			    "box": {
+			     "id": "opera-musical-preset-on-msg",
+			     "maxclass": "message",
 		     "numinlets": 2,
 		     "numoutlets": 1,
 		     "outlettype": [
@@ -5514,12 +5514,134 @@
 		      110.0,
 		      22.0
 		     ],
-		     "text": "opera_musical"
-		    }
-		   },
-		   {
-		    "box": {
-		     "id": "obj-127",
+			     "text": "opera_musical"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "xeno-canto-preset-toggle",
+			     "maxclass": "toggle",
+			     "numinlets": 1,
+			     "numoutlets": 1,
+			     "outlettype": [
+			      "int"
+			     ],
+			     "parameter_enable": 0,
+			     "patching_rect": [
+			      3432.275962462059,
+			      1320.5619840679856,
+			      24.0,
+			      24.0
+			     ],
+			     "presentation": 1,
+			     "presentation_rect": [
+			      373.3665141701189,
+			      508.0,
+			      24.0,
+			      24.0
+			     ],
+			     "varname": "xeno-canto-preset-toggle"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "xeno-canto-preset-label",
+			     "maxclass": "comment",
+			     "numinlets": 1,
+			     "numoutlets": 0,
+			     "patching_rect": [
+			      3465.0,
+			      1322.5619840679856,
+			      130.0,
+			      20.0
+			     ],
+			     "presentation": 1,
+			     "presentation_rect": [
+			      404.0,
+			      510.0,
+			      130.0,
+			      20.0
+			     ],
+			     "text": "xeno-canto preset"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "xeno-canto-preset-sel",
+			     "maxclass": "newobj",
+			     "numinlets": 1,
+			     "numoutlets": 3,
+			     "outlettype": [
+			      "bang",
+			      "bang",
+			      ""
+			     ],
+			     "patching_rect": [
+			      3432.275962462059,
+			      1360.5619840679856,
+			      53.0,
+			      22.0
+			     ],
+			     "text": "sel 0 1"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "xeno-canto-preset-off-msg",
+			     "maxclass": "message",
+			     "numinlets": 2,
+			     "numoutlets": 1,
+			     "outlettype": [
+			      ""
+			     ],
+			     "patching_rect": [
+			      3405.0,
+			      1400.5619840679856,
+			      58.0,
+			      22.0
+			     ],
+			     "text": "default"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "xeno-canto-preset-on-msg",
+			     "maxclass": "message",
+			     "numinlets": 2,
+			     "numoutlets": 1,
+			     "outlettype": [
+			      ""
+			     ],
+			     "patching_rect": [
+			      3475.0,
+			      1400.5619840679856,
+			      130.0,
+			      22.0
+			     ],
+			     "text": "xeno_canto_musical"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "xeno-canto-model-msg",
+			     "maxclass": "message",
+			     "numinlets": 2,
+			     "numoutlets": 1,
+			     "outlettype": [
+			      ""
+			     ],
+			     "patching_rect": [
+			      3620.0,
+			      1400.5619840679856,
+			      90.0,
+			      22.0
+			     ],
+			     "text": "xeno-canto"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "obj-127",
 		     "maxclass": "newobj",
      "numinlets": 1,
      "numoutlets": 1,
@@ -12030,27 +12152,28 @@
 	     "id": "gen-preset-route",
 	     "maxclass": "newobj",
 	     "numinlets": 1,
-		     "numoutlets": 9,
-				     "outlettype": [
-				      "bang",
-				      "bang",
-				      "bang",
-				      "bang",
-				      "bang",
-				      "bang",
-				      "bang",
-				      "bang",
-				      ""
-				     ],
-				     "patching_rect": [
-				      1120.0,
-				      -15.0,
-				      930.0,
-				      22.0
-				     ],
-				     "text": "sel default small_variation medium_variation large_variation choir_musical supermetroid opera_musical n64_cleaner"
-				    }
-				   },
+			     "numoutlets": 10,
+					     "outlettype": [
+					      "bang",
+					      "bang",
+					      "bang",
+					      "bang",
+					      "bang",
+					      "bang",
+					      "bang",
+					      "bang",
+					      "bang",
+					      ""
+					     ],
+					     "patching_rect": [
+					      1120.0,
+					      -15.0,
+					      1100.0,
+					      22.0
+					     ],
+					     "text": "sel default small_variation medium_variation large_variation choir_musical supermetroid opera_musical n64_cleaner xeno_canto_musical"
+					    }
+					   },
    {
     "box": {
      "id": "gen-preset-default-msg",
@@ -12156,11 +12279,29 @@
 		      340.0,
 		      22.0
 		     ],
-			     "text": "13 2 0 0.1 0 0.92 48 0 0. 0.9 1 0.12 64 1. 2 20260617"
-		    }
-		   },
-		   {
-		    "box": {
+				     "text": "13 2 0 0.1 0 0.92 48 0 0. 0.9 1 0.12 64 1. 2 20260617"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "gen-preset-xeno-canto-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3100.0,
+				      35.0,
+				      380.0,
+				      22.0
+				     ],
+				     "text": "13 2 0 0.1 0 0.92 48 0 0. 0.9 1 0.12 64 1. 2 20260617"
+				    }
+				   },
+					   {
+			    "box": {
 		     "id": "gen-preset-opera-musical-msg",
 		     "maxclass": "message",
 		     "numinlets": 2,
@@ -18903,22 +19044,142 @@
 			     ]
 				    }
 				   },
-				   {
-				    "patchline": {
-				     "source": [
-				      "gen-preset-route",
-				      7
+					   {
+					    "patchline": {
+					     "source": [
+					      "gen-preset-route",
+					      7
 				     ],
 				     "destination": [
 				      "gen-preset-n64-cleaner-msg",
 				      0
-				     ]
-				    }
-				   },
-				   {
-				    "patchline": {
-				     "source": [
-				      "gen-preset-opera-musical-msg",
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-preset-toggle",
+					      0
+					     ],
+					     "destination": [
+					      "xeno-canto-preset-sel",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-preset-sel",
+					      0
+					     ],
+					     "destination": [
+					      "xeno-canto-preset-off-msg",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-preset-sel",
+					      1
+					     ],
+					     "destination": [
+					      "xeno-canto-preset-on-msg",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-preset-sel",
+					      1
+					     ],
+					     "destination": [
+					      "xeno-canto-model-msg",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-preset-off-msg",
+					      0
+					     ],
+					     "destination": [
+					      "gen-preset-route",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-preset-on-msg",
+					      0
+					     ],
+					     "destination": [
+					      "gen-preset-route",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-model-msg",
+					      0
+					     ],
+					     "destination": [
+					      "obj-8",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "xeno-canto-model-msg",
+					      0
+					     ],
+					     "destination": [
+					      "obj-103",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "gen-preset-route",
+					      8
+					     ],
+					     "destination": [
+					      "gen-preset-xeno-canto-msg",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "gen-preset-xeno-canto-msg",
+					      0
+					     ],
+					     "destination": [
+					      "gen-preset-unpack",
+					      0
+					     ]
+					    }
+					   },
+					   {
+					    "patchline": {
+					     "source": [
+					      "gen-preset-opera-musical-msg",
 				      0
 				     ],
 			     "destination": [
