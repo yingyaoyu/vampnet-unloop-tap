@@ -1,0 +1,9 @@
+run_number,candidate,rationale,compression,batch_size,beat_mask_ms,dropout,model_choice,n_mask_codebooks,num_feedback_steps,onset_mask_width,periodic_p,pitch_shift_amt,sample_cutoff,sampletemp,sampling_steps,seed,stretch_factor,top_p,typical_filtering,typical_mass,typical_min_tokens
+1,n64_highsteps_beat101_anchor,"Your liked n64 high sampling-steps result, but beat-tracked to keep tap structure.",3,2,101,0.0,n64,3,1,0,7,0,1.0,1.0,103,20260617,1,0.0,True,0.15,64
+2,n64_othermodels_preset_beat101,General least-similar-but-structured preset adapted to n64 with beat mask.,2,2,101,0.2,n64,2,2,0,13,0,0.72,1.1,25,20260617,1,0.0,True,0.15,64
+3,n64_operaish_beat80,"Opera-style dropout/sample cutoff, but with a narrow beat window for structure.",2,2,80,0.38,n64,2,2,0,10,0,0.84,0.92,30,20260617,1,0.0,True,0.18,64
+4,n64_supermetroidish_octave_beat101,"Supermetroid-style octave jump and top-p, constrained by beat tracker.",2,2,101,0.2,n64,2,2,4,13,12,0.68,0.88,24,20260617,1,0.3,True,0.28,48
+5,n64_dense_arcade_beat120,More prompt codebooks plus moderate top-p for dense chiptune texture on the beat grid.,4,2,120,0.25,n64,4,2,2,13,0,0.72,0.95,48,20260617,1,0.2,True,0.22,64
+6,n64_beatonly_wide160,Mostly beat-only reconstruction with a wide beat window; should preserve pulse but change timbre strongly.,14,2,160,0.1,n64,14,2,0,0,0,0.72,1.0,36,20260617,1,0.0,True,0.15,64
+7,n64_stretch2_beat101_comp1,Time-stretch experiment with one prompt codebook so beat mask still applies.,1,2,101,0.15,n64,1,2,0,13,0,0.72,1.05,36,20260617,2,0.0,True,0.15,64
+8,n64_highsteps_loose_top_p_beat120,High-steps n64 with looser sampling and beat mask; likely more transformed while keeping rhythm.,2,2,120,0.2,n64,2,2,0,13,0,0.76,1.02,103,20260617,1,0.15,True,0.2,64

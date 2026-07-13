@@ -5202,13 +5202,325 @@
       48.0,
       20.0
      ],
-     "text": "model"
-    }
-   },
-   {
-    "box": {
-     "id": "obj-127",
-     "maxclass": "newobj",
+	     "text": "model"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "choir-musical-preset-toggle",
+	     "maxclass": "toggle",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      "int"
+	     ],
+	     "parameter_enable": 0,
+	     "patching_rect": [
+	      3432.275962462059,
+	      930.5619840679856,
+	      24.0,
+	      24.0
+	     ],
+	     "presentation": 1,
+	     "presentation_rect": [
+	      373.3665141701189,
+	      452.0,
+	      24.0,
+	      24.0
+	     ],
+	     "varname": "choir-musical-preset-toggle"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "choir-musical-preset-label",
+	     "maxclass": "comment",
+	     "numinlets": 1,
+	     "numoutlets": 0,
+	     "patching_rect": [
+	      3465.0,
+	      932.5619840679856,
+	      100.0,
+	      20.0
+	     ],
+	     "presentation": 1,
+	     "presentation_rect": [
+	      404.0,
+	      454.0,
+	      110.0,
+	      20.0
+	     ],
+	     "text": "choir preset"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "choir-musical-preset-sel",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 3,
+	     "outlettype": [
+	      "bang",
+	      "bang",
+	      ""
+	     ],
+	     "patching_rect": [
+	      3432.275962462059,
+	      970.5619840679856,
+	      53.0,
+	      22.0
+	     ],
+	     "text": "sel 0 1"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "choir-musical-preset-off-msg",
+	     "maxclass": "message",
+	     "numinlets": 2,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3405.0,
+	      1010.5619840679856,
+	      58.0,
+	      22.0
+	     ],
+	     "text": "default"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "choir-musical-preset-on-msg",
+	     "maxclass": "message",
+	     "numinlets": 2,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3475.0,
+	      1010.5619840679856,
+	      110.0,
+	      22.0
+	     ],
+	     "text": "choir_musical"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "supermetroid-preset-toggle",
+	     "maxclass": "toggle",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      "int"
+	     ],
+	     "parameter_enable": 0,
+	     "patching_rect": [
+	      3432.275962462059,
+	      1060.5619840679856,
+	      24.0,
+	      24.0
+	     ],
+	     "presentation": 1,
+	     "presentation_rect": [
+	      373.3665141701189,
+	      480.0,
+	      24.0,
+	      24.0
+	     ],
+	     "varname": "supermetroid-preset-toggle"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "supermetroid-preset-label",
+	     "maxclass": "comment",
+	     "numinlets": 1,
+	     "numoutlets": 0,
+	     "patching_rect": [
+	      3465.0,
+	      1062.5619840679856,
+	      130.0,
+	      20.0
+	     ],
+	     "presentation": 1,
+	     "presentation_rect": [
+	      404.0,
+	      482.0,
+	      130.0,
+	      20.0
+	     ],
+	     "text": "supermetroid preset"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "supermetroid-preset-sel",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 3,
+	     "outlettype": [
+	      "bang",
+	      "bang",
+	      ""
+	     ],
+	     "patching_rect": [
+	      3432.275962462059,
+	      1100.5619840679856,
+	      53.0,
+	      22.0
+	     ],
+	     "text": "sel 0 1"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "supermetroid-preset-off-msg",
+	     "maxclass": "message",
+	     "numinlets": 2,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3405.0,
+	      1140.5619840679856,
+	      58.0,
+	      22.0
+	     ],
+	     "text": "default"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "supermetroid-preset-on-msg",
+	     "maxclass": "message",
+	     "numinlets": 2,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3475.0,
+	      1140.5619840679856,
+	      110.0,
+	      22.0
+	     ],
+		     "text": "supermetroid"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "opera-musical-preset-toggle",
+		     "maxclass": "toggle",
+		     "numinlets": 1,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      "int"
+		     ],
+		     "parameter_enable": 0,
+		     "patching_rect": [
+		      3432.275962462059,
+		      1190.5619840679856,
+		      24.0,
+		      24.0
+		     ],
+		     "presentation": 1,
+		     "presentation_rect": [
+		      373.3665141701189,
+		      508.0,
+		      24.0,
+		      24.0
+		     ],
+		     "varname": "opera-musical-preset-toggle"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "opera-musical-preset-label",
+		     "maxclass": "comment",
+		     "numinlets": 1,
+		     "numoutlets": 0,
+		     "patching_rect": [
+		      3465.0,
+		      1192.5619840679856,
+		      120.0,
+		      20.0
+		     ],
+		     "presentation": 1,
+		     "presentation_rect": [
+		      404.0,
+		      510.0,
+		      120.0,
+		      20.0
+		     ],
+		     "text": "opera preset"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "opera-musical-preset-sel",
+		     "maxclass": "newobj",
+		     "numinlets": 1,
+		     "numoutlets": 3,
+		     "outlettype": [
+		      "bang",
+		      "bang",
+		      ""
+		     ],
+		     "patching_rect": [
+		      3432.275962462059,
+		      1230.5619840679856,
+		      53.0,
+		      22.0
+		     ],
+		     "text": "sel 0 1"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "opera-musical-preset-off-msg",
+		     "maxclass": "message",
+		     "numinlets": 2,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+		     "patching_rect": [
+		      3405.0,
+		      1270.5619840679856,
+		      58.0,
+		      22.0
+		     ],
+		     "text": "default"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "opera-musical-preset-on-msg",
+		     "maxclass": "message",
+		     "numinlets": 2,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+		     "patching_rect": [
+		      3475.0,
+		      1270.5619840679856,
+		      110.0,
+		      22.0
+		     ],
+		     "text": "opera_musical"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "obj-127",
+		     "maxclass": "newobj",
      "numinlets": 1,
      "numoutlets": 1,
      "outlettype": [
@@ -5807,7 +6119,7 @@
     "box": {
      "id": "obj-24",
      "maxclass": "newobj",
-     "numinlets": 19,
+	     "numinlets": 23,
      "numoutlets": 1,
      "outlettype": [
       ""
@@ -5818,7 +6130,7 @@
       3600.0,
       22.0
      ],
-     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression top_p pitchshift samplecutoff"
+	     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression top_p pitchshift samplecutoff typicalmass typicalmintokens stretchfactor feedbacksteps"
     }
    },
    {
@@ -10668,8 +10980,8 @@
       220.0,
       20.0
      ],
-     "text": "motion DSP controls",
-     "presentation": 1,
+	     "text": "motion input gain",
+	     "presentation": 1,
      "presentation_rect": [
       310.0,
       292.0,
@@ -10702,7 +11014,7 @@
       47.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 1,
      "presentation_rect": [
       310.0,
       316.0,
@@ -10772,7 +11084,7 @@
       47.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 0,
      "presentation_rect": [
       360.0,
       316.0,
@@ -10842,7 +11154,7 @@
       47.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 0,
      "presentation_rect": [
       410.0,
       316.0,
@@ -10912,7 +11224,7 @@
       47.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 0,
      "presentation_rect": [
       460.0,
       316.0,
@@ -11412,31 +11724,332 @@
       90.0,
       22.0
      ],
-     "text": "loadmess 1."
-    }
-   },
-   {
-    "box": {
-     "id": "gen-preset-route",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 5,
-     "outlettype": [
-      "bang",
-      "bang",
-      "bang",
-      "bang",
-      ""
-     ],
-     "patching_rect": [
-      1120.0,
-      -15.0,
-      420.0,
-      22.0
-     ],
-     "text": "sel default small_variation medium_variation large_variation"
-    }
-   },
+	     "text": "loadmess 1."
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-mass-number",
+	     "maxclass": "flonum",
+	     "numinlets": 1,
+	     "numoutlets": 2,
+	     "outlettype": [
+	      "",
+	      "bang"
+	     ],
+	     "parameter_enable": 0,
+	     "patching_rect": [
+	      3380.0,
+	      815.0,
+	      60.0,
+	      22.0
+	     ]
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-mass-prepend",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3380.0,
+	      910.0,
+	      150.0,
+	      22.0
+	     ],
+	     "text": "prepend --typical_mass"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-mass-symbol",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3380.0,
+	      965.0,
+	      80.0,
+	      22.0
+	     ],
+	     "text": "tosymbol"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-mass-load",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3380.0,
+	      760.0,
+	      105.0,
+	      22.0
+	     ],
+	     "text": "loadmess 0.15"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-min-tokens-number",
+	     "maxclass": "number",
+	     "maximum": 256,
+	     "minimum": 1,
+	     "numinlets": 1,
+	     "numoutlets": 2,
+	     "outlettype": [
+	      "",
+	      "bang"
+	     ],
+	     "parameter_enable": 0,
+	     "patching_rect": [
+	      3540.0,
+	      815.0,
+	      60.0,
+	      22.0
+	     ]
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-min-tokens-prepend",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3540.0,
+	      910.0,
+	      190.0,
+	      22.0
+	     ],
+	     "text": "prepend --typical_min_tokens"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-min-tokens-symbol",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3540.0,
+	      965.0,
+	      80.0,
+	      22.0
+	     ],
+	     "text": "tosymbol"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "typical-min-tokens-load",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3540.0,
+	      760.0,
+	      105.0,
+	      22.0
+	     ],
+	     "text": "loadmess 64"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "stretch-factor-number",
+	     "maxclass": "flonum",
+	     "maximum": 8.0,
+	     "minimum": 0.0,
+	     "numinlets": 1,
+	     "numoutlets": 2,
+	     "outlettype": [
+	      "",
+	      "bang"
+	     ],
+	     "parameter_enable": 0,
+	     "patching_rect": [
+	      3740.0,
+	      815.0,
+	      60.0,
+	      22.0
+	     ]
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "stretch-factor-prepend",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3740.0,
+	      910.0,
+	      170.0,
+	      22.0
+	     ],
+	     "text": "prepend --stretch_factor"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "stretch-factor-symbol",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3740.0,
+	      965.0,
+	      80.0,
+	      22.0
+	     ],
+	     "text": "tosymbol"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "stretch-factor-load",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3740.0,
+	      760.0,
+	      105.0,
+	      22.0
+	     ],
+	     "text": "loadmess 1."
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "feedback-steps-number",
+	     "maxclass": "number",
+	     "maximum": 8,
+	     "minimum": 1,
+	     "numinlets": 1,
+	     "numoutlets": 2,
+	     "outlettype": [
+	      "",
+	      "bang"
+	     ],
+	     "parameter_enable": 0,
+	     "patching_rect": [
+	      3920.0,
+	      815.0,
+	      60.0,
+	      22.0
+	     ]
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "feedback-steps-prepend",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3920.0,
+	      910.0,
+	      190.0,
+	      22.0
+	     ],
+	     "text": "prepend --num_feedback_steps"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "feedback-steps-symbol",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3920.0,
+	      965.0,
+	      80.0,
+	      22.0
+	     ],
+	     "text": "tosymbol"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "feedback-steps-load",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      3920.0,
+	      760.0,
+	      105.0,
+	      22.0
+	     ],
+	     "text": "loadmess 1"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "gen-preset-route",
+	     "maxclass": "newobj",
+	     "numinlets": 1,
+		     "numoutlets": 8,
+			     "outlettype": [
+			      "bang",
+			      "bang",
+			      "bang",
+			      "bang",
+			      "bang",
+			      "bang",
+			      "bang",
+			      ""
+			     ],
+			     "patching_rect": [
+			      1120.0,
+			      -15.0,
+			      780.0,
+			      22.0
+			     ],
+			     "text": "sel default small_variation medium_variation large_variation choir_musical supermetroid opera_musical"
+			    }
+			   },
    {
     "box": {
      "id": "gen-preset-default-msg",
@@ -11446,15 +12059,15 @@
      "outlettype": [
       ""
      ],
-     "patching_rect": [
-      1120.0,
-      35.0,
-      100.0,
-      22.0
-     ],
-     "text": "7 3 0 0. 0"
-    }
-   },
+	     "patching_rect": [
+	      1120.0,
+	      35.0,
+	      220.0,
+	      22.0
+	     ],
+		     "text": "7 3 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
+	    }
+	   },
    {
     "box": {
      "id": "gen-preset-small-msg",
@@ -11464,15 +12077,15 @@
      "outlettype": [
       ""
      ],
-     "patching_rect": [
-      1260.0,
-      35.0,
-      100.0,
-      22.0
-     ],
-     "text": "5 4 0 0. 0"
-    }
-   },
+	     "patching_rect": [
+	      1260.0,
+	      35.0,
+	      220.0,
+	      22.0
+	     ],
+		     "text": "5 4 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
+	    }
+	   },
    {
     "box": {
      "id": "gen-preset-medium-msg",
@@ -11482,15 +12095,15 @@
      "outlettype": [
       ""
      ],
-     "patching_rect": [
-      1400.0,
-      35.0,
-      100.0,
-      22.0
-     ],
-     "text": "7 4 0 0. 0"
-    }
-   },
+	     "patching_rect": [
+	      1400.0,
+	      35.0,
+	      220.0,
+	      22.0
+	     ],
+		     "text": "7 4 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
+	    }
+	   },
    {
     "box": {
      "id": "gen-preset-large-msg",
@@ -11500,37 +12113,102 @@
      "outlettype": [
       ""
      ],
-     "patching_rect": [
-      1540.0,
-      35.0,
-      120.0,
-      22.0
-     ],
-     "text": "13 4 0 0.2 0"
-    }
-   },
-   {
-    "box": {
-     "id": "gen-preset-unpack",
-     "maxclass": "newobj",
-     "numinlets": 1,
-     "numoutlets": 5,
-     "outlettype": [
-      "int",
-      "int",
-      "int",
-      "float",
-      "int"
-     ],
-     "patching_rect": [
-      1320.0,
-      95.0,
-      150.0,
-      22.0
-     ],
-     "text": "unpack i i i f i"
-    }
-   }
+	     "patching_rect": [
+	      1540.0,
+	      35.0,
+	      220.0,
+	      22.0
+	     ],
+		     "text": "13 4 0 0.2 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "gen-preset-choir-musical-msg",
+	     "maxclass": "message",
+	     "numinlets": 2,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
+	     "patching_rect": [
+	      1690.0,
+	      35.0,
+	      260.0,
+	      22.0
+	     ],
+		     "text": "13 2 0 0.2 0 1.1 25 0 0. 0.72 0 0.15 64 1. 1 0"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "gen-preset-supermetroid-msg",
+		     "maxclass": "message",
+		     "numinlets": 2,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+		     "patching_rect": [
+		      1980.0,
+		      35.0,
+		      340.0,
+		      22.0
+		     ],
+		     "text": "13 2 4 0.2 0 0.88 24 12 0.3 0.68 1 0.28 48 1. 2 0"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "gen-preset-opera-musical-msg",
+		     "maxclass": "message",
+		     "numinlets": 2,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+		     "patching_rect": [
+		      2350.0,
+		      35.0,
+		      340.0,
+		      22.0
+		     ],
+		     "text": "10 2 0 0.38 0 0.92 30 0 0. 0.84 1 0.18 64 1. 2 20260617"
+		    }
+		   },
+			   {
+	    "box": {
+			     "id": "gen-preset-unpack",
+		     "maxclass": "newobj",
+		     "numinlets": 1,
+		     "numoutlets": 16,
+		     "outlettype": [
+		      "int",
+		      "int",
+		      "int",
+		      "float",
+		      "int",
+		      "float",
+		      "int",
+		      "int",
+		      "float",
+		      "float",
+		      "int",
+		      "float",
+		      "int",
+		      "float",
+		      "int",
+		      "int"
+		     ],
+		     "patching_rect": [
+		      1320.0,
+		      95.0,
+		      500.0,
+		      22.0
+		     ],
+		     "text": "unpack i i i f i f i i f f i f i f i i"
+		    }
+		   }
   ],
   "lines": [
    {
@@ -17414,46 +18092,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-filtercutoff-dial",
-      0
-     ],
-     "destination": [
-      "motion-filtercutoff-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-filterq-dial",
-      0
-     ],
-     "destination": [
-      "motion-filterq-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-drive-dial",
-      0
-     ],
-     "destination": [
-      "motion-drive-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
+	   {
+	    "patchline": {
+	     "source": [
+	      "motion-osc-route-controls",
       8
      ],
      "destination": [
@@ -17462,46 +18104,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
-      9
-     ],
-     "destination": [
-      "motion-filtercutoff-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
-      10
-     ],
-     "destination": [
-      "motion-filterq-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
-      11
-     ],
-     "destination": [
-      "motion-drive-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-controls",
+	   {
+	    "patchline": {
+	     "source": [
+	      "motion-osc-route-controls",
       12
      ],
      "destination": [
@@ -17534,46 +18140,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
-      9
-     ],
-     "destination": [
-      "motion-filtercutoff-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
-      10
-     ],
-     "destination": [
-      "motion-filterq-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
-      11
-     ],
-     "destination": [
-      "motion-drive-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-osc-route-direct",
+	   {
+	    "patchline": {
+	     "source": [
+	      "motion-osc-route-direct",
       12
      ],
      "destination": [
@@ -17792,16 +18362,208 @@
       "sample-cutoff-symbol",
       0
      ],
-     "destination": [
-      "obj-24",
-      18
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "obj-15",
+	     "destination": [
+	      "obj-24",
+	      18
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-mass-load",
+	      0
+	     ],
+	     "destination": [
+	      "typical-mass-number",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-mass-number",
+	      0
+	     ],
+	     "destination": [
+	      "typical-mass-prepend",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-mass-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "typical-mass-symbol",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-mass-symbol",
+	      0
+	     ],
+	     "destination": [
+	      "obj-24",
+	      19
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-min-tokens-load",
+	      0
+	     ],
+	     "destination": [
+	      "typical-min-tokens-number",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-min-tokens-number",
+	      0
+	     ],
+	     "destination": [
+	      "typical-min-tokens-prepend",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-min-tokens-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "typical-min-tokens-symbol",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "typical-min-tokens-symbol",
+	      0
+	     ],
+	     "destination": [
+	      "obj-24",
+	      20
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "stretch-factor-load",
+	      0
+	     ],
+	     "destination": [
+	      "stretch-factor-number",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "stretch-factor-number",
+	      0
+	     ],
+	     "destination": [
+	      "stretch-factor-prepend",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "stretch-factor-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "stretch-factor-symbol",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "stretch-factor-symbol",
+	      0
+	     ],
+	     "destination": [
+	      "obj-24",
+	      21
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "feedback-steps-load",
+	      0
+	     ],
+	     "destination": [
+	      "feedback-steps-number",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "feedback-steps-number",
+	      0
+	     ],
+	     "destination": [
+	      "feedback-steps-prepend",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "feedback-steps-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "feedback-steps-symbol",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "feedback-steps-symbol",
+	      0
+	     ],
+	     "destination": [
+	      "obj-24",
+	      22
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "obj-15",
       10
      ],
      "destination": [
@@ -17846,11 +18608,11 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "obj-15",
-      14
+	   {
+	    "patchline": {
+	     "source": [
+	      "obj-15",
+	      14
      ],
      "destination": [
       "gen-preset-route",
@@ -17894,22 +18656,250 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-route",
-      3
-     ],
-     "destination": [
-      "gen-preset-large-msg",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-default-msg",
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-route",
+	      3
+	     ],
+	     "destination": [
+	      "gen-preset-large-msg",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "choir-musical-preset-toggle",
+	      0
+	     ],
+	     "destination": [
+	      "choir-musical-preset-sel",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "choir-musical-preset-sel",
+	      0
+	     ],
+	     "destination": [
+	      "choir-musical-preset-off-msg",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "choir-musical-preset-sel",
+	      1
+	     ],
+	     "destination": [
+	      "choir-musical-preset-on-msg",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "choir-musical-preset-off-msg",
+	      0
+	     ],
+	     "destination": [
+	      "gen-preset-route",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "choir-musical-preset-on-msg",
+	      0
+	     ],
+	     "destination": [
+	      "gen-preset-route",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-route",
+	      4
+	     ],
+		     "destination": [
+		      "gen-preset-choir-musical-msg",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "supermetroid-preset-toggle",
+		      0
+		     ],
+		     "destination": [
+		      "supermetroid-preset-sel",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "supermetroid-preset-sel",
+		      0
+		     ],
+		     "destination": [
+		      "supermetroid-preset-off-msg",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "supermetroid-preset-sel",
+		      1
+		     ],
+		     "destination": [
+		      "supermetroid-preset-on-msg",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "supermetroid-preset-off-msg",
+		      0
+		     ],
+		     "destination": [
+		      "gen-preset-route",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "supermetroid-preset-on-msg",
+		      0
+		     ],
+		     "destination": [
+		      "gen-preset-route",
+		      0
+		     ]
+		    }
+		   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "gen-preset-route",
+			      5
+		     ],
+		     "destination": [
+		      "gen-preset-supermetroid-msg",
+		      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "opera-musical-preset-toggle",
+			      0
+			     ],
+			     "destination": [
+			      "opera-musical-preset-sel",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "opera-musical-preset-sel",
+			      0
+			     ],
+			     "destination": [
+			      "opera-musical-preset-off-msg",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "opera-musical-preset-sel",
+			      1
+			     ],
+			     "destination": [
+			      "opera-musical-preset-on-msg",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "opera-musical-preset-off-msg",
+			      0
+			     ],
+			     "destination": [
+			      "gen-preset-route",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "opera-musical-preset-on-msg",
+			      0
+			     ],
+			     "destination": [
+			      "gen-preset-route",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "gen-preset-route",
+			      6
+			     ],
+			     "destination": [
+			      "gen-preset-opera-musical-msg",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "gen-preset-opera-musical-msg",
+			      0
+			     ],
+			     "destination": [
+			      "gen-preset-unpack",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "gen-preset-default-msg",
       0
      ],
      "destination": [
@@ -17942,22 +18932,46 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-large-msg",
-      0
-     ],
-     "destination": [
-      "gen-preset-unpack",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-unpack",
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-large-msg",
+	      0
+	     ],
+	     "destination": [
+	      "gen-preset-unpack",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-choir-musical-msg",
+	      0
+	     ],
+		     "destination": [
+		      "gen-preset-unpack",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "gen-preset-supermetroid-msg",
+		      0
+		     ],
+		     "destination": [
+		      "gen-preset-unpack",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "gen-preset-unpack",
       0
      ],
      "destination": [
@@ -18002,19 +19016,151 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-unpack",
-      4
-     ],
-     "destination": [
-      "obj-69",
-      0
-     ]
-    }
-   }
-  ],
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-unpack",
+	      4
+	     ],
+	     "destination": [
+	      "obj-69",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-unpack",
+	      5
+	     ],
+	     "destination": [
+	      "obj-62",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-unpack",
+	      6
+	     ],
+	     "destination": [
+	      "obj-70",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-unpack",
+	      7
+	     ],
+	     "destination": [
+	      "pitch-shift-dial",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-unpack",
+	      8
+	     ],
+	     "destination": [
+	      "top-p-dial",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-unpack",
+	      9
+	     ],
+		     "destination": [
+		      "sample-cutoff-dial",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "gen-preset-unpack",
+		      10
+		     ],
+		     "destination": [
+		      "obj-129",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "gen-preset-unpack",
+		      11
+		     ],
+		     "destination": [
+		      "typical-mass-number",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "gen-preset-unpack",
+		      12
+		     ],
+		     "destination": [
+		      "typical-min-tokens-number",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "gen-preset-unpack",
+		      13
+		     ],
+		     "destination": [
+		      "stretch-factor-number",
+		      0
+		     ]
+		    }
+		   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "gen-preset-unpack",
+			      14
+		     ],
+		     "destination": [
+		      "feedback-steps-number",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "gen-preset-unpack",
+			      15
+			     ],
+			     "destination": [
+			      "obj-372",
+			      0
+			     ]
+			    }
+			   }
+			  ],
   "originid": "pat-237",
   "styles": [
    {

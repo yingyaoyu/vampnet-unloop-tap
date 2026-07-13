@@ -32,6 +32,10 @@ def vamp(
     top_p: float = 0.0,
     pitch_shift_amt: int = 0,
     sample_cutoff: float = 1.0,
+    typical_mass: float = 0.15,
+    typical_min_tokens: int = 64,
+    stretch_factor: float = 1.0,
+    num_feedback_steps: int = 1,
     seed: int = 0,
 ):
     _emit_status("STARTING")
@@ -68,11 +72,11 @@ def vamp(
             top_p=top_p,
             periodic_p=periodic_hint_freq,
             dropout=dropout,
-            stretch_factor=1.0,
+            stretch_factor=stretch_factor,
             onset_mask_width=onset_mask_width,
             typical_filtering=bool(typical_filter),
-            typical_mass=0.15,
-            typical_min_tokens=64,
+            typical_mass=typical_mass,
+            typical_min_tokens=typical_min_tokens,
             seed=seed,
             model_choice=checkpoint_name,
             n_mask_codebooks=n_mask_codebooks,
@@ -80,7 +84,7 @@ def vamp(
             sample_cutoff=sample_cutoff,
             sampling_steps=num_steps,
             beat_mask_ms=beat_mask_ms,
-            num_feedback_steps=1,
+            num_feedback_steps=num_feedback_steps,
             api_name="/vamp_1",
         )
 

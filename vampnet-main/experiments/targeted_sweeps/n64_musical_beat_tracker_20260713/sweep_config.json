@@ -1,0 +1,203 @@
+{
+  "base_params": {
+    "batch_size": 2,
+    "beat_mask_ms": 0,
+    "dropout": 0.0,
+    "model_choice": "n64",
+    "n_mask_codebooks": 3,
+    "num_feedback_steps": 1,
+    "onset_mask_width": 0,
+    "periodic_p": 7,
+    "pitch_shift_amt": 0,
+    "sample_cutoff": 1.0,
+    "sampletemp": 1.0,
+    "sampling_steps": 36,
+    "seed": 20260617,
+    "stretch_factor": 1,
+    "top_p": 0.0,
+    "typical_filtering": true,
+    "typical_mass": 0.15,
+    "typical_min_tokens": 64
+  },
+  "candidates": [
+    {
+      "name": "n64_highsteps_beat101_anchor",
+      "overrides": {
+        "beat_mask_ms": 101,
+        "dropout": 0.0,
+        "n_mask_codebooks": 3,
+        "num_feedback_steps": 1,
+        "onset_mask_width": 0,
+        "periodic_p": 7,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 1.0,
+        "sampletemp": 1.0,
+        "sampling_steps": 103,
+        "stretch_factor": 1,
+        "top_p": 0.0,
+        "typical_filtering": true,
+        "typical_mass": 0.15,
+        "typical_min_tokens": 64
+      },
+      "rationale": "Your liked n64 high sampling-steps result, but beat-tracked to keep tap structure."
+    },
+    {
+      "name": "n64_othermodels_preset_beat101",
+      "overrides": {
+        "beat_mask_ms": 101,
+        "dropout": 0.2,
+        "n_mask_codebooks": 2,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 0,
+        "periodic_p": 13,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 0.72,
+        "sampletemp": 1.1,
+        "sampling_steps": 25,
+        "stretch_factor": 1,
+        "top_p": 0.0,
+        "typical_filtering": true,
+        "typical_mass": 0.15,
+        "typical_min_tokens": 64
+      },
+      "rationale": "General least-similar-but-structured preset adapted to n64 with beat mask."
+    },
+    {
+      "name": "n64_operaish_beat80",
+      "overrides": {
+        "beat_mask_ms": 80,
+        "dropout": 0.38,
+        "n_mask_codebooks": 2,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 0,
+        "periodic_p": 10,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 0.84,
+        "sampletemp": 0.92,
+        "sampling_steps": 30,
+        "stretch_factor": 1,
+        "top_p": 0.0,
+        "typical_filtering": true,
+        "typical_mass": 0.18,
+        "typical_min_tokens": 64
+      },
+      "rationale": "Opera-style dropout/sample cutoff, but with a narrow beat window for structure."
+    },
+    {
+      "name": "n64_supermetroidish_octave_beat101",
+      "overrides": {
+        "beat_mask_ms": 101,
+        "dropout": 0.2,
+        "n_mask_codebooks": 2,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 4,
+        "periodic_p": 13,
+        "pitch_shift_amt": 12,
+        "sample_cutoff": 0.68,
+        "sampletemp": 0.88,
+        "sampling_steps": 24,
+        "stretch_factor": 1,
+        "top_p": 0.3,
+        "typical_filtering": true,
+        "typical_mass": 0.28,
+        "typical_min_tokens": 48
+      },
+      "rationale": "Supermetroid-style octave jump and top-p, constrained by beat tracker."
+    },
+    {
+      "name": "n64_dense_arcade_beat120",
+      "overrides": {
+        "beat_mask_ms": 120,
+        "dropout": 0.25,
+        "n_mask_codebooks": 4,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 2,
+        "periodic_p": 13,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 0.72,
+        "sampletemp": 0.95,
+        "sampling_steps": 48,
+        "stretch_factor": 1,
+        "top_p": 0.2,
+        "typical_filtering": true,
+        "typical_mass": 0.22,
+        "typical_min_tokens": 64
+      },
+      "rationale": "More prompt codebooks plus moderate top-p for dense chiptune texture on the beat grid."
+    },
+    {
+      "name": "n64_beatonly_wide160",
+      "overrides": {
+        "beat_mask_ms": 160,
+        "dropout": 0.1,
+        "n_mask_codebooks": 14,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 0,
+        "periodic_p": 0,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 0.72,
+        "sampletemp": 1.0,
+        "sampling_steps": 36,
+        "stretch_factor": 1,
+        "top_p": 0.0,
+        "typical_filtering": true,
+        "typical_mass": 0.15,
+        "typical_min_tokens": 64
+      },
+      "rationale": "Mostly beat-only reconstruction with a wide beat window; should preserve pulse but change timbre strongly."
+    },
+    {
+      "name": "n64_stretch2_beat101_comp1",
+      "overrides": {
+        "beat_mask_ms": 101,
+        "dropout": 0.15,
+        "n_mask_codebooks": 1,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 0,
+        "periodic_p": 13,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 0.72,
+        "sampletemp": 1.05,
+        "sampling_steps": 36,
+        "stretch_factor": 2,
+        "top_p": 0.0,
+        "typical_filtering": true,
+        "typical_mass": 0.15,
+        "typical_min_tokens": 64
+      },
+      "rationale": "Time-stretch experiment with one prompt codebook so beat mask still applies."
+    },
+    {
+      "name": "n64_highsteps_loose_top_p_beat120",
+      "overrides": {
+        "beat_mask_ms": 120,
+        "dropout": 0.2,
+        "n_mask_codebooks": 2,
+        "num_feedback_steps": 2,
+        "onset_mask_width": 0,
+        "periodic_p": 13,
+        "pitch_shift_amt": 0,
+        "sample_cutoff": 0.76,
+        "sampletemp": 1.02,
+        "sampling_steps": 103,
+        "stretch_factor": 1,
+        "top_p": 0.15,
+        "typical_filtering": true,
+        "typical_mass": 0.2,
+        "typical_min_tokens": 64
+      },
+      "rationale": "High-steps n64 with looser sampling and beat mask; likely more transformed while keeping rhythm."
+    }
+  ],
+  "copied_input_path": "experiments/targeted_sweeps/n64_musical_beat_tracker_20260713/input/Dry #15_1 10s.wav",
+  "device": "mps",
+  "input_path": "/Users/yingyao/Downloads/VampNet/vampnet-main/experiments/Dry #15_1 10s.wav",
+  "model_choice": "n64",
+  "notes": [
+    "compression is stored as n_mask_codebooks in code/artifacts.",
+    "Beat tracker is active whenever beat_mask_ms > 0.",
+    "compression=0 is intentionally avoided for beat-tracker cases because codebook_mask(0) masks all codebooks and erases the beat-mask constraint."
+  ],
+  "output_root": "experiments/targeted_sweeps/n64_musical_beat_tracker_20260713",
+  "sweep_mode": "n64_musical_beat_tracker_listening_pack"
+}

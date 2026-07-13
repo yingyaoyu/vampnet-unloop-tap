@@ -158,7 +158,8 @@ def low_mid_high(spec: dict[str, Any]) -> list[tuple[str, Any]]:
     ]
 
 
-def build_sweep() -> list[dict[str, Any]]:
+def build_sweep(excluded_params: set[str] | None = None) -> list[dict[str, Any]]:
+    excluded_params = excluded_params or set()
     runs: list[dict[str, Any]] = [
         {
             "sweep_param": "baseline",
@@ -168,6 +169,8 @@ def build_sweep() -> list[dict[str, Any]]:
         }
     ]
     for spec in PARAM_SPECS:
+        if spec["name"] in excluded_params or spec["key"] in excluded_params:
+            continue
         kind = spec["kind"]
         if kind == "preset":
             for label, overrides in PRESETS.items():
@@ -536,6 +539,12 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=None, help="Override generated outputs per run.")
     parser.add_argument("--sampling-steps", type=int, default=None, help="Override baseline sampling steps.")
     parser.add_argument(
+        "--exclude-param",
+        action="append",
+        default=[],
+        help="Skip a sweep parameter by name or key. Can be passed multiple times.",
+    )
+    parser.add_argument(
         "--chunk-seconds",
         type=float,
         default=None,
@@ -572,6 +581,7 @@ def main() -> None:
     if args.chunk_seconds is not None:
         base_params["chunk_seconds"] = args.chunk_seconds
         base_params["crossfade_seconds"] = args.crossfade_seconds
+    excluded_params = set(args.exclude_param)
 
     dump_json(
         output_root / "sweep_config.json",
@@ -581,7 +591,11 @@ def main() -> None:
             "output_root": str(output_root),
             "device": device,
             "base_params": base_params,
-            "param_specs": PARAM_SPECS,
+            "param_specs": [
+                spec for spec in PARAM_SPECS
+                if spec["name"] not in excluded_params and spec["key"] not in excluded_params
+            ],
+            "excluded_params": sorted(excluded_params),
             "presets": PRESETS,
             "sweep_mode": "one_parameter_at_a_time",
             "chunking": {
@@ -599,7 +613,7 @@ def main() -> None:
         interface.load_finetuned(args.model_choice)
     interface.to(device)
 
-    sweep_runs = build_sweep()
+    sweep_runs = build_sweep(excluded_params)
     if args.limit is not None:
         sweep_runs = sweep_runs[: args.limit]
 

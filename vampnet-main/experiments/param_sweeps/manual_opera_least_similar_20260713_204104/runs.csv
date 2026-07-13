@@ -1,0 +1,2 @@
+batch_size,beat_mask_ms,chunk_count,dropout,join_method,model_choice,n_mask_codebooks,num_feedback_steps,num_outputs,onset_mask_width,periodic_p,pitch_shift_amt,run_id,run_number,sample_cutoff,sampletemp,sampling_steps,status,stretch_factor,sweep_label,sweep_param,sweep_value,top_p,typical_filtering,typical_mass,typical_min_tokens
+1,0,1,0.38,direct,opera,2,2,1,0,13,0,001_alien_aria_sparse_anchor_798cc5209739,1,0.84,0.92,30,ok,1,alien_aria_sparse_anchor,manual,least_similar_musical,0.0,True,0.18,64

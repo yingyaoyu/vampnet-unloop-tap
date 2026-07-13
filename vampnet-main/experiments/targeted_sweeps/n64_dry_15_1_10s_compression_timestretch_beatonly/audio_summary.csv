@@ -1,0 +1,13 @@
+file,duration_s,sample_rate,channels,frames,peak_abs,rms_dbfs,nonfinite_samples
+001_compression_compare_comp0_stretch1_2761ef6466a7_output1.wav,9.927,44100,1,437760,0.468842,-23.629,0
+001_compression_compare_comp0_stretch1_2761ef6466a7_output2.wav,9.927,44100,1,437760,0.50943,-24.916,0
+002_compression_compare_comp14_stretch1_1f4483f5df19_output1.wav,9.927,44100,1,437760,0.990021,-29.479,0
+002_compression_compare_comp14_stretch1_1f4483f5df19_output2.wav,9.927,44100,1,437760,0.990021,-27.581,0
+003_compression0_timestretch_comp0_stretch2_2ea6b0bcf391_output1.wav,19.853,44100,1,875520,0.494354,-23.752,0
+003_compression0_timestretch_comp0_stretch2_2ea6b0bcf391_output2.wav,19.853,44100,1,875520,0.643433,-26.623,0
+004_compression0_timestretch_comp0_stretch4_0c5fb756fb8c_output1.wav,39.706,44100,1,1751040,0.551697,-23.736,0
+004_compression0_timestretch_comp0_stretch4_0c5fb756fb8c_output2.wav,39.706,44100,1,1751040,0.766937,-26.42,0
+005_compression0_timestretch_comp0_stretch6_46257b515453_output1.wav,59.559,44100,1,2626560,0.537842,-23.695,0
+005_compression0_timestretch_comp0_stretch6_46257b515453_output2.wav,59.559,44100,1,2626560,0.788879,-26.526,0
+006_beat_only_mask_beatonly_100ms_85650cb55dbf_output1.wav,9.927,44100,1,437760,0.98999,-26.99,0
+006_beat_only_mask_beatonly_100ms_85650cb55dbf_output2.wav,9.927,44100,1,437760,0.98999,-27.358,0

@@ -1,0 +1,41 @@
+[
+  {
+    "batch_size": 1,
+    "beat_mask_ms": 0,
+    "chunk_count": 1,
+    "copied_input_path": "experiments/param_sweeps/manual_opera_least_similar_20260713_204104/input/Dry#15_1_test_12s.wav",
+    "dropout": 0.38,
+    "elapsed_s": 187.126,
+    "input_path": "/Users/yingyao/Downloads/Dry#15_1_test_12s.wav",
+    "join_method": "direct",
+    "mask_path": "experiments/param_sweeps/manual_opera_least_similar_20260713_204104/runs/manual/001_alien_aria_sparse_anchor_798cc5209739/mask.png",
+    "model_choice": "opera",
+    "n_mask_codebooks": 2,
+    "num_feedback_steps": 2,
+    "num_outputs": 1,
+    "onset_mask_width": 0,
+    "output_1_path": "experiments/param_sweeps/manual_opera_least_similar_20260713_204104/runs/manual/001_alien_aria_sparse_anchor_798cc5209739/output_1.wav",
+    "output_paths": [
+      "experiments/param_sweeps/manual_opera_least_similar_20260713_204104/runs/manual/001_alien_aria_sparse_anchor_798cc5209739/output_1.wav"
+    ],
+    "params_hash": "798cc5209739",
+    "periodic_p": 13,
+    "pitch_shift_amt": 0,
+    "run_dir": "experiments/param_sweeps/manual_opera_least_similar_20260713_204104/runs/manual/001_alien_aria_sparse_anchor_798cc5209739",
+    "run_id": "001_alien_aria_sparse_anchor_798cc5209739",
+    "run_number": 1,
+    "sample_cutoff": 0.84,
+    "sampletemp": 0.92,
+    "sampling_steps": 30,
+    "seed": 20260617,
+    "status": "ok",
+    "stretch_factor": 1,
+    "sweep_label": "alien_aria_sparse_anchor",
+    "sweep_param": "manual",
+    "sweep_value": "least_similar_musical",
+    "top_p": 0.0,
+    "typical_filtering": true,
+    "typical_mass": 0.18,
+    "typical_min_tokens": 64
+  }
+]

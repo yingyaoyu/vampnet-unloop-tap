@@ -14,8 +14,9 @@ Webcam
 The controller extracts three gesture features:
 
 - **Arm height** controls VampNet temperature and input gain.
-- **Motion energy** controls dropout, onset masking, filter cutoff, drive, and
-  FX wet mix.
+- **Motion energy** controls dropout and onset masking; the input-FX filter,
+  Q, and drive controls are currently disabled so only input gain changes in
+  that Max control strip.
 - **Arm spread** selects periodic values `3`, `7`, or `13`.
 
 The current version starts with `n64`, but the model can be changed in Max.
@@ -259,7 +260,7 @@ Unloop/VampNet. The default is:
 
 ```text
 arms below 0.78 arm_height: 0 dB
-arms at or above 0.78 arm_height: +16 dB
+arms at or above 0.78 arm_height: +60 dB
 ```
 
 To change the boost for one run, start the gesture controller with
@@ -269,14 +270,14 @@ To change the boost for one run, start the gesture controller with
 python motion_to_unloop.py --loudness-boost-db 34
 ```
 
-Use `50` or `80` carefully and keep the speaker/headphone volume low first.
+Use `60` or `80` carefully and keep the speaker/headphone volume low first.
 The Max patch allows up to `+80 dB`, but those values clip easily.
 
 To make a new value the default, edit this line in
 `unloop-main/motion_to_unloop.py`:
 
 ```python
-LOUDNESS_BOOST_GAIN_DB = 16.0
+LOUDNESS_BOOST_GAIN_DB = 60.0
 ```
 
 ## 8. Use the pipeline

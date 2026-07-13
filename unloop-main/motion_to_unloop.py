@@ -10,15 +10,14 @@ It sends those features and mapped Unloop control values over OSC.
 
 arm_height: wrists high vs torso, 0..1.
 temperature = 0.75..1.30: higher arms = wilder VampNet sampling.
-input_gain_db: binary loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +16 dB by default (a bit above shoulder).
+input_gain_db: binary loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +60 dB by default (a bit above shoulder).
 Change the boost per run with --loudness-boost-db.
 
 motion_energy: frame-to-frame body movement, 0..1.
 dropout = 0..0.25: more movement = less prompt anchoring / more variation.
 onset_mask = 3..25: more movement preserves wider onset/attack regions.
-filter_cutoff = 350..9000 Hz: more movement = brighter processed input.
-filter_q = 0.7..3.5: more movement = more resonant filter.
-drive = 1..6: more movement = more saturation/distortion.
+filter_cutoff, filter_q, drive are held neutral; motion no longer sends these
+input-FX controls.
  
 arm_spread: wrist distance vs shoulder width, 0..1.
 < 0.33 -> periodic = 3
@@ -53,7 +52,7 @@ POSE_MODEL_PATH = Path(__file__).with_name("models") / "pose_landmarker_lite.tas
 # then an obvious boost once the wrists are clearly raised above the shoulders.
 LOUDNESS_TRIGGER_ARM_HEIGHT = 0.78
 LOUDNESS_NORMAL_GAIN_DB = 0.0
-LOUDNESS_BOOST_GAIN_DB = 16.0
+LOUDNESS_BOOST_GAIN_DB = 60.0
 
 POSE_INDEX = {
     "NOSE": 0,
@@ -156,11 +155,6 @@ def smooth(previous: float, current: float, alpha: float) -> float:
     return alpha * current + (1.0 - alpha) * previous
 
 
-def exp_map(value: float, low: float, high: float) -> float:
-    value = clamp(value)
-    return float(low * ((high / low) ** value))
-
-
 def arm_height_to_loudness_gain(arm_height: float) -> tuple[float, float]:
     gain_db = (
         LOUDNESS_BOOST_GAIN_DB
@@ -252,10 +246,11 @@ def map_to_unloop(features: MotionFeatures) -> UnloopControls:
     # More movement = more regeneration pressure. dropout: randomly remove some of the prompt anchors 
     dropout = 0.25 * features.motion_energy #range 0..0.25 because motion_energy is clamped to 0..1
 
-    # More movement = brighter/more affected sound before VampNet encoding.
-    filter_cutoff = exp_map(features.motion_energy, 350.0, 9000.0)
-    filter_q = 0.7 + 2.8 * features.motion_energy
-    drive = 1.0 + 5.0 * features.motion_energy
+    # Input-FX filter and drive are intentionally neutral now; motion should
+    # only affect the input-gain stage in that Max control strip.
+    filter_cutoff = 12000.0
+    filter_q = 0.7
+    drive = 1.0
 
     # More movement also asks VampNet to preserve tap attacks/onsets.
     onset_mask = int(round(3 + 22 * features.motion_energy)) #range 3..25 because motion_energy is clamped to 0..1. 
@@ -292,9 +287,6 @@ def send_controls(client: SimpleUDPClient, features: MotionFeatures, controls: U
     client.send_message("/motion/periodic", controls.periodic)
     client.send_message("/motion/inputgain", controls.input_gain)
     client.send_message("/motion/inputgain_db", controls.input_gain_db)
-    client.send_message("/motion/filtercutoff", controls.filter_cutoff)
-    client.send_message("/motion/filterq", controls.filter_q)
-    client.send_message("/motion/drive", controls.drive)
     client.send_message("/motion/gain", [controls.input_gain, controls.input_gain_db])
 
 
@@ -407,9 +399,7 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
             f"dropout={summary.controls.dropout:.2f} "
             f"onset={summary.controls.onset_mask} "
             f"periodic={summary.controls.periodic} "
-            f"gain={summary.controls.input_gain:.2f} "
-            f"cutoff={summary.controls.filter_cutoff:.0f}Hz "
-            f"drive={summary.controls.drive:.2f}"
+            f"gain={summary.controls.input_gain:.2f}/{summary.controls.input_gain_db:.1f}dB"
         )
 
     def apply_summary_if_available(self) -> bool:
@@ -429,7 +419,7 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
                     "SUMMARY "
                     f"temp {controls.temperature:.2f} | dropout {controls.dropout:.2f} | "
                     f"onset {controls.onset_mask} | periodic {controls.periodic} | "
-                    f"gain {controls.input_gain:.2f} | drive {controls.drive:.2f}"
+                    f"gain {controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB"
                 )
             return "LIVE"
 
@@ -674,8 +664,7 @@ def main() -> None:
                             f"energy={smoothed.motion_energy:.2f} spread={smoothed.arm_spread:.2f} | "
                             f"temp={controls.temperature:.2f} dropout={controls.dropout:.2f} "
                             f"onset={controls.onset_mask} periodic={controls.periodic} "
-                            f"gain={controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB "
-                            f"cutoff={controls.filter_cutoff:.0f}Hz drive={controls.drive:.2f}"
+                            f"gain={controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB"
                         )
                     else:
                         send_controls(client, smoothed, controls)
@@ -692,8 +681,7 @@ def main() -> None:
                     f"onset {controls.onset_mask} | periodic {controls.periodic}"
                 )
                 effects = (
-                    f"gain {controls.input_gain:.2f} ({controls.input_gain_db:.1f}dB) | "
-                    f"cutoff {controls.filter_cutoff:.0f}Hz | drive {controls.drive:.2f}"
+                    f"gain {controls.input_gain:.2f} ({controls.input_gain_db:.1f}dB)"
                 )
                 accumulator_status = accumulator.status_text()
             else:

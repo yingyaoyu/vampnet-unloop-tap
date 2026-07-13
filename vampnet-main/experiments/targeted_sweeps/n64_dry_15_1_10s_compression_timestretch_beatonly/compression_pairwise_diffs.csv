@@ -1,0 +1,3 @@
+output_index,file_a,file_b,duration_compared_s,rms_diff,rms_diff_vs_comp0_db,correlation,sample_rate_match
+1,001_compression_compare_comp0_stretch1_2761ef6466a7_output1.wav,002_compression_compare_comp14_stretch1_1f4483f5df19_output1.wav,9.927,0.072465,0.832,0.047979,True
+2,001_compression_compare_comp0_stretch1_2761ef6466a7_output2.wav,002_compression_compare_comp14_stretch1_1f4483f5df19_output2.wav,9.927,0.068831,1.672,0.048714,True

@@ -1,0 +1,27 @@
+{
+  "base_params": {
+    "batch_size": 1,
+    "beat_mask_ms": 0,
+    "dropout": 0.38,
+    "model_choice": "opera",
+    "n_mask_codebooks": 2,
+    "num_feedback_steps": 2,
+    "onset_mask_width": 0,
+    "periodic_p": 13,
+    "pitch_shift_amt": 0,
+    "sample_cutoff": 0.84,
+    "sampletemp": 0.92,
+    "sampling_steps": 30,
+    "seed": 20260617,
+    "stretch_factor": 1,
+    "top_p": 0.0,
+    "typical_filtering": true,
+    "typical_mass": 0.18,
+    "typical_min_tokens": 64
+  },
+  "copied_input_path": "experiments/param_sweeps/manual_opera_least_similar_20260713_204104/input/Dry#15_1_test_12s.wav",
+  "input_path": "/Users/yingyao/Downloads/Dry#15_1_test_12s.wav",
+  "output_root": "experiments/param_sweeps/manual_opera_least_similar_20260713_204104",
+  "selection_reason": "least similar to source while preserving sparse anchors and constrained sampling for musicality",
+  "sweep_mode": "manual_single_run"
+}

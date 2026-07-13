@@ -699,17 +699,17 @@
       ""
      ],
      "patching_rect": [
-      28.6666921377182,
-      302.5,
-      558.4367037406773,
-      461.0
+	      28.6666921377182,
+	      302.5,
+	      558.4367037406773,
+	      545.0
      ],
      "presentation": 1,
      "presentation_rect": [
-      3.176764070987701,
-      309.95860119394877,
-      558.0,
-      457.0
+	      3.176764070987701,
+	      309.95860119394877,
+	      558.0,
+	      545.0
      ],
      "varname": "vamper[1]",
      "viewvisibility": 1
@@ -998,7 +998,7 @@
       360.0,
       20.0
      ],
-     "text": "motion input FX: gain -> filter/drive -> VampNet"
+	     "text": "motion input gain -> VampNet"
     }
    },
    {
@@ -1013,9 +1013,9 @@
       220.0,
       20.0
      ],
-     "text": "motion input FX",
+	     "text": "motion input gain",
      "textjustification": 1,
-     "presentation": 1,
+	     "presentation": 1,
      "presentation_rect": [
       226.0,
       66.0,
@@ -1048,7 +1048,7 @@
       45.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 1,
      "presentation_rect": [
       226.0,
       88.0,
@@ -1118,7 +1118,7 @@
       45.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 0,
      "presentation_rect": [
       286.0,
       88.0,
@@ -1188,7 +1188,7 @@
       45.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 0,
      "presentation_rect": [
       346.0,
       88.0,
@@ -1258,7 +1258,7 @@
       45.0,
       45.0
      ],
-     "presentation": 1,
+	     "presentation": 0,
      "presentation_rect": [
       406.0,
       88.0,
@@ -1691,15 +1691,19 @@
    {
     "box": {
      "id": "top-preset-menu",
-     "items": [
-      "default",
-      ",",
-      "small_variation",
-      ",",
-      "medium_variation",
-      ",",
-      "large_variation"
-     ],
+	     "items": [
+	      "default",
+	      ",",
+	      "small_variation",
+	      ",",
+	      "medium_variation",
+	      ",",
+	      "large_variation",
+	      ",",
+	      "choir_musical",
+	      ",",
+	      "opera_musical"
+	     ],
      "maxclass": "umenu",
      "numinlets": 1,
      "numoutlets": 3,
@@ -1717,20 +1721,20 @@
       22.0
      ],
      "presentation": 1,
-     "presentation_rect": [
-      408.0,
-      228.0,
-      142.0,
-      22.0
-     ],
-     "pattrmode": 1,
-     "varname": "top-preset-menu"
-    }
-   },
-   {
-    "box": {
-     "id": "top-preset-prepend",
-     "maxclass": "newobj",
+	     "presentation_rect": [
+	      408.0,
+	      228.0,
+	      156.0,
+	      22.0
+	     ],
+	     "pattrmode": 1,
+	     "varname": "top-preset-menu"
+	    }
+	   },
+	   {
+	    "box": {
+	     "id": "top-preset-prepend",
+	     "maxclass": "newobj",
      "numinlets": 1,
      "numoutlets": 1,
      "outlettype": [
@@ -1969,22 +1973,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "obj-2",
-      0
-     ],
-     "destination": [
-      "motion-filter",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "obj-2",
+	   {
+	    "patchline": {
+	     "source": [
+	      "obj-2",
       0
      ],
      "destination": [
@@ -1993,118 +1985,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-filtercutoff",
-      0
-     ],
-     "destination": [
-      "motion-filter",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-load-cutoff",
-      0
-     ],
-     "destination": [
-      "motion-filter",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-filterq",
-      0
-     ],
-     "destination": [
-      "motion-filter",
-      2
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-load-filterq",
-      0
-     ],
-     "destination": [
-      "motion-filter",
-      2
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-filter",
-      0
-     ],
-     "destination": [
-      "motion-drive-mul",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-drive",
-      0
-     ],
-     "destination": [
-      "motion-drive-mul",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-load-drive",
-      0
-     ],
-     "destination": [
-      "motion-drive-mul",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-drive-mul",
-      0
-     ],
-     "destination": [
-      "motion-clip",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-clip",
-      0
-     ],
-     "destination": [
-      "motion-wet-mul",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-dry-mul",
+	   {
+	    "patchline": {
+	     "source": [
+	      "motion-dry-mul",
       0
      ],
      "destination": [
@@ -2113,22 +1997,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-wet-mul",
-      0
-     ],
-     "destination": [
-      "motion-sum",
-      1
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-sum",
+	   {
+	    "patchline": {
+	     "source": [
+	      "motion-sum",
       0
      ],
      "destination": [
@@ -2149,46 +2021,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-top-filtercutoff-dial",
-      0
-     ],
-     "destination": [
-      "motion-top-filtercutoff-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-top-filterq-dial",
-      0
-     ],
-     "destination": [
-      "motion-top-filterq-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-top-drive-dial",
-      0
-     ],
-     "destination": [
-      "motion-top-drive-send",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-inputgain-db",
+	   {
+	    "patchline": {
+	     "source": [
+	      "motion-r-inputgain-db",
       0
      ],
      "destination": [
@@ -2197,46 +2033,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-filtercutoff",
-      0
-     ],
-     "destination": [
-      "motion-top-filtercutoff-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-filterq",
-      0
-     ],
-     "destination": [
-      "motion-top-filterq-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-drive",
-      0
-     ],
-     "destination": [
-      "motion-top-drive-dial",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "top-compression-load",
+	   {
+	    "patchline": {
+	     "source": [
+	      "top-compression-load",
       0
      ],
      "destination": [
@@ -2389,22 +2189,22 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "top-preset-menu",
-      1
+	   {
+	    "patchline": {
+	     "source": [
+	      "top-preset-menu",
+	      1
      ],
      "destination": [
       "top-preset-prepend",
       0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "top-preset-prepend",
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "top-preset-prepend",
       0
      ],
      "destination": [
