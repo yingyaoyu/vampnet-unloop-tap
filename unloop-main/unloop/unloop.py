@@ -1,8 +1,11 @@
 import argbind
 import shutil
 import time
+import wave
 from gradio_client import Client, handle_file
 from pathlib import Path
+
+import numpy as np
 
 
 def _status_label(value) -> str:
@@ -13,6 +16,45 @@ def _status_label(value) -> str:
 
 def _emit_status(value) -> None:
     print(f"STATUS STATUS.{_status_label(value)}", flush=True)
+
+
+def _validate_n_mask_codebooks(value: int) -> int:
+    value = int(value)
+    if not 0 <= value <= 14:
+        raise ValueError(
+            "compression / n_mask_codebooks must be between 0 and 14."
+        )
+    return value
+
+
+def _apply_output_gain(path: Path, gain_db: float) -> None:
+    gain_db = float(gain_db)
+    if abs(gain_db) < 1e-9:
+        return
+
+    gain = 10.0 ** (gain_db / 20.0)
+    with wave.open(str(path), "rb") as wav:
+        params = wav.getparams()
+        frames = wav.readframes(params.nframes)
+
+    if params.sampwidth != 2:
+        raise ValueError(
+            f"output_gain_db currently supports 16-bit PCM WAV files, got {params.sampwidth * 8}-bit audio."
+        )
+
+    samples = np.frombuffer(frames, dtype="<i2").astype(np.float32)
+    boosted = np.clip(np.rint(samples * gain), -32768, 32767).astype("<i2")
+    clipped = int(np.count_nonzero(np.abs(samples * gain) > 32767))
+
+    with wave.open(str(path), "wb") as wav:
+        wav.setparams(params)
+        wav.writeframes(boosted.tobytes())
+
+    print(
+        f"OUTPUT_GAIN applied {gain_db:.2f} dB to {path}"
+        + (f" ({clipped} clipped samples)" if clipped else ""),
+        flush=True,
+    )
 
 
 def vamp(
@@ -36,10 +78,12 @@ def vamp(
     typical_min_tokens: int = 64,
     stretch_factor: float = 1.0,
     num_feedback_steps: int = 1,
+    output_gain_db: float = 0.0,
     seed: int = 0,
 ):
     _emit_status("STARTING")
     try:
+        n_mask_codebooks = _validate_n_mask_codebooks(n_mask_codebooks)
         # print(dir(Client))
         audio_file = Path(audio_path).expanduser()
         output_file = Path(output_path).expanduser()
@@ -63,6 +107,7 @@ def vamp(
 
         def save_output(output_audio):
             shutil.copy(output_audio, output_file)
+            _apply_output_gain(output_file, output_gain_db)
             return output_file
 
         _emit_status("SUBMITTING")

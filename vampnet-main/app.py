@@ -19,7 +19,7 @@ def _pop_int_arg(names: tuple[str, ...], default: int, minimum: int, maximum: in
     return default
 
 
-DEFAULT_COMPRESSION = _pop_int_arg(("--compression", "--n-mask-codebooks"), 3, 1, 14)
+DEFAULT_COMPRESSION = _pop_int_arg(("--compression", "--n-mask-codebooks"), 3, 0, 14)
 
 
 def _configure_gradio_temp_dir() -> None:
@@ -115,6 +115,16 @@ else:
     device = "cpu"
 
 print(f"using device {device}\n"*10)
+
+
+def _validate_n_mask_codebooks(value: int | float) -> int:
+    value = int(value)
+    if not 0 <= value <= 14:
+        raise gr.Error(
+            "compression / n_mask_codebooks must be between 0 and 14."
+        )
+    return value
+
 
 interface = Interface.default()
 init_model_choice = open("DEFAULT_MODEL").read().strip()
@@ -231,6 +241,8 @@ def _vamp_internal(
         typical_mass, typical_min_tokens, top_p, 
         sample_cutoff, stretch_factor, sampling_steps, beat_mask_ms, num_feedback_steps, api=False, harp=False
     ):
+
+    n_mask_codebooks = _validate_n_mask_codebooks(n_mask_codebooks)
 
     print("args!")
     print(f"seed: {seed}")
@@ -543,7 +555,7 @@ with gr.Blocks() as demo:
                 n_mask_codebooks = gr.Slider(
                     label="compression prompt ",
                     value=DEFAULT_COMPRESSION,
-                    minimum=1, 
+                    minimum=0,
                     maximum=14,
                     step=1,
                 )

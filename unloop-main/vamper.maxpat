@@ -1485,12 +1485,12 @@
           30.0,
           30.0
          ]
-        }
-       }
-      ],
-      "lines": [
-       {
-        "patchline": {
+			    }
+			   }
+	  ],
+	  "lines": [
+	   {
+	    "patchline": {
          "destination": [
           "obj-284",
           0
@@ -5233,7 +5233,7 @@
 	   },
 	   {
 	    "box": {
-	     "id": "choir-musical-preset-label",
+		     "id": "choir-musical-preset-label",
 	     "maxclass": "comment",
 	     "numinlets": 1,
 	     "numoutlets": 0,
@@ -5250,7 +5250,7 @@
 	      110.0,
 	      20.0
 	     ],
-		     "text": "opera preset"
+		     "text": "choir preset"
 	    }
 	   },
 	   {
@@ -5293,7 +5293,7 @@
 	   },
 	   {
 	    "box": {
-	     "id": "choir-musical-preset-on-msg",
+		     "id": "choir-musical-preset-on-msg",
 	     "maxclass": "message",
 	     "numinlets": 2,
 	     "numoutlets": 1,
@@ -5306,7 +5306,7 @@
 	      110.0,
 	      22.0
 	     ],
-		     "text": "opera_musical"
+		     "text": "choir_musical"
 	    }
 	   },
 	   {
@@ -5328,7 +5328,7 @@
 		     "presentation": 1,
 	     "presentation_rect": [
 	      373.3665141701189,
-	      480.0,
+	      508.0,
 	      24.0,
 	      24.0
 	     ],
@@ -5350,7 +5350,7 @@
 		     "presentation": 1,
 	     "presentation_rect": [
 	      404.0,
-	      482.0,
+	      510.0,
 	      130.0,
 	      20.0
 	     ],
@@ -5429,10 +5429,10 @@
 		      24.0,
 		      24.0
 		     ],
-			     "presentation": 0,
+			     "presentation": 1,
 		     "presentation_rect": [
 		      373.3665141701189,
-		      508.0,
+		      480.0,
 		      24.0,
 		      24.0
 		     ],
@@ -5451,10 +5451,10 @@
 		      120.0,
 		      20.0
 		     ],
-			     "presentation": 0,
+			     "presentation": 1,
 		     "presentation_rect": [
 		      404.0,
-		      510.0,
+		      482.0,
 		      120.0,
 		      20.0
 		     ],
@@ -5536,7 +5536,7 @@
 			     "presentation": 1,
 			     "presentation_rect": [
 			      373.3665141701189,
-			      508.0,
+			      536.0,
 			      24.0,
 			      24.0
 			     ],
@@ -5558,7 +5558,7 @@
 			     "presentation": 1,
 			     "presentation_rect": [
 			      404.0,
-			      510.0,
+			      538.0,
 			      130.0,
 			      20.0
 			     ],
@@ -5636,12 +5636,188 @@
 			      90.0,
 			      22.0
 			     ],
-			     "text": "xeno-canto"
-			    }
-			   },
-			   {
-			    "box": {
-			     "id": "obj-127",
+				     "text": "xeno-canto"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "choir-model-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3620.0,
+				      1010.5619840679856,
+				      60.0,
+				      22.0
+				     ],
+				     "text": "choir"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "opera-model-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3620.0,
+				      1270.5619840679856,
+				      60.0,
+				      22.0
+				     ],
+				     "text": "opera"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "supermetroid-model-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3620.0,
+				      1140.5619840679856,
+				      110.0,
+				      22.0
+				     ],
+				     "text": "supermetroid"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "n64-cleaner-preset-toggle",
+				     "maxclass": "toggle",
+				     "numinlets": 1,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      "int"
+				     ],
+				     "parameter_enable": 0,
+				     "patching_rect": [
+				      3432.275962462059,
+				      1450.5619840679856,
+				      24.0,
+				      24.0
+				     ],
+				     "presentation": 1,
+				     "presentation_rect": [
+				      373.3665141701189,
+				      564.0,
+				      24.0,
+				      24.0
+				     ],
+				     "varname": "n64-cleaner-preset-toggle"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "n64-cleaner-preset-label",
+				     "maxclass": "comment",
+				     "numinlets": 1,
+				     "numoutlets": 0,
+				     "patching_rect": [
+				      3465.0,
+				      1452.5619840679856,
+				      110.0,
+				      20.0
+				     ],
+				     "presentation": 1,
+				     "presentation_rect": [
+				      404.0,
+				      566.0,
+				      110.0,
+				      20.0
+				     ],
+				     "text": "n64 preset"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "n64-cleaner-preset-sel",
+				     "maxclass": "newobj",
+				     "numinlets": 1,
+				     "numoutlets": 3,
+				     "outlettype": [
+				      "bang",
+				      "bang",
+				      ""
+				     ],
+				     "patching_rect": [
+				      3432.275962462059,
+				      1490.5619840679856,
+				      53.0,
+				      22.0
+				     ],
+				     "text": "sel 0 1"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "n64-cleaner-preset-off-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3405.0,
+				      1530.5619840679856,
+				      58.0,
+				      22.0
+				     ],
+				     "text": "default"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "n64-cleaner-preset-on-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3475.0,
+				      1530.5619840679856,
+				      90.0,
+				      22.0
+				     ],
+				     "text": "n64_cleaner"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "n64-model-msg",
+				     "maxclass": "message",
+				     "numinlets": 2,
+				     "numoutlets": 1,
+				     "outlettype": [
+				      ""
+				     ],
+				     "patching_rect": [
+				      3620.0,
+				      1530.5619840679856,
+				      60.0,
+				      22.0
+				     ],
+				     "text": "n64"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "obj-127",
 		     "maxclass": "newobj",
      "numinlets": 1,
      "numoutlets": 1,
@@ -6238,21 +6414,21 @@
     }
    },
    {
-    "box": {
-     "id": "obj-24",
-     "maxclass": "newobj",
-	     "numinlets": 23,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
+	    "box": {
+	     "id": "obj-24",
+	     "maxclass": "newobj",
+		     "numinlets": 24,
+	     "numoutlets": 1,
+	     "outlettype": [
+	      ""
+	     ],
      "patching_rect": [
       1005.0,
       1245.0,
-      3600.0,
-      22.0
-     ],
-	     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression top_p pitchshift samplecutoff typicalmass typicalmintokens stretchfactor feedbacksteps"
+	      3600.0,
+	      22.0
+	     ],
+		     "text": "pack python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py inputfile outputfile servername temp phint onsetmask beatmask downbeats typical numsteps checkpointname dropout seed compression top_p pitchshift samplecutoff typicalmass typicalmintokens stretchfactor feedbacksteps outputgain"
     }
    },
    {
@@ -6392,7 +6568,7 @@
       2700.0,
       22.0
      ],
-     "text": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py \"--audio_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-input-1058.wav\" \"--output_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-output-1058.wav\" \"--servername http://127.0.0.1:7860/\" \"--temp 1.0000\" \"--periodic_hint_freq 0\" \"--onset_mask_width 0\" beatmask downbeats \"--typical_filter 0\" \"--num_steps 36\" \"--checkpoint_name n64\" \"--dropout 0.0000\" \"--seed 0\" \"--n_mask_codebooks 3\""
+	     "text": "/Users/yingyao/anaconda3/envs/vampnet_env/bin/python /Users/yingyao/Downloads/VampNet/unloop-main/vamp.py \"--audio_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-input-1058.wav\" \"--output_path /Users/yingyao/Downloads/VampNet/unloop-main/audio/vampnet-output-1058.wav\" \"--servername http://127.0.0.1:7860/\" \"--temp 1.0000\" \"--periodic_hint_freq 0\" \"--onset_mask_width 0\" beatmask downbeats \"--typical_filter 0\" \"--num_steps 36\" \"--checkpoint_name n64\" \"--dropout 0.0000\" \"--seed 0\" \"--n_mask_codebooks 3\" \"--output_gain_db 0.0000\""
     }
    },
    {
@@ -11102,7 +11278,7 @@
       220.0,
       20.0
      ],
-	     "text": "motion input gain",
+		     "text": "motion output gain",
 	     "presentation": 1,
      "presentation_rect": [
       310.0,
@@ -11153,12 +11329,12 @@
        ],
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
-       "parameter_longname": "motion input gain dB",
+	       "parameter_longname": "motion output gain dB",
        "parameter_mmax": 80.0,
        "parameter_mmin": -24.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
-       "parameter_shortname": "in gain",
+	       "parameter_shortname": "out gain",
        "parameter_type": 0,
        "parameter_unitstyle": 4
       }
@@ -11470,13 +11646,13 @@
        ],
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
-       "parameter_longname": "compression prompt",
-       "parameter_mmax": 14.0,
-       "parameter_mmin": 0.0,
-       "parameter_modmode": 0,
-       "parameter_osc_name": "<default>",
-       "parameter_shortname": "comp",
-       "parameter_steps": 14,
+	       "parameter_longname": "compression prompt",
+	       "parameter_mmax": 14.0,
+	       "parameter_mmin": 0.0,
+	       "parameter_modmode": 0,
+	       "parameter_osc_name": "<default>",
+	       "parameter_shortname": "comp",
+	       "parameter_steps": 15,
        "parameter_type": 1,
        "parameter_unitstyle": 0
       }
@@ -12125,13 +12301,115 @@
 	      965.0,
 	      80.0,
 	      22.0
-	     ],
-	     "text": "tosymbol"
-	    }
-	   },
-	   {
-	    "box": {
-	     "id": "feedback-steps-load",
+		     ],
+		     "text": "tosymbol"
+		    }
+		   },
+			   {
+			    "box": {
+			     "id": "debug-output-gain-comment",
+			     "maxclass": "comment",
+			     "numinlets": 1,
+			     "numoutlets": 0,
+			     "patching_rect": [
+			      4140.0,
+			      785.0,
+			      300.0,
+			      20.0
+			     ],
+			     "text": "DEBUG: motion dB -> --output_gain_db"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "output-gain-receive",
+			     "maxclass": "newobj",
+			     "numinlets": 0,
+			     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+		     "patching_rect": [
+		      4140.0,
+		      815.0,
+		      145.0,
+		      22.0
+		     ],
+		     "text": "r motion-inputgain-db"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "output-gain-load",
+		     "maxclass": "newobj",
+		     "numinlets": 0,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+			     "patching_rect": [
+			      4300.0,
+			      850.0,
+			      90.0,
+			      22.0
+		     ],
+		     "text": "loadmess 0."
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "output-gain-prepend",
+		     "maxclass": "newobj",
+		     "numinlets": 1,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+			     "patching_rect": [
+			      4140.0,
+			      850.0,
+			      190.0,
+			      22.0
+		     ],
+		     "text": "prepend --output_gain_db"
+		    }
+		   },
+		   {
+		    "box": {
+		     "id": "output-gain-symbol",
+		     "maxclass": "newobj",
+		     "numinlets": 1,
+		     "numoutlets": 1,
+		     "outlettype": [
+		      ""
+		     ],
+			     "patching_rect": [
+			      4140.0,
+			      900.0,
+			      80.0,
+			      22.0
+		     ],
+			     "text": "tosymbol"
+			    }
+			   },
+			   {
+			    "box": {
+			     "id": "debug-print-output-gain-arg",
+			     "maxclass": "newobj",
+			     "numinlets": 1,
+			     "numoutlets": 0,
+			     "patching_rect": [
+			      4350.0,
+			      850.0,
+			      175.0,
+			      22.0
+			     ],
+			     "text": "print OUTPUT_GAIN_ARG"
+			    }
+			   },
+		   {
+		    "box": {
+		     "id": "feedback-steps-load",
 	     "maxclass": "newobj",
 	     "numinlets": 1,
 	     "numoutlets": 1,
@@ -12149,14 +12427,11 @@
 	   },
 	   {
 	    "box": {
-	     "id": "gen-preset-route",
-	     "maxclass": "newobj",
-	     "numinlets": 1,
-			     "numoutlets": 10,
+		     "id": "gen-preset-route",
+		     "maxclass": "newobj",
+		     "numinlets": 1,
+			     "numoutlets": 7,
 					     "outlettype": [
-					      "bang",
-					      "bang",
-					      "bang",
 					      "bang",
 					      "bang",
 					      "bang",
@@ -12171,9 +12446,9 @@
 					      1100.0,
 					      22.0
 					     ],
-					     "text": "sel default small_variation medium_variation large_variation choir_musical supermetroid opera_musical n64_cleaner xeno_canto_musical"
-					    }
-					   },
+					     "text": "sel default choir_musical supermetroid opera_musical n64_cleaner xeno_canto_musical"
+				    }
+			   },
    {
     "box": {
      "id": "gen-preset-default-msg",
@@ -12189,66 +12464,12 @@
 	      220.0,
 	      22.0
 	     ],
-		     "text": "7 3 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
+	     "text": "7 3 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
 	    }
 	   },
-   {
-    "box": {
-     "id": "gen-preset-small-msg",
-     "maxclass": "message",
-     "numinlets": 2,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-	     "patching_rect": [
-	      1260.0,
-	      35.0,
-	      220.0,
-	      22.0
-	     ],
-		     "text": "5 4 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
-	    }
-	   },
-   {
-    "box": {
-     "id": "gen-preset-medium-msg",
-     "maxclass": "message",
-     "numinlets": 2,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-	     "patching_rect": [
-	      1400.0,
-	      35.0,
-	      220.0,
-	      22.0
-	     ],
-		     "text": "7 4 0 0. 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
-	    }
-	   },
-   {
-    "box": {
-     "id": "gen-preset-large-msg",
-     "maxclass": "message",
-     "numinlets": 2,
-     "numoutlets": 1,
-     "outlettype": [
-      ""
-     ],
-	     "patching_rect": [
-	      1540.0,
-	      35.0,
-	      220.0,
-	      22.0
-	     ],
-		     "text": "13 4 0 0.2 0 1. 36 0 0. 1. 0 0.15 64 1. 1 0"
-	    }
-	   },
-	   {
-	    "box": {
-	     "id": "gen-preset-choir-musical-msg",
+				   {
+				    "box": {
+			     "id": "gen-preset-choir-musical-msg",
 	     "maxclass": "message",
 	     "numinlets": 2,
 	     "numoutlets": 1,
@@ -12365,14 +12586,158 @@
 		      95.0,
 		      500.0,
 		      22.0
-		     ],
-		     "text": "unpack i i i f i f i i f f i f i f i i"
-		    }
-		   }
-  ],
-  "lines": [
-   {
-    "patchline": {
+			     ],
+			     "text": "unpack i i i f i f i i f f i f i f i i"
+			    }
+			   },
+				   {
+				    "box": {
+				     "id": "debug-comp-comment",
+				     "maxclass": "comment",
+				     "numinlets": 1,
+				     "numoutlets": 0,
+				     "patching_rect": [
+				      2380.0,
+				      880.0,
+				      250.0,
+				      20.0
+				     ],
+				     "text": "DEBUG: compression argument"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "debug-print-max-comp-arg",
+				     "maxclass": "newobj",
+				     "numinlets": 1,
+				     "numoutlets": 0,
+			     "patching_rect": [
+			      2605.0,
+			      910.0,
+			      155.0,
+			      22.0
+			     ],
+			     "text": "print MAX_COMP_ARG"
+			    }
+				   },
+				   {
+				    "box": {
+				     "id": "debug-max-command-comment",
+				     "maxclass": "comment",
+				     "numinlets": 1,
+				     "numoutlets": 0,
+				     "patching_rect": [
+				      999.4024361371994,
+				      1288.0,
+				      320.0,
+				      20.0
+				     ],
+				     "text": "DEBUG: full shell command"
+				    }
+				   },
+				   {
+				    "box": {
+				     "id": "debug-print-max-command",
+				     "maxclass": "newobj",
+				     "numinlets": 1,
+			     "numoutlets": 0,
+			     "patching_rect": [
+			      999.4024361371994,
+			      1345.0,
+			      155.0,
+			      22.0
+			     ],
+			     "text": "print MAX_COMMAND"
+			    }
+			   }
+	  ],
+	  "lines": [
+	   {
+	    "patchline": {
+	     "source": [
+	      "comp-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "debug-print-max-comp-arg",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "obj-24",
+	      0
+	     ],
+	     "destination": [
+	      "debug-print-max-command",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "output-gain-receive",
+	      0
+	     ],
+	     "destination": [
+	      "output-gain-prepend",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "output-gain-load",
+	      0
+	     ],
+	     "destination": [
+	      "output-gain-prepend",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "output-gain-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "output-gain-symbol",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "output-gain-prepend",
+	      0
+	     ],
+	     "destination": [
+	      "debug-print-output-gain-arg",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "output-gain-symbol",
+	      0
+	     ],
+	     "destination": [
+	      "obj-24",
+	      23
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
      "destination": [
       "obj-24",
       6
@@ -18780,50 +19145,14 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-route",
-      0
-     ],
-     "destination": [
-      "gen-preset-default-msg",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-route",
-      1
-     ],
-     "destination": [
-      "gen-preset-small-msg",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-route",
-      2
-     ],
-     "destination": [
-      "gen-preset-medium-msg",
-      0
-     ]
-    }
-   },
 	   {
 	    "patchline": {
 	     "source": [
 	      "gen-preset-route",
-	      3
+	      0
 	     ],
 	     "destination": [
-	      "gen-preset-large-msg",
+	      "gen-preset-default-msg",
 	      0
 	     ]
 	    }
@@ -18831,7 +19160,7 @@
 	   {
 	    "patchline": {
 	     "source": [
-	      "choir-musical-preset-toggle",
+		      "choir-musical-preset-toggle",
 	      0
 	     ],
 	     "destination": [
@@ -18852,47 +19181,83 @@
 	     ]
 	    }
 	   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "choir-musical-preset-sel",
+		      1
+		     ],
+		     "destination": [
+		      "choir-musical-preset-on-msg",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "choir-musical-preset-sel",
+		      1
+		     ],
+		     "destination": [
+		      "choir-model-msg",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "choir-model-msg",
+		      0
+		     ],
+		     "destination": [
+		      "obj-8",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "choir-model-msg",
+		      0
+		     ],
+		     "destination": [
+		      "obj-103",
+		      0
+		     ]
+		    }
+		   },
+		   {
+		    "patchline": {
+		     "source": [
+		      "choir-musical-preset-off-msg",
+	      0
+	     ],
+	     "destination": [
+	      "gen-preset-route",
+	      0
+	     ]
+	    }
+	   },
 	   {
 	    "patchline": {
 	     "source": [
-	      "choir-musical-preset-sel",
+	      "choir-musical-preset-on-msg",
+	      0
+	     ],
+	     "destination": [
+	      "gen-preset-route",
+	      0
+	     ]
+	    }
+	   },
+	   {
+	    "patchline": {
+	     "source": [
+	      "gen-preset-route",
 	      1
-	     ],
-	     "destination": [
-	      "choir-musical-preset-on-msg",
-	      0
-	     ]
-	    }
-	   },
-	   {
-	    "patchline": {
-	     "source": [
-	      "choir-musical-preset-off-msg",
-	      0
-	     ],
-	     "destination": [
-	      "gen-preset-route",
-	      0
-	     ]
-	    }
-	   },
-	   {
-	    "patchline": {
-	     "source": [
-	      "choir-musical-preset-on-msg",
-	      0
-	     ],
-	     "destination": [
-	      "gen-preset-route",
-	      0
-	     ]
-	    }
-	   },
-	   {
-	    "patchline": {
-	     "source": [
-	      "gen-preset-route",
-	      4
 	     ],
 		     "destination": [
 		      "gen-preset-choir-musical-msg",
@@ -18924,22 +19289,58 @@
 		     ]
 		    }
 		   },
-		   {
-		    "patchline": {
-		     "source": [
-		      "supermetroid-preset-sel",
-		      1
-		     ],
-		     "destination": [
-		      "supermetroid-preset-on-msg",
-		      0
-		     ]
-		    }
-		   },
-		   {
-		    "patchline": {
-		     "source": [
-		      "supermetroid-preset-off-msg",
+			   {
+			    "patchline": {
+			     "source": [
+			      "supermetroid-preset-sel",
+			      1
+			     ],
+			     "destination": [
+			      "supermetroid-preset-on-msg",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "supermetroid-preset-sel",
+			      1
+			     ],
+			     "destination": [
+			      "supermetroid-model-msg",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "supermetroid-model-msg",
+			      0
+			     ],
+			     "destination": [
+			      "obj-8",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "supermetroid-model-msg",
+			      0
+			     ],
+			     "destination": [
+			      "obj-103",
+			      0
+			     ]
+			    }
+			   },
+			   {
+			    "patchline": {
+			     "source": [
+			      "supermetroid-preset-off-msg",
 		      0
 		     ],
 		     "destination": [
@@ -18961,13 +19362,13 @@
 		    }
 		   },
 			   {
-			    "patchline": {
-			     "source": [
-			      "gen-preset-route",
-			      5
-		     ],
-		     "destination": [
-		      "gen-preset-supermetroid-msg",
+				    "patchline": {
+	     "source": [
+	      "gen-preset-route",
+	      2
+	     ],
+				     "destination": [
+				      "gen-preset-supermetroid-msg",
 		      0
 			     ]
 			    }
@@ -18996,22 +19397,58 @@
 			     ]
 			    }
 			   },
-			   {
-			    "patchline": {
-			     "source": [
-			      "opera-musical-preset-sel",
-			      1
-			     ],
-			     "destination": [
-			      "opera-musical-preset-on-msg",
-			      0
-			     ]
-			    }
-			   },
-			   {
-			    "patchline": {
-			     "source": [
-			      "opera-musical-preset-off-msg",
+				   {
+				    "patchline": {
+				     "source": [
+				      "opera-musical-preset-sel",
+				      1
+				     ],
+				     "destination": [
+				      "opera-musical-preset-on-msg",
+				      0
+				     ]
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "opera-musical-preset-sel",
+				      1
+				     ],
+				     "destination": [
+				      "opera-model-msg",
+				      0
+				     ]
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "opera-model-msg",
+				      0
+				     ],
+				     "destination": [
+				      "obj-8",
+				      0
+				     ]
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "opera-model-msg",
+				      0
+				     ],
+				     "destination": [
+				      "obj-103",
+				      0
+				     ]
+				    }
+				   },
+				   {
+				    "patchline": {
+				     "source": [
+				      "opera-musical-preset-off-msg",
 			      0
 			     ],
 			     "destination": [
@@ -19032,34 +19469,130 @@
 			     ]
 			    }
 			   },
-			   {
-			    "patchline": {
-			     "source": [
-			      "gen-preset-route",
-			      6
-			     ],
-			     "destination": [
-			      "gen-preset-opera-musical-msg",
+				   {
+				    "patchline": {
+	     "source": [
+	      "gen-preset-route",
+	      3
+	     ],
+					     "destination": [
+					      "gen-preset-opera-musical-msg",
 			      0
 			     ]
 				    }
 				   },
-					   {
-					    "patchline": {
-					     "source": [
-					      "gen-preset-route",
-					      7
-				     ],
-				     "destination": [
-				      "gen-preset-n64-cleaner-msg",
-				      0
-					     ]
-					    }
-					   },
-					   {
-					    "patchline": {
-					     "source": [
-					      "xeno-canto-preset-toggle",
+						   {
+							    "patchline": {
+	     "source": [
+	      "gen-preset-route",
+	      4
+	     ],
+							     "destination": [
+							      "gen-preset-n64-cleaner-msg",
+					      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-cleaner-preset-toggle",
+						      0
+						     ],
+						     "destination": [
+						      "n64-cleaner-preset-sel",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-cleaner-preset-sel",
+						      0
+						     ],
+						     "destination": [
+						      "n64-cleaner-preset-off-msg",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-cleaner-preset-sel",
+						      1
+						     ],
+						     "destination": [
+						      "n64-cleaner-preset-on-msg",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-cleaner-preset-sel",
+						      1
+						     ],
+						     "destination": [
+						      "n64-model-msg",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-cleaner-preset-off-msg",
+						      0
+						     ],
+						     "destination": [
+						      "gen-preset-route",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-cleaner-preset-on-msg",
+						      0
+						     ],
+						     "destination": [
+						      "gen-preset-route",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-model-msg",
+						      0
+						     ],
+						     "destination": [
+						      "obj-8",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "n64-model-msg",
+						      0
+						     ],
+						     "destination": [
+						      "obj-103",
+						      0
+						     ]
+						    }
+						   },
+						   {
+						    "patchline": {
+						     "source": [
+						      "xeno-canto-preset-toggle",
 					      0
 					     ],
 					     "destination": [
@@ -19153,13 +19686,13 @@
 					    }
 					   },
 					   {
-					    "patchline": {
-					     "source": [
-					      "gen-preset-route",
-					      8
-					     ],
-					     "destination": [
-					      "gen-preset-xeno-canto-msg",
+						    "patchline": {
+	     "source": [
+	      "gen-preset-route",
+	      5
+	     ],
+							     "destination": [
+							      "gen-preset-xeno-canto-msg",
 					      0
 					     ]
 					    }
@@ -19200,46 +19733,10 @@
 				     ]
 				    }
 				   },
-				   {
-				    "patchline": {
-				     "source": [
-				      "gen-preset-default-msg",
-	      0
-     ],
-     "destination": [
-      "gen-preset-unpack",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-small-msg",
-      0
-     ],
-     "destination": [
-      "gen-preset-unpack",
-      0
-     ]
-    }
-   },
-   {
-    "patchline": {
-     "source": [
-      "gen-preset-medium-msg",
-      0
-     ],
-     "destination": [
-      "gen-preset-unpack",
-      0
-     ]
-    }
-   },
 	   {
 	    "patchline": {
 	     "source": [
-	      "gen-preset-large-msg",
+	      "gen-preset-default-msg",
 	      0
 	     ],
 	     "destination": [
@@ -19251,7 +19748,7 @@
 	   {
 	    "patchline": {
 	     "source": [
-	      "gen-preset-choir-musical-msg",
+		      "gen-preset-choir-musical-msg",
 	      0
 	     ],
 		     "destination": [

@@ -702,14 +702,14 @@
 	      28.6666921377182,
 	      302.5,
 	      558.4367037406773,
-	      545.0
+		      605.0
      ],
      "presentation": 1,
      "presentation_rect": [
 	      3.176764070987701,
 	      309.95860119394877,
 	      558.0,
-	      545.0
+		      605.0
      ],
      "varname": "vamper[1]",
      "viewvisibility": 1
@@ -998,7 +998,7 @@
       360.0,
       20.0
      ],
-	     "text": "motion input gain -> VampNet"
+		     "text": "motion output gain -> wet file"
     }
    },
    {
@@ -1013,7 +1013,7 @@
       220.0,
       20.0
      ],
-	     "text": "motion input gain",
+		     "text": "motion output gain",
      "textjustification": 1,
 	     "presentation": 1,
      "presentation_rect": [
@@ -1065,12 +1065,12 @@
        ],
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
-       "parameter_longname": "motion top input gain dB",
+	       "parameter_longname": "motion top output gain dB",
        "parameter_mmax": 80.0,
        "parameter_mmin": -24.0,
        "parameter_modmode": 0,
        "parameter_osc_name": "<default>",
-       "parameter_shortname": "in gain",
+	       "parameter_shortname": "out gain",
        "parameter_type": 0,
        "parameter_unitstyle": 4
       }
@@ -1367,15 +1367,15 @@
        ],
        "parameter_initial_enable": 1,
        "parameter_linknames": 1,
-       "parameter_longname": "top compression prompt",
-       "parameter_mmax": 14.0,
-       "parameter_mmin": 0.0,
-       "parameter_modmode": 0,
-       "parameter_osc_name": "<default>",
-       "parameter_shortname": "comp",
-       "parameter_type": 1,
-       "parameter_unitstyle": 0,
-       "parameter_steps": 14
+	       "parameter_longname": "top compression prompt",
+	       "parameter_mmax": 14.0,
+	       "parameter_mmin": 0.0,
+	       "parameter_modmode": 0,
+	       "parameter_osc_name": "<default>",
+	       "parameter_shortname": "comp",
+	       "parameter_type": 1,
+	       "parameter_unitstyle": 0,
+	       "parameter_steps": 15
       }
      },
      "varname": "top-compression"
@@ -1691,18 +1691,14 @@
    {
     "box": {
      "id": "top-preset-menu",
-	     "items": [
-	      "default",
-	      ",",
-	      "small_variation",
-	      ",",
-	      "medium_variation",
-	      ",",
-	      "large_variation",
-	      ",",
-		      "choir_musical",
-		      ",",
-		      "opera_musical",
+		     "items": [
+			      "default",
+			      ",",
+				      "choir_musical",
+			      ",",
+			      "supermetroid",
+			      ",",
+			      "opera_musical",
 		      ",",
 			      "n64_cleaner",
 			      ",",
@@ -1965,22 +1961,10 @@
      ]
     }
    },
-   {
-    "patchline": {
-     "source": [
-      "motion-r-inputgain-db",
-      0
-     ],
-     "destination": [
-      "obj-2",
-      0
-     ]
-    }
-   },
-	   {
-	    "patchline": {
-	     "source": [
-	      "obj-2",
+		   {
+		    "patchline": {
+		     "source": [
+		      "obj-2",
       0
      ],
      "destination": [
@@ -2373,11 +2357,11 @@
      "parameter_initial": 24,
      "parameter_longname": "numsteps[1]"
     },
-    "motion-top-inputgain-db-dial": {
-     "parameter_longname": "motion top input gain dB",
-     "parameter_shortname": "in gain",
-     "parameter_invisible": 0
-    },
+	    "motion-top-inputgain-db-dial": {
+	     "parameter_longname": "motion top output gain dB",
+	     "parameter_shortname": "out gain",
+	     "parameter_invisible": 0
+	    },
     "motion-top-filtercutoff-dial": {
      "parameter_longname": "motion top filter cutoff",
      "parameter_shortname": "cutoff",
@@ -2395,15 +2379,19 @@
     },
     "obj-1::comp-dial": {
      "parameter_initial": 3,
-     "parameter_longname": "compression prompt",
-     "parameter_range": [
-      1,
-      14
-     ],
+	     "parameter_longname": "compression prompt",
+	     "parameter_range": [
+	      0,
+	      14
+	     ],
      "parameter_shortname": "comp"
     },
     "top-compression-dial": {
-     "parameter_longname": "top compression prompt",
+	     "parameter_longname": "top compression prompt",
+	     "parameter_range": [
+	      0,
+	      14
+	     ],
      "parameter_shortname": "comp",
      "parameter_invisible": 0
     },
@@ -2424,11 +2412,11 @@
     }
    },
    "inherited_shortname": 1,
-   "motion-top-inputgain-db-dial": [
-    "motion top input gain dB",
-    "in gain",
-    0
-   ],
+	   "motion-top-inputgain-db-dial": [
+	    "motion top output gain dB",
+	    "out gain",
+	    0
+	   ],
    "motion-top-filtercutoff-dial": [
     "motion top filter cutoff",
     "cutoff",

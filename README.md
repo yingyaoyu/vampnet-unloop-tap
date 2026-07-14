@@ -253,14 +253,14 @@ python motion_to_unloop.py
 Remember to allow camera access for the terminal application in system settings. Also allow microphone access for Max.The webcam window should display the detected skeleton and mapped gesture
 values.
 
-### Adjust arm-height input gain
+### Adjust arm-height output gain
 
-Arm height controls a binary input-gain boost before the audio is sent into
-Unloop/VampNet. The default is:
+Arm height controls a binary output-gain boost after VampNet generates the wet
+audio file. The default is:
 
 ```text
 arms below 0.78 arm_height: 0 dB
-arms at or above 0.78 arm_height: +60 dB
+arms at or above 0.78 arm_height: +20 dB
 ```
 
 To change the boost for one run, start the gesture controller with
@@ -277,7 +277,7 @@ To make a new value the default, edit this line in
 `unloop-main/motion_to_unloop.py`:
 
 ```python
-LOUDNESS_BOOST_GAIN_DB = 60.0
+LOUDNESS_BOOST_GAIN_DB = 20.0
 ```
 
 ## 8. Use the pipeline

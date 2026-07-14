@@ -10,7 +10,7 @@ It sends those features and mapped Unloop control values over OSC.
 
 arm_height: wrists high vs torso, 0..1.
 temperature = 0.75..1.30: higher arms = wilder VampNet sampling.
-input_gain_db: binary loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +60 dB by default (a bit above shoulder).
+output_gain_db: binary wet-file loudness boost. Below 0.78 arm height = 0 dB; above/equal 0.78 = +20 dB by default (a bit above shoulder).
 Change the boost per run with --loudness-boost-db.
 
 motion_energy: frame-to-frame body movement, 0..1.
@@ -52,7 +52,7 @@ POSE_MODEL_PATH = Path(__file__).with_name("models") / "pose_landmarker_lite.tas
 # then an obvious boost once the wrists are clearly raised above the shoulders.
 LOUDNESS_TRIGGER_ARM_HEIGHT = 0.78
 LOUDNESS_NORMAL_GAIN_DB = 0.0
-LOUDNESS_BOOST_GAIN_DB = 60.0
+LOUDNESS_BOOST_GAIN_DB = 20.0
 
 POSE_INDEX = {
     "NOSE": 0,
@@ -247,7 +247,7 @@ def map_to_unloop(features: MotionFeatures) -> UnloopControls:
     dropout = 0.25 * features.motion_energy #range 0..0.25 because motion_energy is clamped to 0..1
 
     # Input-FX filter and drive are intentionally neutral now; motion should
-    # only affect the input-gain stage in that Max control strip.
+    # only affect the wet output-gain stage after VampNet generation.
     filter_cutoff = 12000.0
     filter_q = 0.7
     drive = 1.0
@@ -399,7 +399,7 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
             f"dropout={summary.controls.dropout:.2f} "
             f"onset={summary.controls.onset_mask} "
             f"periodic={summary.controls.periodic} "
-            f"gain={summary.controls.input_gain:.2f}/{summary.controls.input_gain_db:.1f}dB"
+            f"output_gain={summary.controls.input_gain:.2f}/{summary.controls.input_gain_db:.1f}dB"
         )
 
     def apply_summary_if_available(self) -> bool:
@@ -419,7 +419,7 @@ class RecordingAccumulator: #collects motion samples during a recording window, 
                     "SUMMARY "
                     f"temp {controls.temperature:.2f} | dropout {controls.dropout:.2f} | "
                     f"onset {controls.onset_mask} | periodic {controls.periodic} | "
-                    f"gain {controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB"
+                    f"output gain {controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB"
                 )
             return "LIVE"
 
@@ -596,7 +596,7 @@ def main() -> None:
         "--loudness-boost-db",
         type=float,
         default=LOUDNESS_BOOST_GAIN_DB,
-        help="Input-gain boost in dB when arm_height crosses the high-arm threshold.",
+        help="Wet-output gain boost in dB when arm_height crosses the high-arm threshold.",
     )
     parser.add_argument(
         "--loudness-trigger-arm-height",
@@ -664,7 +664,7 @@ def main() -> None:
                             f"energy={smoothed.motion_energy:.2f} spread={smoothed.arm_spread:.2f} | "
                             f"temp={controls.temperature:.2f} dropout={controls.dropout:.2f} "
                             f"onset={controls.onset_mask} periodic={controls.periodic} "
-                            f"gain={controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB"
+                            f"output_gain={controls.input_gain:.2f}/{controls.input_gain_db:.1f}dB"
                         )
                     else:
                         send_controls(client, smoothed, controls)
@@ -681,7 +681,7 @@ def main() -> None:
                     f"onset {controls.onset_mask} | periodic {controls.periodic}"
                 )
                 effects = (
-                    f"gain {controls.input_gain:.2f} ({controls.input_gain_db:.1f}dB)"
+                    f"output gain {controls.input_gain:.2f} ({controls.input_gain_db:.1f}dB)"
                 )
                 accumulator_status = accumulator.status_text()
             else:
